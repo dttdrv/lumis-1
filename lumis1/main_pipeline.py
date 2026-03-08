@@ -60,6 +60,23 @@ def _message_content_to_text(content: Any) -> str:
     return "Image reference omitted for text-only training."
 
 
+def normalize_messages_for_text_chat_template(messages: Any) -> list[dict[str, str]]:
+    """Collapse block-structured message content into plain text for text-only chat templates."""
+    if not isinstance(messages, list):
+        raise ValueError("messages must be a list")
+    normalized: list[dict[str, str]] = []
+    for message in messages:
+        if not isinstance(message, dict):
+            continue
+        normalized.append(
+            {
+                "role": str(message.get("role") or "user"),
+                "content": _message_content_to_text(message.get("content")),
+            }
+        )
+    return normalized
+
+
 def analyze_sft_training_surface(dataset_path: str | Path) -> dict[str, Any]:
     """Inspect one SFT dataset and decide whether text-only fallback is required."""
     path = Path(dataset_path).expanduser().resolve()
@@ -193,6 +210,43 @@ def build_main_colab_run_plan(repo_root: str | Path, run_prefix: str) -> dict[st
         "dpo_output_dir": dpo_root / "artifacts" / "dpo_model",
         "gguf_dir": export_root / "artifacts" / "gguf",
     }
+
+
+def resolve_profile_name(
+    repo_root: str | Path,
+    requested_profile: str | None,
+    *,
+    gpu_total_memory_gb: float | None = None,
+) -> str:
+    """Resolve an operator profile, defaulting to the safer option on smaller GPUs."""
+    root = Path(repo_root).expanduser().resolve()
+    profile_cfg = _load_yaml_mapping(root / "configs" / "run_profiles.yaml")
+    profiles = profile_cfg.get("profiles")
+    if not isinstance(profiles, dict) or not profiles:
+        raise ValueError("configs/run_profiles.yaml must define at least one profile")
+
+    if requested_profile and requested_profile != "auto":
+        if requested_profile not in profiles:
+            raise ValueError(f"unknown profile: {requested_profile}")
+        return requested_profile
+
+    if gpu_total_memory_gb is not None and gpu_total_memory_gb >= 80 and "default_96gb" in profiles:
+        return "default_96gb"
+    if "safe_fallback" in profiles:
+        return "safe_fallback"
+    if "default_96gb" in profiles:
+        return "default_96gb"
+    return next(iter(profiles))
+
+
+def detect_model_artifact_layout(model_dir: str | Path) -> str:
+    """Detect whether a model directory stores PEFT adapters or a full Transformers model."""
+    path = Path(model_dir).expanduser().resolve()
+    if (path / "adapter_config.json").exists():
+        return "peft_adapter"
+    if (path / "config.json").exists():
+        return "transformers_model"
+    return "unknown"
 
 
 def resolve_sft_runtime(

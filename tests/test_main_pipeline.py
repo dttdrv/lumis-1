@@ -7,7 +7,10 @@ from lumis1.main_pipeline import (
     analyze_sft_training_surface,
     build_gguf_export_plan,
     build_main_colab_run_plan,
+    detect_model_artifact_layout,
     materialize_text_only_training_dataset,
+    normalize_messages_for_text_chat_template,
+    resolve_profile_name,
     resolve_dpo_runtime,
     resolve_sft_runtime,
 )
@@ -86,6 +89,11 @@ def _make_repo(tmp_path: Path) -> Path:
                 '      gradient_accumulation_steps: 16',
                 '    dpo:',
                 '      gradient_accumulation_steps: 16',
+                '  safe_fallback:',
+                '    sft:',
+                '      gradient_accumulation_steps: 32',
+                '    dpo:',
+                '      gradient_accumulation_steps: 32',
                 "",
             ]
         ),
@@ -172,6 +180,37 @@ def test_build_gguf_export_plan_defaults_to_q8_and_q4(tmp_path: Path) -> None:
     assert export["export_dir"] == plan["gguf_dir"]
     assert export["quantization_methods"] == ["q8_0", "q4_k_m"]
     assert export["zip_path"] == plan["gguf_dir"].parent / "gguf_bundle.zip"
+
+
+def test_resolve_profile_name_prefers_safe_fallback_on_smaller_gpu(tmp_path: Path) -> None:
+    repo = _make_repo(tmp_path)
+
+    resolved = resolve_profile_name(repo, "auto", gpu_total_memory_gb=24.0)
+
+    assert resolved == "safe_fallback"
+
+
+def test_resolve_profile_name_prefers_96gb_profile_on_large_gpu(tmp_path: Path) -> None:
+    repo = _make_repo(tmp_path)
+
+    resolved = resolve_profile_name(repo, "auto", gpu_total_memory_gb=96.0)
+
+    assert resolved == "default_96gb"
+
+
+def test_detect_model_artifact_layout_distinguishes_peft_and_full_models(tmp_path: Path) -> None:
+    peft_dir = tmp_path / "peft_model"
+    full_dir = tmp_path / "full_model"
+    unknown_dir = tmp_path / "unknown_model"
+    peft_dir.mkdir()
+    full_dir.mkdir()
+    unknown_dir.mkdir()
+    (peft_dir / "adapter_config.json").write_text("{}", encoding="utf-8")
+    (full_dir / "config.json").write_text("{}", encoding="utf-8")
+
+    assert detect_model_artifact_layout(peft_dir) == "peft_adapter"
+    assert detect_model_artifact_layout(full_dir) == "transformers_model"
+    assert detect_model_artifact_layout(unknown_dir) == "unknown"
 
 
 def test_analyze_sft_training_surface_detects_placeholder_only_multimodal_rows(
@@ -265,3 +304,27 @@ def test_materialize_text_only_training_dataset_strips_placeholder_image_blocks(
     assert rows[0]["messages"][0]["content"] == "A screenshot is provided."
     assert rows[0]["messages"][1]["content"] == "I can help with that."
     assert rows[0]["meta"]["multimodal_placeholder_collapsed_for_training"] is True
+
+
+def test_normalize_messages_for_text_chat_template_collapses_block_content() -> None:
+    normalized = normalize_messages_for_text_chat_template(
+        [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": "Line one."},
+                    {"type": "image", "image": "image://demo.png"},
+                    {"type": "text", "text": "Line two."},
+                ],
+            },
+            {
+                "role": "assistant",
+                "content": [{"type": "text", "text": "Answer."}],
+            },
+        ]
+    )
+
+    assert normalized == [
+        {"role": "user", "content": "Line one.\nLine two."},
+        {"role": "assistant", "content": "Answer."},
+    ]

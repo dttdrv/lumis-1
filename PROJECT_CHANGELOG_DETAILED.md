@@ -599,3 +599,329 @@ git show HEAD:notebooks/90_colab_main_pipeline.ipynb
 
 ### Next recommended step
 - Push the notebook wording fix to `main`.
+
+## 2026-03-08T10:54:56+02:00 | session: colab-single-pass-hardening
+
+### Intent / objective
+- Harden the unified Colab notebook against the concrete failure modes found in a hostile audit, with emphasis on one-pass execution and reduced operator intervention.
+
+### Repository areas inspected
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `lumis1/main_pipeline.py`
+- `lumis1/run_evidence.py`
+- `scripts/build_colab_main_notebook.py`
+- `tests/test_colab_main_notebook.py`
+- `tests/test_main_pipeline.py`
+- `tests/test_run_evidence.py`
+- official Unsloth, TRL, and Qwen sources
+
+### Files modified
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `lumis1/main_pipeline.py`
+- `lumis1/run_evidence.py`
+- `scripts/build_colab_main_notebook.py`
+- `tests/test_colab_main_notebook.py`
+- `tests/test_main_pipeline.py`
+- `tests/test_run_evidence.py`
+- `PROJECT_BRIEF.md`
+- `STATE.yaml`
+- `LOG.md`
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+- `PROJECT_CHANGELOG_DETAILED.md`
+- `PROJECT_TIME_CAPSULE.md`
+
+### Commands executed
+```bash
+python scripts/build_colab_main_notebook.py
+python -m pytest tests/test_main_pipeline.py tests/test_colab_main_notebook.py -q
+python -m pytest -q
+python - <<'PY'
+import json
+from pathlib import Path
+p = Path("notebooks/90_colab_main_pipeline.ipynb")
+nb = json.loads(p.read_text(encoding="utf-8"))
+for idx, cell in enumerate(nb["cells"]):
+    if cell.get("cell_type") == "code":
+        compile("".join(cell.get("source", [])), f"{p}#cell{idx}", "exec")
+print("compiled notebook 90")
+PY
+```
+
+### Outputs / reports produced
+- hardened `notebooks/90_colab_main_pipeline.ipynb`
+- updated notebook operator guidance
+- updated regression tests for the single-pass Colab path
+
+### Bugs / errors observed
+- notebook 90 previously hard-killed the Colab runtime during dependency installation and required a manual rerun
+- notebook 90 defaulted to a 96 GB profile with no auto-downgrade for smaller GPUs
+- notebook 90 blocked on placeholder-only image rows even though the runtime already had a text-only fallback helper
+- notebook 90 assumed merged/full-model checkpoints for DPO and eval even when upstream stages saved PEFT adapters
+- GGUF export fallback previously stopped after producing a merged directory and never retried GGUF conversion from that merged model
+- notebook builder failed on notebook BOM decoding and had drifted away from the actual notebook contract
+
+### Assumptions made
+- A single-pass Colab run should prefer a safer automatic profile on smaller GPUs rather than assuming a 96 GB device class.
+- Placeholder-only image rows may be collapsed to a text-only training surface without claiming proof-bearing multimodal training.
+- `structural_only` export completion is acceptable for unattended runs when required GGUF variants exist but parity-pair inputs are absent, as long as this weaker status is labeled explicitly.
+
+### Decisions made
+- Added `resolve_profile_name`, `detect_model_artifact_layout`, and message normalization helpers to the shared runtime.
+- Removed the forced install-time kernel kill from notebook 90 and replaced it with in-place dependency convergence checks.
+- Auto-collapsed placeholder-only image rows into a text-only SFT fallback in notebook 90.
+- Made DPO, eval, and export adapter-aware by detecting PEFT artifact layouts explicitly.
+- Allowed `multimodal_correctness = not_applicable` and `export_smoke = structural_only` as unattended completion states in run-status assessment.
+- Fixed the notebook builder to read notebook 90 with BOM-tolerant decoding.
+
+### Rationale for decisions
+- These changes remove operator-intervention traps without pretending the unresolved concrete multimodal training gap is solved.
+- The explicit weaker statuses preserve honesty while making the unified notebook usable for the currently automatable path.
+
+### Risks or uncertainties
+- Concrete multimodal SFT remains unverified and still cannot be called proof-bearing.
+- `structural_only` export completion is weaker than parity-verified GGUF smoke and may not be sufficient for final release criteria.
+- Open-corpus assembly still has order-sensitive exact-token-budget constraints that can fail on upstream dataset drift.
+
+### Rollback / recovery notes
+- If unattended completion proves too permissive, tighten `assess_eval_export_status` again by removing `not_applicable` or `structural_only` from the accepted status set.
+- If Colab import behavior regresses after in-place installs, reintroduce a restart only as a guarded fallback for already-imported runtime packages.
+
+### Next recommended step
+- Run notebook 90 on a real Colab G4 session and record whether the one-pass path reaches SFT, DPO, GGUF export, and eval without manual resets.
+
+## Entry 2026-03-08 11:31:36 +02:00 — Session rehab-20260308-06
+
+### Objective
+- Re-implement notebook 90 as a standalone Colab notebook with embedded configs/runtime, real multimodal materialization steps, and a full single-pass SFT -> DPO -> GGUF -> eval flow.
+
+### Repository areas inspected
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `scripts/build_colab_main_notebook.py`
+- `lumis1/colab_standalone.py`
+- `lumis1/main_pipeline.py`
+- `lumis1/vision_schema.py`
+- `lumis1/schema.py`
+- `notebooks/20_build_open_dataset_mix.ipynb`
+- `notebooks/30_merge_and_validate_full_dataset.ipynb`
+- `configs/dataset_mixture.yaml`
+- `configs/dataset_sources_allowlist.yaml`
+- `configs/train_sft.yaml`
+- `configs/train_dpo.yaml`
+- `workspace/reports/identity_validation.json`
+- `workspace/reports/full_dataset_validation.json`
+- `workspace/reports/open_corpus_build_report.json`
+- canonical identity artifact under `Dataset/identity_dataset/output/full_run_codex_spark_xhigh/`
+
+### Files modified
+- `lumis1/colab_standalone.py`
+- `tests/test_colab_standalone.py`
+- `tests/test_colab_main_notebook.py`
+- `scripts/build_colab_main_notebook.py`
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `PROJECT_BRIEF.md`
+- `STATE.yaml`
+- `LOG.md`
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+- `PROJECT_CHANGELOG_DETAILED.md`
+- `PROJECT_TIME_CAPSULE.md`
+
+### Commands executed
+```bash
+# Context7 query for Transformers multimodal chat templating
+# Context7 query for Unsloth FastVisionModel examples
+# Get-Content / rg over notebook 90, notebook 20, notebook 30, lumis1/*.py, reports, identity artifact
+# Get-Content workspace/final/full_sft.jsonl -TotalCount 5
+# Get-Content workspace/interim/open_sft.jsonl -TotalCount 5
+# Get-ChildItem / rg over Dataset/identity_dataset/output/full_run_codex_spark_xhigh
+# python -m pytest tests/test_colab_standalone.py tests/test_colab_main_notebook.py -q
+# python scripts/build_colab_main_notebook.py
+# python -m pytest -q
+# notebook JSON/code-cell compile sweep across all notebooks
+# python -m py_compile scripts/build_colab_main_notebook.py lumis1/colab_standalone.py
+```
+
+### Outputs / reports produced
+- Rebuilt `notebooks/90_colab_main_pipeline.ipynb` as a standalone notebook.
+- Added the embedded-runtime helper module `lumis1/colab_standalone.py`.
+- Added regression coverage in `tests/test_colab_standalone.py`.
+- Updated operator/state/docs to describe the standalone notebook truthfully.
+
+### Bugs / errors observed
+- The previous notebook 90 was not standalone and still imported repo-side modules/config files.
+- The previous notebook 90 collapsed placeholder image rows to text-only instead of providing a real multimodal path.
+- The current merged sample artifacts still use placeholder URIs (`image://...`, `synthetic://...`) rather than concrete image payloads.
+- The canonical identity artifact itself only stores placeholder multimodal references, so a true multimodal run needs asset materialization before SFT.
+- The first generator rewrite produced an `IndentationError` because pretty-printed embedded JSON broke notebook cell dedenting; fixed by switching to single-line embedded JSON literals.
+
+### Assumptions made
+- Placeholder identity image references can be bridged operationally with deterministic surrogate screenshot/document images for notebook-run training.
+- Supported HF multimodal sources will expose image payloads consumable by `datasets` at Colab runtime.
+- Text-preference DPO remains acceptable on top of the multimodal base model path.
+
+### Decisions made
+- Rebuild notebook 90 as a self-contained runtime surface instead of patching the old repo-dependent cells again.
+- Embed config YAML text and a tested runtime helper module directly into notebook 90.
+- Materialize placeholder identity images into concrete local `image_path` files instead of silently dropping multimodal rows.
+- Use `FastVisionModel` + `UnslothVisionDataCollator` for SFT whenever concrete multimodal rows exist.
+- Keep DPO text-preference oriented but make the handoff and evidence contract consistent inside the same notebook.
+- Treat the notebook as operationally stronger but still unproven until a real Colab G4 run succeeds.
+
+### Rationale
+- The user explicitly required a notebook that can run without attaching repo-side YAML files.
+- The biggest correctness gap was not UI convenience but the absence of a real multimodal dataset-to-trainer path.
+- The identity artifact is still the strongest completed dataset artifact, so the notebook has to adapt around it rather than rewriting it.
+
+### Risks / uncertainties
+- Identity multimodal rows are still trained against surrogate images, not curated original screenshots/documents.
+- HF multimodal source schemas may drift at runtime; the embedded mapping is heuristic and statically tested only.
+- GGUF export remains structurally verified by the code path, not proven on a real Colab run in this repo.
+- The DPO stage still optimizes text preferences, not multimodal preference data.
+
+### Rollback / recovery notes
+- If notebook 90 proves less reliable than the modular path on Colab, revert to the canonical `00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60` sequence and keep notebook 90 labeled convenience-only.
+- If surrogate identity images are judged unacceptable, disable multimodal identity SFT until curated real identity images exist.
+
+### Next recommended step
+- Run `notebooks/90_colab_main_pipeline.ipynb` on a real Colab G4 runtime with the canonical identity folder under Drive, then inspect `workspace/runs/<run_id>/`, `workspace/reports/open_corpus_build_report.json`, `workspace/reports/full_dataset_validation.json`, and the GGUF export directory before making any claim that the notebook is proof-bearing.
+
+## Entry 2026-03-08 11:42:49 +02:00 — Session rehab-20260308-07
+
+### Objective
+- Critique the rebuilt standalone notebook like a hostile reviewer, then fix any remaining concrete Colab G4 runtime hazards before closing.
+
+### Repository areas inspected
+- `scripts/build_colab_main_notebook.py`
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `lumis1/colab_standalone.py`
+- `requirements.txt`
+- `constraints.txt`
+- `tests/test_colab_main_notebook.py`
+- `tests/test_colab_standalone.py`
+- `PROJECT_BRIEF.md`
+- `STATE.yaml`
+- `LOG.md`
+
+### Files modified
+- `requirements.txt`
+- `constraints.txt`
+- `scripts/build_colab_main_notebook.py`
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `tests/test_colab_main_notebook.py`
+- `PROJECT_BRIEF.md`
+- `STATE.yaml`
+- `LOG.md`
+- `PROJECT_CHANGELOG_DETAILED.md`
+- `PROJECT_TIME_CAPSULE.md`
+
+### Commands executed
+```bash
+# python -m pytest -q
+# python -m pytest tests/test_colab_main_notebook.py tests/test_colab_standalone.py -q
+# python scripts/build_colab_main_notebook.py
+# notebook JSON/code-cell compile sweep for notebooks/*.ipynb
+# rg / Get-Content over scripts/build_colab_main_notebook.py, requirements.txt, constraints.txt, notebook 90
+# Get-Date -Format o
+```
+
+### Outputs / reports produced
+- Rebuilt `notebooks/90_colab_main_pipeline.ipynb` with embedded requirements-plus-constraints install content.
+- Refreshed notebook/operator state in `PROJECT_BRIEF.md`, `STATE.yaml`, and `LOG.md`.
+
+### Bugs / errors observed
+- Notebook 90 was still embedding only `constraints.txt`, not the actual requirement surface, so a fresh Colab could miss packages like `huggingface-hub`, `sentencepiece`, or `safetensors`.
+- The multimodal SFT/export/eval path still treated the returned preprocessing object too much like a plain tokenizer and did not persist processor assets explicitly.
+- The export path still preferred generic PEFT merge first even for multimodal adapters, which was a weaker fit for the current Unsloth vision save/load surface.
+
+### Assumptions made
+- Explicitly embedding `requirements.txt` plus `constraints.txt` is a more faithful standalone install contract than embedding only constraint pins.
+- Persisting processor assets alongside adapters and merged artifacts reduces the odds of silent multimodal reload/export failure on Colab.
+
+### Decisions made
+- Add `huggingface-hub` to the explicit dependency surface and pin it in `constraints.txt`.
+- Keep `safetensors` explicitly pinned in `constraints.txt` because notebook 90 now installs from requirements plus constraints.
+- Change notebook 90 to embed both requirement and constraint text and install via `pip install -r ... -c ...`.
+- Add helper functions for tokenizer/processor loading and processing-asset persistence in the embedded notebook runtime.
+- Prefer `FastVisionModel.save_pretrained_merged` / `FastLanguageModel.save_pretrained_merged` before falling back to generic `AutoPeftModelForCausalLM.merge_and_unload`.
+
+### Rationale
+- A self-contained notebook cannot truthfully depend on packages being present only because Colab happened to preinstall them.
+- Multimodal save/load/export failures usually show up late and expensively; persisting processor assets and preferring Unsloth-native merge reduces that class of breakage before the first real run.
+
+### Risks / uncertainties
+- The HF multimodal source mapping is still heuristic and still unproven on a real Colab G4 run.
+- The merged multimodal export path is statically hardened, not proof-bearing yet.
+- Surrogate identity images remain an operational bridge, not equivalent to curated real images.
+
+### Rollback / recovery notes
+- If the embedded requirements-plus-constraints install proves too strict for Colab, narrow the pinned surface only after capturing the exact package conflict in `workspace/runs/<run_id>/environment/`.
+- If Unsloth-native merged export fails on a real run, keep the current generic PEFT fallback and record the exact failure string before changing the precedence order again.
+
+### Next recommended step
+- Run notebook 90 on a real Colab G4 session and verify that the embedded install completes, multimodal SFT saves processor assets, and GGUF export can reload the merged artifact without manual intervention.
+
+## Entry 2026-03-08 11:44:12 +02:00 — Session rehab-20260308-08
+
+### Objective
+- Critique the standalone notebook again after the rebuild and remove remaining multimodal handoff bugs in DPO, export, and eval.
+
+### Repository areas inspected
+- `scripts/build_colab_main_notebook.py`
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `tests/test_colab_main_notebook.py`
+- `PROJECT_BRIEF.md`
+- `STATE.yaml`
+- `LOG.md`
+
+### Files modified
+- `scripts/build_colab_main_notebook.py`
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `tests/test_colab_main_notebook.py`
+- `STATE.yaml`
+- `LOG.md`
+- `PROJECT_CHANGELOG_DETAILED.md`
+- `PROJECT_TIME_CAPSULE.md`
+
+### Commands executed
+```bash
+# python scripts/build_colab_main_notebook.py
+# python -m py_compile scripts/build_colab_main_notebook.py lumis1/colab_standalone.py
+# python -m pytest tests/test_colab_main_notebook.py tests/test_colab_standalone.py -q
+# python -m pytest -q
+# notebook JSON/code-cell compile sweep for notebooks/*.ipynb
+# rg / Get-Content over scripts/build_colab_main_notebook.py and generated notebook 90
+```
+
+### Outputs / reports produced
+- Regenerated `notebooks/90_colab_main_pipeline.ipynb` from the patched generator.
+- Refreshed notebook contract verification with `47 passed` overall and `5 passed` for the notebook-specific subset.
+
+### Bugs / errors observed
+- Notebook 90 still assumed a successful DPO handoff when picking the final model for export/eval.
+- The GGUF export cell skipped direct Unsloth export attempts whenever the generic PEFT merge step failed, even though the adapter directory could still be a valid direct export input.
+- The eval cell still assumed the causal-loader path would always work for the effective final model.
+
+### Assumptions made
+- Export/eval should continue from the best available artifact even if DPO fails, as long as the failure is recorded in run evidence.
+- A direct Unsloth loader retry from adapter directories is a safer fallback than aborting export immediately after a failed generic merge.
+
+### Decisions made
+- Make DPO fail closed: record failure in run evidence, keep the notebook running, and fall back to the SFT artifact for downstream stages.
+- Change export to retry direct Unsloth loads from both the merged directory and the original final-model directory.
+- Change eval to follow the effective final model and fall back to a `FastVisionModel` loader when the causal-loader path fails.
+- Extend notebook contract tests so the generated notebook must contain the new fallback surfaces.
+
+### Rationale
+- The previous behavior turned recoverable multimodal handoff failures into full-run aborts.
+- A one-notebook unattended Colab surface has to degrade explicitly and traceably rather than silently assuming every intermediate stage succeeded.
+
+### Risks / uncertainties
+- The new DPO/export/eval fallbacks are still statically verified only; no real Colab G4 evidence exists yet.
+- Multimodal DPO remains operationally tolerated, not evidence-backed.
+- The fallback `FastVisionModel` eval path still depends on live processor/model compatibility at Colab runtime.
+
+### Rollback / recovery notes
+- If the DPO fail-closed behavior masks an issue you want to treat as fatal, restore the earlier hard-fail behavior only after capturing a real failing Colab run under `workspace/runs/<run_id>/`.
+- If direct Unsloth export retries create ambiguous artifact states, inspect `workspace/runs/<run_id>/reports/gguf_export.json` before changing precedence again.
+
+### Next recommended step
+- Run notebook 90 on Colab G4 and inspect whether DPO completes, whether export uses a merged or adapter retry path, and whether eval uses the causal or `FastVisionModel` loader path in the generated run evidence.

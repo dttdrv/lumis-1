@@ -50,3 +50,21 @@
 - Aligned Colab bootstrap contracts with the repo surface: notebook 90 and the helper script now accept documented identity-file aliases, default to an env-selectable stable branch instead of a hardcoded feature branch, and use the dedicated `*-export` run for GGUF artifacts.
 - Expanded regression coverage for the Colab notebook and main pipeline contracts; the full test suite now passes with `41 passed`.
 - Added `NOTEBOOK_OPERATOR_INSTRUCTIONS.md` documenting where the unified Colab notebook lives, how it relates to the canonical modular notebook path, and how to run the notebook surfaces without overstating what is proven.
+- Hardened the single Colab notebook for one-pass execution: removed the forced install-time kernel kill, switched the default profile selection to GPU-memory-aware `auto`, and added placeholder-image text fallback for SFT.
+- Repaired unified-notebook stage handoff for adapter outputs: DPO, eval, and GGUF export now detect PEFT adapter directories and handle them explicitly instead of assuming merged full-model checkpoints.
+- Repaired the notebook builder so it reads notebook 90 with BOM-tolerant decoding and can normalize the canonical notebook again without crashing.
+- Added unattended eval/export policy coverage: text-only training surfaces can report `multimodal_correctness = not_applicable`, and GGUF export can report `structural_only` when variants exist but parity-pair side inputs are absent.
+- Added regression coverage for profile auto-resolution, model artifact layout detection, message normalization for chat-template rendering, and unattended eval/export status assessment; the full suite now passes with `43 passed`.
+- Re-implemented notebook 90 as a standalone Colab surface that embeds its own runtime/config code and no longer depends on repo-side YAML/module files at execution time.
+- Added `lumis1/colab_standalone.py` and `tests/test_colab_standalone.py` as the tested helper surface embedded into notebook 90.
+- Rebuilt notebook 90 so it materializes surrogate local image assets for placeholder identity rows, builds concrete `image_path` rows for supported HF multimodal sources, attempts `FastVisionModel` SFT when multimodal rows exist, and carries the same run through DPO, GGUF export, eval, and Drive copy-out.
+- Updated notebook 90 eval/export status handling so multimodal checks and structural GGUF export can complete coherently inside the standalone path.
+- Re-ran the full test suite after the standalone notebook rebuild: `47 passed`.
+- Re-ran notebook JSON/code-cell validation across all active notebooks after the rebuild.
+- Embedded the actual `requirements.txt` plus `constraints.txt` install contract into notebook 90 instead of only embedding the constraint pins.
+- Added explicit multimodal processor persistence through SFT, DPO, export, and eval, and made the export path prefer Unsloth-native merged saves before falling back to generic PEFT merge behavior.
+- Rebuilt notebook 90 and re-ran the full suite after the Colab dependency/export hardening pass: `47 passed`.
+- Hardened the standalone Colab notebook against multimodal handoff failures: DPO now fails closed into run evidence without aborting export/eval, GGUF export now retries direct Unsloth loads from both merged and adapter directories, and eval now follows the effective final model instead of assuming DPO completed.
+- Repaired the standalone multimodal row format so notebook 90 now emits public-compatible `image`, `path`, and `image_path` keys instead of relying on a repo-local image field convention alone.
+- Repaired the unified notebook handoff so DPO failure no longer aborts the full Colab run; export and eval now fall back to the SFT artifact while recording the DPO failure in run evidence.
+- Rebuilt notebook 90 from the generator again after the hostile review pass and re-ran the full suite: `47 passed`.

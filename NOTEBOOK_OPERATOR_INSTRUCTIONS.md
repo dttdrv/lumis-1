@@ -8,7 +8,8 @@ This file explains how to run the Lumis-1 notebook surfaces after the 2026-03-08
 
 The single sequential Colab notebook is:
 
-- `notebooks/90_colab_main_pipeline.ipynb`\r\n- `C:\\Users\\deyan\\Projects\\Lumis-1\\notebooks\\90_colab_main_pipeline.ipynb`
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `C:\\Users\\deyan\\Projects\\Lumis-1\\notebooks\\90_colab_main_pipeline.ipynb`
 
 It is a convenience wrapper for operators who cannot run the modular notebooks side by side.
 
@@ -26,16 +27,19 @@ It does not replace repository truth. The underlying canonical stages are still:
 
 `90_colab_main_pipeline.ipynb` is intended to run the current active path in one Colab session:
 
-1. Mount Drive and clone `dttdrv/lumis-1`
-2. Install the repo-pinned dependency baseline
-3. Validate the identity dataset
-4. Build the open corpus
-5. Merge and validate the final dataset
-6. Run SFT
-7. Run DPO
-8. Export GGUF first
-9. Run eval/export smoke
-10. Copy artifacts to Drive and optionally download one GGUF file to the browser
+1. Mount Drive and create one working root under `/content/lumis1_main`
+2. Install the pinned dependency baseline embedded inside the notebook
+3. Materialize the notebook’s embedded runtime/config surface locally
+4. Validate the identity dataset
+5. Rewrite placeholder identity image references into concrete surrogate local image assets
+6. Build the open corpus from allowlisted HF sources and materialize supported multimodal images into local rows carrying `image`, `path`, and `image_path`
+7. Merge and validate the final dataset
+8. Run SFT
+9. Run DPO
+10. If DPO fails, record that failure in run evidence and continue downstream from the SFT artifact
+11. Export GGUF first
+12. Run eval/export smoke against the effective final model
+13. Copy artifacts to Drive and optionally download one GGUF file to the browser
 
 ## What You Must Provide
 
@@ -52,6 +56,10 @@ or the accepted aliases:
 The default Colab location is:
 
 - `/content/drive/MyDrive/lumis1_colab/identity_input`
+
+Notebook 90 now defaults `PROFILE` to `auto`, which resolves to a safer memory profile from the detected GPU rather than assuming a 96 GB class device.
+
+Notebook 90 now installs pinned dependencies in place without intentionally killing the kernel. On a fresh Colab runtime, `Run all` no longer depends on a forced reconnect in the middle of the notebook.
 
 ## What Is Proven vs Unproven
 
@@ -71,9 +79,20 @@ Unproven:
 
 ## Important Current Limitation
 
-Notebook 90 is not yet a guaranteed end-to-end multimodal trainer.
+Notebook 90 is no longer text-only by design. It now tries to build a real multimodal SFT surface by:
 
-The current repo still lacks a proof-bearing FastVisionModel-based SFT path for the image-text rows present in the active dataset mix. The notebook is intentionally conservative around that gap.
+- rewriting placeholder identity image references into surrogate local screenshot/document images
+- materializing supported HF multimodal records into concrete local image rows with public-compatible `image`, `path`, and `image_path` keys
+- switching to `FastVisionModel` SFT when multimodal rows are present
+
+It also no longer treats DPO as a single point of failure. If the DPO stage fails, notebook 90 records that failure under the DPO run evidence tree and continues export/eval from the SFT artifact instead of aborting the whole Colab session.
+
+The GGUF export stage also now retries direct Unsloth loads from both merged and adapter-backed model directories instead of giving up after the first generic merge failure.
+
+That still does not make the path proof-bearing yet. Two important risks remain:
+
+- identity multimodal rows are trained against surrogate images, not curated original screenshots/documents
+- the HF multimodal source mapping is heuristic and still unproven on a real Colab run
 
 ## Expected Evidence
 
@@ -90,6 +109,8 @@ Treat training, DPO, evaluation, and export as real only when the notebook write
 - `workspace/runs/<run_id>/checksums/`
 
 If those directories are not populated, do not treat the run as complete.
+
+If `workspace/runs/<run_id>/reports/export_smoke.json` reports `status = structural_only`, the notebook completed unattended and produced the required GGUF variants, but parity-pair verification was not available. Treat that as structurally usable, not as exact parity proof.
 
 ## If You Want The Modular Path Instead
 

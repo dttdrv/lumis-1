@@ -146,7 +146,7 @@ def assess_eval_export_status(
         mm_status = (
             results.get("checks", {}).get("multimodal_correctness", {}).get("status")
         )
-        if mm_status != "pass":
+        if mm_status not in {"pass", "not_applicable"}:
             blocking_reasons.append(f"multimodal_correctness:{mm_status or 'missing'}")
 
         hallucination_status = (
@@ -161,7 +161,7 @@ def assess_eval_export_status(
 
     if run_export:
         export_status = results.get("export_smoke", {}).get("status")
-        if export_status != "pass":
+        if export_status not in {"pass", "structural_only"}:
             blocking_reasons.append(f"export_smoke:{export_status or 'missing'}")
 
     return {

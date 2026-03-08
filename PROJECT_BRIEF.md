@@ -8,7 +8,7 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 
 - `configs/*.yaml`
 - `notebooks/00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60`
-- `notebooks/90_colab_main_pipeline.ipynb` as the sequential Colab convenience surface over the same active path
+- `notebooks/90_colab_main_pipeline.ipynb` as the standalone sequential Colab convenience surface over the same active path
 - runtime helpers in `lumis1/*`
 - tests in `tests/*`
 - current evidence in `workspace/reports/*`
@@ -44,8 +44,14 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 - Unsloth + Qwen3.5 thinking-off policy remains enforced for the active dataset path.
 - Colab defaults should prefer the repo-pinned dependency baseline; Unsloth auto-install is a fallback, not the default truth surface.
 - Qwen3.5 non-thinking execution must be probed through the tokenizer chat template with `enable_thinking=False`; `/nothink`-style assumptions are not treated as sufficient proof.
-- The current single Colab notebook refuses the unverified multimodal SFT path by default when image-text rows are present.
-- The current single Colab notebook now normalizes DPO preference prompts from either `prompt` or `prompt_messages`, accepts canonical identity filenames and documented aliases at bootstrap, and writes GGUF export evidence under the dedicated `*-export` run.
+- The current single Colab notebook now embeds its own runtime/config surface, so the operator does not need to attach repo YAML files separately.
+- The current single Colab notebook now embeds the effective dependency contract from `requirements.txt` plus `constraints.txt`, so fresh Colab installs do not silently depend on preinstalled packages like `huggingface-hub`, `sentencepiece`, or `safetensors`.
+- The current single Colab notebook now installs pinned dependencies in place without a forced kernel kill, auto-resolves the safer run profile from detected GPU memory, accepts canonical identity filenames plus documented aliases at bootstrap, and writes GGUF export evidence under the dedicated `*-export` run.
+- The current single Colab notebook now materializes surrogate local image assets for placeholder-only identity rows, writes multimodal blocks with public-compatible `image` / `path` / `image_path` keys for supported HF multimodal sources, and attempts a `FastVisionModel` SFT path when multimodal rows exist.
+- The current single Colab notebook now persists multimodal processor assets through SFT, DPO, export, and eval, and prefers Unsloth-native merged export before falling back to generic PEFT merge behavior.
+- The current single Colab notebook now degrades cleanly when DPO fails: it records the DPO failure in run evidence and continues export/eval from the SFT artifact instead of aborting the entire Colab run.
+- Concrete multimodal SFT remains unproven until a real Colab run succeeds end to end; identity multimodal supervision still depends on surrogate screenshot/document images, not original curated screenshots.
+- GGUF export can now complete unattended in `structural_only` mode when required variants exist but parity-pair smoke inputs are absent; this is not the same as proof-bearing parity verification.
 
 ## Runtime Outputs
 
