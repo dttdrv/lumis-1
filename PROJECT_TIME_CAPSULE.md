@@ -515,3 +515,54 @@
 
 ### Exact next step for the next agent
 - Build the explicit FastVisionModel multimodal SFT path and verify it on Colab, or intentionally narrow notebook 90 to a text-only training scope everywhere it is described before any push that markets it as the main end-to-end notebook.
+
+## 2026-03-08T10:32:00+02:00 | notebook-path-correction
+
+### Canonical execution path as currently understood
+- `configs/*.yaml`
+- `notebooks/00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60`
+- `notebooks/90_colab_main_pipeline.ipynb` as the single Colab convenience surface over the same stages
+- `lumis1/*`
+- `workspace/reports/*`
+
+### Proven claims
+- `notebooks/90_colab_main_pipeline.ipynb` exists on `main`.
+- The confusion came from an uncommitted instruction-doc detour, not from notebook 90 being absent.
+- `main` already contains today’s rehab work at commit `4c4fcfa`.
+
+### Unproven claims
+- A proof-bearing full Colab run of notebook 90.
+- A proof-bearing multimodal SFT path for the current mixed dataset.
+
+### Current blockers
+- The remaining real blocker is still the unverified multimodal Qwen3.5 SFT path.
+- A stale remote branch still exists until explicitly deleted.
+
+### Active defects
+- No new code defect was found in notebook 90 during this correction block.
+- The active operator defect was documentation drift caused by an uncommitted wrong document.
+
+### Current risk register
+- Users can still over-read notebook 90 as fully end-to-end if they ignore the current multimodal limitation.
+- Remote branch clutter can create confusion about which branch is authoritative.
+
+### Current evidence-bearing artifacts
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+- `PROJECT_BRIEF.md`
+- `STATE.yaml`
+
+### Most trustworthy files
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+- `OPERATOR_RUN_ORDER.md`
+
+### Least trustworthy or stale files
+- Any leftover admin/relink instructions not committed as part of the canonical operator path
+- Any remote non-`main` rehab branch that survived cleanup
+
+### What changed in understanding during this session
+- The unified notebook was not lost or overwritten in git; the confusion was caused by my later local uncommitted edits.
+
+### What the next agent should do without rereading everything
+- Delete the stale remote rehab branch, commit the notebook-instruction correction to `main`, push `main`, and only then continue work on the multimodal SFT gap.

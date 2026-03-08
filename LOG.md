@@ -49,3 +49,4 @@
 - Updated notebook 30 and notebook 90 merge logic so identity preference rows are rewritten into the canonical current shape before `full_preferences.jsonl` is written.
 - Aligned Colab bootstrap contracts with the repo surface: notebook 90 and the helper script now accept documented identity-file aliases, default to an env-selectable stable branch instead of a hardcoded feature branch, and use the dedicated `*-export` run for GGUF artifacts.
 - Expanded regression coverage for the Colab notebook and main pipeline contracts; the full test suite now passes with `41 passed`.
+- Added `NOTEBOOK_OPERATOR_INSTRUCTIONS.md` documenting where the unified Colab notebook lives, how it relates to the canonical modular notebook path, and how to run the notebook surfaces without overstating what is proven.

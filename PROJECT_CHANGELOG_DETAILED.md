@@ -507,3 +507,59 @@ git status --short
 
 ### Next recommended step
 - Implement and verify the explicit FastVisionModel multimodal SFT path, or formally narrow notebook 90 to a text-only training scope before presenting it as end-to-end runnable on the repo’s current multimodal dataset.
+
+## 2026-03-08T10:32:00+02:00 | session: notebook-path-correction
+
+### Intent / objective
+- Correct operator-facing confusion after an uncommitted detour created the wrong instruction document and left a stale remote branch alive.
+
+### Repository areas inspected
+- `notebooks/`
+- `LOG.md`
+- `PROJECT_CHANGELOG_DETAILED.md`
+- `PROJECT_TIME_CAPSULE.md`
+- git branch state
+
+### Files modified
+- `LOG.md`
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+- `PROJECT_CHANGELOG_DETAILED.md`
+- `PROJECT_TIME_CAPSULE.md`
+
+### Files removed
+- `REPO_RELINK_AND_PUSH_MAIN_INSTRUCTIONS.md`
+
+### Commands executed
+```bash
+git status --short
+git branch -a
+git log --oneline --decorate -n 5
+git diff -- LOG.md
+git show HEAD:notebooks/90_colab_main_pipeline.ipynb
+```
+
+### Outputs / reports produced
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+
+### Bugs / errors observed
+- The unified notebook itself was present on `main`, but a later uncommitted instruction-doc edit path created avoidable confusion.
+- `origin/codex/truth-parity-rehab` remained after `main` had already absorbed the rehab work.
+
+### Assumptions made
+- The user wanted a notebook-focused operator instruction document, not a repo-relink procedure.
+
+### Decisions made
+- Removed the mistaken relink instruction document before it could be committed.
+- Added a notebook-focused instruction document that points directly to notebook 90 and clarifies proven vs unproven state.
+
+### Rationale for decisions
+- The current confusion was about notebook discoverability and execution surface, not git relinking.
+
+### Risks or uncertainties
+- The operator documentation is now clearer, but notebook 90 still remains operationally limited by the unproven multimodal SFT path.
+
+### Rollback / recovery notes
+- If a repo-relink procedure is needed later, recreate it in a separate historical/admin document instead of mixing it with notebook operator guidance.
+
+### Next recommended step
+- Delete the stale remote rehab branch so only `main` remains on the remote, then commit and push the notebook-instruction correction.
