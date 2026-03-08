@@ -25,6 +25,8 @@ def test_colab_main_notebook_exists_and_compiles() -> None:
 
     all_source = "\n".join(joined_source)
     assert "IDENTITY_INPUT_DIR" in all_source
+    assert 'IDENTITY_HF_REPO_ID = os.environ.get("LUMIS1_IDENTITY_HF_REPO", "STnoui/lumis1-identity")' in all_source
+    assert "IDENTITY_AUTO_DOWNLOAD = True" in all_source
     assert "RUN_SFT" in all_source
     assert "RUN_DPO" in all_source
     assert "RUN_EXPORT" in all_source
@@ -50,6 +52,10 @@ def test_colab_main_notebook_exists_and_compiles() -> None:
     assert "full_preferences.jsonl" in all_source
     assert "AutoPeftModelForCausalLM" in all_source
     assert "huggingface_hub" in all_source
+    assert "hf_hub_download" in all_source
+    assert "mount_drive_safely" in all_source
+    assert "identity_download.json" in all_source
+    assert "ensure_identity_inputs()" in all_source
     assert "huggingface-hub>=1.4.0" in all_source
     assert "sentencepiece>=0.2.0" in all_source
     assert "safetensors>=0.6.0" in all_source

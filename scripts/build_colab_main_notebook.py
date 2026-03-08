@@ -97,6 +97,8 @@ def build_notebook() -> dict:
                 IDENTITY_INPUT_DIR = DRIVE_ROOT / "identity_input"
                 WORKSPACE_PERSIST_ROOT = DRIVE_ROOT / "workspace"
                 EXPORT_PERSIST_ROOT = DRIVE_ROOT / "exports"
+                IDENTITY_HF_REPO_ID = os.environ.get("LUMIS1_IDENTITY_HF_REPO", "STnoui/lumis1-identity")
+                IDENTITY_AUTO_DOWNLOAD = True
 
                 INSTALL_MODE = "repo_pinned"  # repo_pinned | unsloth_auto
                 STRICT_REPO_PINNED_SYNC = True
@@ -134,7 +136,25 @@ def build_notebook() -> dict:
                 if IN_COLAB:
                     from google.colab import drive  # type: ignore
 
-                    drive.mount("/content/drive", force_remount=False)
+                    def mount_drive_safely(mountpoint: str = "/content/drive") -> None:
+                        mount_path = Path(mountpoint)
+                        if os.path.ismount(mountpoint):
+                            return
+                        if mount_path.exists():
+                            if mount_path.is_symlink() or mount_path.is_file():
+                                mount_path.unlink()
+                            elif mount_path.is_dir() and any(mount_path.iterdir()):
+                                shutil.rmtree(mount_path, ignore_errors=True)
+                        try:
+                            drive.mount(mountpoint, force_remount=False)
+                        except ValueError as exc:
+                            if "Mountpoint must not already contain files" not in str(exc):
+                                raise
+                            if mount_path.exists() and not os.path.ismount(mountpoint):
+                                shutil.rmtree(mount_path, ignore_errors=True)
+                            drive.mount(mountpoint, force_remount=True)
+
+                    mount_drive_safely("/content/drive")
                     try:
                         from google.colab import userdata  # type: ignore
                         if HF_TOKEN is None:
@@ -154,6 +174,8 @@ def build_notebook() -> dict:
                     "export_persist_root": str(EXPORT_PERSIST_ROOT),
                     "run_prefix": PIPELINE_PREFIX,
                     "profile": PROFILE,
+                    "identity_hf_repo_id": IDENTITY_HF_REPO_ID,
+                    "identity_auto_download": IDENTITY_AUTO_DOWNLOAD,
                     "run_sft": RUN_SFT,
                     "run_dpo": RUN_DPO,
                     "run_export": RUN_EXPORT,
@@ -283,7 +305,7 @@ def build_notebook() -> dict:
                 import torch
                 import yaml
                 from datasets import load_dataset
-                from huggingface_hub import login
+                from huggingface_hub import hf_hub_download, login
                 import huggingface_hub
                 from peft import AutoPeftModelForCausalLM
                 from PIL import Image
@@ -520,6 +542,38 @@ def build_notebook() -> dict:
                         raise FileNotFoundError(f"Missing identity preference file in {IDENTITY_INPUT_DIR}; accepted names: {DEFAULT_PREFERENCE_NAMES}")
                     return {"sft": sft_path, "preferences": pref_path}
 
+                def ensure_identity_inputs() -> dict[str, Any]:
+                    IDENTITY_INPUT_DIR.mkdir(parents=True, exist_ok=True)
+                    try:
+                        resolved = resolve_identity_paths()
+                        return {
+                            "status": "present",
+                            "repo_id": IDENTITY_HF_REPO_ID,
+                            "identity_paths": {key: str(value) for key, value in resolved.items()},
+                        }
+                    except FileNotFoundError as initial_error:
+                        if not IDENTITY_AUTO_DOWNLOAD:
+                            raise
+                        download_report = {
+                            "status": "downloaded",
+                            "repo_id": IDENTITY_HF_REPO_ID,
+                            "downloaded_files": [],
+                            "initial_error": str(initial_error),
+                        }
+                        for filename in ("sft_dataset.jsonl", "preference_dataset.jsonl"):
+                            downloaded_path = hf_hub_download(
+                                repo_id=IDENTITY_HF_REPO_ID,
+                                repo_type="dataset",
+                                filename=filename,
+                                local_dir=str(IDENTITY_INPUT_DIR),
+                                local_dir_use_symlinks=False,
+                                token=HF_TOKEN,
+                            )
+                            download_report["downloaded_files"].append(str(downloaded_path))
+                        resolved = resolve_identity_paths()
+                        download_report["identity_paths"] = {key: str(value) for key, value in resolved.items()}
+                        return download_report
+
                 def build_preference_row(source_id: str, record: dict[str, Any], row_id: str) -> dict[str, Any] | None:
                     triplet = extract_preference_triplet(record)
                     if triplet is None:
@@ -634,6 +688,8 @@ def build_notebook() -> dict:
                 freeze = subprocess.check_output([sys.executable, "-m", "pip", "freeze"], text=True)
                 (REPORTS / "env_freeze.txt").write_text(freeze, encoding="utf-8")
 
+                identity_bootstrap = ensure_identity_inputs()
+                save_json(REPORTS / "identity_download.json", identity_bootstrap)
                 identity_paths = resolve_identity_paths()
                 raw_identity_rows = list(iter_jsonl(identity_paths["sft"]))
                 raw_identity_prefs = list(iter_jsonl(identity_paths["preferences"]))
@@ -648,6 +704,7 @@ def build_notebook() -> dict:
                 identity_multimodal_rows = sum(1 for row in materialized_identity_rows if row.get("modality") == "image_text")
                 identity_report = {
                     "identity_paths": {k: str(v) for k, v in identity_paths.items()},
+                    "identity_bootstrap": identity_bootstrap,
                     "counts": {
                         "sft_rows": len(raw_identity_rows),
                         "preference_rows": len(raw_identity_prefs),

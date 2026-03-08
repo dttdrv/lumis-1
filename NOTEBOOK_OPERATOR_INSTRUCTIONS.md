@@ -41,25 +41,36 @@ It does not replace repository truth. The underlying canonical stages are still:
 12. Run eval/export smoke against the effective final model
 13. Copy artifacts to Drive and optionally download one GGUF file to the browser
 
-## What You Must Provide
+## Identity Input
 
-Notebook 90 expects an identity input folder containing either the preferred canonical names:
+Notebook 90 uses this input folder:
+
+- `/content/drive/MyDrive/lumis1_colab/identity_input`
+
+If the folder already contains the identity files, the notebook uses them directly.
+
+If the files are missing, notebook 90 now auto-downloads them from the default Hugging Face dataset repo:
+
+- `STnoui/lumis1-identity`
+
+The expected canonical filenames are:
 
 - `sft_dataset.jsonl`
 - `preference_dataset.jsonl`
 
-or the accepted aliases:
+The accepted aliases are still:
 
 - `identity_sft.jsonl`
 - `identity_preferences.jsonl`
 
-The default Colab location is:
+You only need to override this behavior if:
 
-- `/content/drive/MyDrive/lumis1_colab/identity_input`
+- you want a different HF dataset repo, in which case set `LUMIS1_IDENTITY_HF_REPO`
+- you want to disable auto-download and provide the files yourself
 
 Notebook 90 now defaults `PROFILE` to `auto`, which resolves to a safer memory profile from the detected GPU rather than assuming a 96 GB class device.
 
-Notebook 90 now installs pinned dependencies in place without intentionally killing the kernel. On a fresh Colab runtime, `Run all` no longer depends on a forced reconnect in the middle of the notebook.
+Notebook 90 now installs pinned dependencies in place without intentionally killing the kernel. It also retries Colab Drive mounting safely when `/content/drive` is already present and non-empty in the runtime.
 
 ## What Is Proven vs Unproven
 

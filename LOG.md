@@ -68,3 +68,4 @@
 - Repaired the standalone multimodal row format so notebook 90 now emits public-compatible `image`, `path`, and `image_path` keys instead of relying on a repo-local image field convention alone.
 - Repaired the unified notebook handoff so DPO failure no longer aborts the full Colab run; export and eval now fall back to the SFT artifact while recording the DPO failure in run evidence.
 - Rebuilt notebook 90 from the generator again after the hostile review pass and re-ran the full suite: `47 passed`.
+- Repaired notebook 90 bootstrap so it now recovers Colab Drive mounting when `/content/drive` is already non-empty and auto-downloads missing identity files from `STnoui/lumis1-identity` before validation.
