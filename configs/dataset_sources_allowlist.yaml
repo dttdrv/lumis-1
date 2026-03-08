@@ -1,0 +1,192 @@
+version: "2.1"
+policy:
+  default_action: "deny"
+  allow_only_listed_sources: true
+  reject_unlisted_sources: true
+  private_local_requires_attestation: true
+
+sources:
+  - source_id: "HuggingFaceH4/ultrachat_200k"
+    source_mode: "hf"
+    enabled: true
+    license: "MIT"
+    category: ["polished_general_assistant"]
+    default_split: "train_sft"
+    max_tokens_cap: 180000000
+    link: "https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k"
+
+  - source_id: "CohereLabs/aya_dataset"
+    source_mode: "hf"
+    enabled: true
+    license: "Apache-2.0"
+    category: ["multilingual", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 140000000
+    link: "https://huggingface.co/datasets/CohereLabs/aya_dataset"
+
+  - source_id: "allenai/WildChat-4.8M"
+    source_mode: "hf"
+    enabled: true
+    license: "ODC-BY"
+    category: ["real_user_conversations", "multilingual"]
+    default_split: "train"
+    max_tokens_cap: 220000000
+    strip_fields:
+      - "age"
+      - "gender"
+      - "race"
+      - "ethnicity"
+      - "demographics"
+    link: "https://huggingface.co/datasets/allenai/WildChat-4.8M"
+
+  - source_id: "HuggingFaceTB/smoltalk2"
+    source_mode: "hf"
+    enabled: true
+    license: "subset_specific"
+    category: ["polished_general_assistant", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 130000000
+    require_thinking_off: true
+    subset_allowlist:
+      mode: "allow_only"
+      rules:
+        - subset_name_pattern: "*no_think*"
+          required_license_in:
+            - "Apache-2.0"
+            - "MIT"
+            - "CC-BY-4.0"
+    link: "https://huggingface.co/datasets/HuggingFaceTB/smoltalk2"
+
+  - source_id: "nvidia/HelpSteer3"
+    source_mode: "hf"
+    enabled: true
+    license: "CC-BY-4.0"
+    category: ["utility_tasks", "preference_dpo"]
+    default_split: "train"
+    max_tokens_cap: 80000000
+    dpo_secondary: true
+    link: "https://huggingface.co/datasets/nvidia/HelpSteer3"
+
+  - source_id: "argilla/ultrafeedback-binarized-preferences-cleaned"
+    source_mode: "hf"
+    enabled: true
+    license: "MIT"
+    category: ["preference_dpo"]
+    default_split: "train"
+    max_tokens_cap: 200000000
+    dpo_primary: true
+    link: "https://huggingface.co/datasets/argilla/ultrafeedback-binarized-preferences-cleaned"
+
+  - source_id: "HuggingFaceM4/the_cauldron"
+    source_mode: "hf"
+    enabled: true
+    license: "subset_specific"
+    category: ["image_text", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 30000000
+    sampled_only: true
+    subset_allowlist:
+      mode: "allow_only"
+      required_subset_license_in:
+        - "MIT"
+        - "Apache-2.0"
+        - "CC-BY-4.0"
+      subsets: []
+    prompts_license_note: "Prompts are CC-BY-4.0; each subset still requires explicit subset license approval."
+    link: "https://huggingface.co/datasets/HuggingFaceM4/the_cauldron"
+
+  - source_id: "HuggingFaceM4/Docmatix"
+    source_mode: "hf"
+    enabled: true
+    license: "MIT"
+    category: ["image_text", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 24000000
+    sampled_only: true
+    link: "https://huggingface.co/datasets/HuggingFaceM4/Docmatix"
+
+  - source_id: "facebook/textvqa"
+    source_mode: "hf"
+    enabled: true
+    license: "CC-BY-4.0"
+    category: ["image_text", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 16000000
+    sampled_only: true
+    link: "https://huggingface.co/datasets/facebook/textvqa"
+
+  - source_id: "lmms-lab/DocVQA"
+    source_mode: "hf"
+    enabled: true
+    license: "Apache-2.0"
+    category: ["image_text", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 16000000
+    sampled_only: true
+    link: "https://huggingface.co/datasets/lmms-lab/DocVQA"
+
+  - source_id: "HuggingFaceM4/FineVision"
+    source_mode: "hf"
+    enabled: false
+    license: "subset_specific"
+    category: ["image_text", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 20000000
+    sampled_only: true
+    subset_allowlist:
+      mode: "allow_only"
+      required_subset_license_in:
+        - "MIT"
+        - "Apache-2.0"
+        - "CC-BY-4.0"
+      subsets: []
+    operator_approval_required: true
+    warning: "Disabled by default. Enable only after explicit subset-level license approval."
+    link: "https://huggingface.co/datasets/HuggingFaceM4/FineVision"
+
+  - source_id: "nvidia/Nemotron-Post-Training-Dataset-v2"
+    source_mode: "hf"
+    enabled: false
+    license: "CC-BY-4.0"
+    category: ["preference_dpo", "utility_tasks"]
+    default_split: "train"
+    max_tokens_cap: 0
+    operator_approval_required: true
+    provenance_attestation_required: true
+    warning: "Disabled by default. Requires explicit operator provenance and licensing approval before use."
+    link: "https://huggingface.co/datasets/nvidia/Nemotron-Post-Training-Dataset-v2"
+
+  - source_id: "allenai/tulu-3-sft-mixture"
+    source_mode: "hf"
+    enabled: false
+    license: "subset_specific"
+    category: ["optional"]
+    default_split: "train"
+    max_tokens_cap: 0
+    operator_approval_required: true
+    subset_allowlist:
+      mode: "allow_only"
+      subsets: []
+    link: "https://huggingface.co/datasets/allenai/tulu-3-sft-mixture"
+
+  - source_id: "PRIVATE_LOCAL_01"
+    source_mode: "local"
+    enabled: false
+    local_path: ""
+    category: ["operator_defined"]
+    max_tokens_cap: 0
+    provenance_attestation: ""
+    license: ""
+    redistribution_allowed: false
+    pii_policy: ""
+
+  - source_id: "PRIVATE_LOCAL_02"
+    source_mode: "local"
+    enabled: false
+    local_path: ""
+    category: ["operator_defined"]
+    max_tokens_cap: 0
+    provenance_attestation: ""
+    license: ""
+    redistribution_allowed: false
+    pii_policy: ""

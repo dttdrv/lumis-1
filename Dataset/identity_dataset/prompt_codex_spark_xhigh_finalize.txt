@@ -1,0 +1,109 @@
+MODEL SETTINGS
+- model: gpt-5.3-codex-spark
+- reasoning_effort: xhigh
+
+ROLE
+You are the finalization controller for the chunked Lumis-1 run.
+You must use reviewer subagents before declaring completion.
+
+MANDATORY SUBAGENT REVIEW GATE
+Before final completion, run these reviewer subagents:
+1) final_sft reviewer
+2) final_pref reviewer
+3) final_report reviewer
+
+If any reviewer subagent is unavailable, print:
+FINALIZE_BLOCKED reason=review_subagents_unavailable
+and stop.
+
+INPUT CONTRACT
+Read:
+1) identity_dataset/output/full_run_codex_spark_xhigh/state.json
+2) identity_dataset/output/full_run_codex_spark_xhigh/chunks/
+3) identity_dataset/config/identity_dataset_config.json
+4) lumis1_identity_codex_prompt.txt
+5) identity_dataset/prompt_codex_spark_xhigh_subagent_reviewer.txt
+
+PRECONDITION
+Proceed only if:
+- state.sft_written == 100000
+- state.pref_written == 25000
+- state.status == active
+
+If precondition fails, print only:
+FINALIZE_BLOCKED reason=precondition_failed
+and stop.
+
+TASK
+Merge chunk files into final artifacts under:
+identity_dataset/output/full_run_codex_spark_xhigh
+
+REQUIRED OUTPUT FILES
+1) sft_dataset.jsonl
+2) preference_dataset.jsonl
+3) category_manifest.json
+4) language_manifest.json
+5) multimodal_manifest.json
+6) review_report.json
+7) spot_checks.jsonl
+8) stress_test_pack.jsonl
+9) run_manifest.json
+10) identity_policy_sheet.md
+11) how_dataset_could_still_fail.md
+
+MERGE RULES
+- Merge chunks/sft_chunk_*.jsonl in numeric order into sft_dataset.jsonl.
+- Merge chunks/pref_chunk_*.jsonl in numeric order into preference_dataset.jsonl.
+- Validate every line is valid JSON.
+- If invalid JSON found, print FINALIZE_BLOCKED reason=invalid_json and stop.
+
+MANIFEST RULES
+Compute from merged SFT rows only:
+- category_manifest with totals, breakdown, share
+- language_manifest with totals, breakdown, share
+- multimodal_manifest with totals and share
+
+REVIEW REPORT RULES
+Include at least:
+- run_id
+- generated_at_utc
+- status=completed
+- counts.sft_rows_generated
+- counts.preference_pairs_generated
+- within_targets=true
+- sft_target=100000
+- pair_target=25000
+- category_manifest
+- language_manifest
+- multimodal_manifest
+- filter_stats
+- quality_warnings
+
+SPOT/STRESS RULES
+- spot_checks.jsonl: 25 representative rows.
+- stress_test_pack.jsonl: deterministic stress-focused subset.
+
+POLICY COPY
+Copy lumis1_identity_codex_prompt.txt to identity_policy_sheet.md.
+
+SUBAGENT FINAL REVIEW PHASE
+Run reviewer prompt three times:
+- review_target=final_sft on sft_dataset.jsonl
+- review_target=final_pref on preference_dataset.jsonl
+- review_target=final_report on report+manifests
+
+If any reviewer returns blocked/fail:
+- print FINALIZE_BLOCKED reason=review_failed
+- stop without setting finalized.
+
+STATE UPDATE
+If all reviewer subagents pass:
+- set state.status = finalized
+- set state.updated_at_utc = now
+
+OUTPUT CONTRACT (exactly these lines)
+FINALIZE_COMPLETE run_id=<...>
+review_subagents=3
+sft_rows=<int>
+preference_pairs=<int>
+output=identity_dataset/output/full_run_codex_spark_xhigh

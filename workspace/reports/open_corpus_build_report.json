@@ -1,0 +1,75 @@
+{
+  "bucket_histogram": {
+    "general_polished": 2018,
+    "multilingual": 938,
+    "real_user": 1250,
+    "utility": 794
+  },
+  "config": "configs/dataset_mixture.yaml",
+  "drop_counters": {
+    "duplicate_near": 9,
+    "source_skipped_CohereLabs/aya_dataset_license_review": 1,
+    "source_skipped_HuggingFaceM4/the_cauldron_license_review": 1
+  },
+  "dry_run": true,
+  "language_histogram": {
+    "ar": 541,
+    "bg": 501,
+    "de": 480,
+    "en": 516,
+    "es": 537,
+    "fr": 459,
+    "it": 387,
+    "pt": 596,
+    "ru": 524,
+    "zh": 459
+  },
+  "mixture_math_check": {
+    "actual_open_mm_share": 0.1262,
+    "non_identity_mm_formula": {
+      "derived_non_identity_mm_share": 0.12621249999999998,
+      "expected_non_identity_mm_share": 0.1262125,
+      "match_within_1e-4": true
+    }
+  },
+  "modality_histogram": {
+    "multimodal": 631,
+    "text": 4369
+  },
+  "outputs": {
+    "open_preference_path": "workspace\\interim\\open_preferences.jsonl",
+    "open_preference_rows": 5000,
+    "open_sft_path": "workspace\\interim\\open_sft.jsonl",
+    "open_sft_rows": 5000
+  },
+  "small_sample": true,
+  "source_counts_after": {
+    "HuggingFaceH4/ultrachat_200k": 449,
+    "HuggingFaceM4/Docmatix": 407,
+    "HuggingFaceTB/smoltalk": 776,
+    "HuggingFaceTB/smoltalk2": 641,
+    "allenai/WildChat-1M": 1250,
+    "facebook/textvqa": 204,
+    "lmms-lab/DocVQA": 163
+  },
+  "source_counts_before": {
+    "HuggingFaceH4/ultrachat_200k": 453,
+    "HuggingFaceM4/Docmatix": 407,
+    "HuggingFaceTB/smoltalk": 776,
+    "HuggingFaceTB/smoltalk2": 646,
+    "allenai/WildChat-1M": 1250,
+    "facebook/textvqa": 204,
+    "lmms-lab/DocVQA": 163
+  },
+  "source_mode": "synthetic",
+  "targets": {
+    "bucket_counts": {
+      "general_polished": 1875,
+      "multilingual": 938,
+      "real_user": 1250,
+      "utility": 937
+    },
+    "non_identity_multimodal_share_expected": 0.1262125,
+    "open_target_rows": 5000
+  }
+}

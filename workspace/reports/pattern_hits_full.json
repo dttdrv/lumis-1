@@ -1,0 +1,3323 @@
+{
+  "openai": [
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 2,
+      "text": "  \"openai\": ["
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 4,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/client/configmap.yaml\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 5,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/.env.sample\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 6,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/client.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 7,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/requirements.txt\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 12,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 16,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 23,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 24,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 26,
+      "text": "    \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 2,
+      "text": "  \"openai\": ["
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 6,
+      "text": "      \"text\": \"- https://build.nvidia.com/openai/gpt-oss-120b/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 11,
+      "text": "      \"text\": \"# Be sure to clone https://github.com/openai/improved-gan\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 16,
+      "text": "      \"text\": \"by cloning the [improved-gan](https://github.com/openai/improved-gan)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 21,
+      "text": "      \"text\": \"      - Synthetic data generation with OpenAI: samples/python/synth_data_with_openai.ipynb\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 26,
+      "text": "      \"text\": \"  samples/python/streamlit/openai_fake_data_generator.py\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 29,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 31,
+      "text": "      \"text\": \"    \\\"!pip install openai pandas\\\\n\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 34,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 36,
+      "text": "      \"text\": \"    \\\"###### Path to notebook: [https://www.github.com/microsoft/presidio/blob/main/docs/samples/python/synth_data_with_openai.ipynb](https://www.github.com/microsoft/presidio/blob/main/docs/samples/python/synth_data_with_openai.ipynb)\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 39,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 41,
+      "text": "      \"text\": \"    \\\"from openai import OpenAI\\\\n\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 44,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 46,
+      "text": "      \"text\": \"    \\\"#Or put explicitly in notebook. Find out more here: https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 51,
+      "text": "      \"text\": \"openai\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 56,
+      "text": "      \"text\": \"from openai_fake_data_generator import OpenAIParams\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 61,
+      "text": "      \"text\": \"def set_up_openai_synthesis():\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 66,
+      "text": "      \"text\": \"    if os.getenv(\\\"OPENAI_TYPE\\\", default=\\\"openai\\\") == \\\"Azure\\\":\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 71,
+      "text": "      \"text\": \"        openai_api_type = \\\"azure\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 76,
+      "text": "      \"text\": \"        st_openai_api_base = st.sidebar.text_input(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 81,
+      "text": "      \"text\": \"        openai_key = os.getenv(\\\"AZURE_OPENAI_KEY\\\", default=\\\"\\\")\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 86,
+      "text": "      \"text\": \"        st_openai_version = st.sidebar.text_input(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 91,
+      "text": "      \"text\": \"        openai_api_type = \\\"openai\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 96,
+      "text": "      \"text\": \"        st_openai_version = st_openai_api_base = None\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 101,
+      "text": "      \"text\": \"        openai_key = os.getenv(\\\"OPENAI_KEY\\\", default=\\\"\\\")\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 106,
+      "text": "      \"text\": \"    st_openai_key = st.sidebar.text_input(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 111,
+      "text": "      \"text\": \"        value=openai_key,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 116,
+      "text": "      \"text\": \"        help=\\\"See https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key for more info.\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 121,
+      "text": "      \"text\": \"    st_openai_model = st.sidebar.text_input(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 126,
+      "text": "      \"text\": \"        help=\\\"See more here: https://platform.openai.com/docs/models/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 131,
+      "text": "      \"text\": \"        openai_api_type,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 136,
+      "text": "      \"text\": \"        st_openai_api_base,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 141,
+      "text": "      \"text\": \"        st_openai_version,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 146,
+      "text": "      \"text\": \"        st_openai_key,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 151,
+      "text": "      \"text\": \"        st_openai_model,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 156,
+      "text": "      \"text\": \"        openai_api_type,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 161,
+      "text": "      \"text\": \"        st_openai_api_base,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 166,
+      "text": "      \"text\": \"        st_openai_version,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 171,
+      "text": "      \"text\": \"        st_openai_key,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 176,
+      "text": "      \"text\": \"        st_openai_model,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 181,
+      "text": "      \"text\": \"    ) = set_up_openai_synthesis()\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 186,
+      "text": "      \"text\": \"        openai_key=st_openai_key,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 191,
+      "text": "      \"text\": \"        model=st_openai_model,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 196,
+      "text": "      \"text\": \"        api_base=st_openai_api_base,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 201,
+      "text": "      \"text\": \"        api_version=st_openai_version,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 206,
+      "text": "      \"text\": \"        api_type=openai_api_type,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 211,
+      "text": "      \"text\": \"from openai_fake_data_generator import (\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 216,
+      "text": "      \"text\": \"    openai_params: OpenAIParams,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 221,
+      "text": "      \"text\": \"    if not openai_params.openai_key:\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 226,
+      "text": "      \"text\": \"    fake = call_completion_model(prompt=prompt, openai_params=openai_params)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 231,
+      "text": "      \"text\": \"def call_openai_api(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 236,
+      "text": "      \"text\": \"    prompt: str, openai_model_name: str, openai_deployment_name: Optional[str] = None\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 241,
+      "text": "      \"text\": \"        prompt, model=openai_model_name, deployment_id=openai_deployment_name\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 244,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 246,
+      "text": "      \"text\": \"import openai\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 249,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 251,
+      "text": "      \"text\": \"from openai import OpenAI, AzureOpenAI\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 254,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 256,
+      "text": "      \"text\": \"    [\\\"openai_key\\\", \\\"model\\\", \\\"api_base\\\", \\\"deployment_id\\\", \\\"api_version\\\", \\\"api_type\\\"],\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 259,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 261,
+      "text": "      \"text\": \"    openai_params: OpenAIParams,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 264,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 266,
+      "text": "      \"text\": \"    :param openai_params: OpenAI parameters for the completion model\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 269,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 271,
+      "text": "      \"text\": \"    if openai_params.api_type.lower() == \\\"azure\\\":\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 274,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 276,
+      "text": "      \"text\": \"            api_version=openai_params.api_version,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 279,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 281,
+      "text": "      \"text\": \"            api_key=openai_params.openai_key,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 284,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 286,
+      "text": "      \"text\": \"            azure_endpoint=openai_params.api_base,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 289,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 291,
+      "text": "      \"text\": \"            azure_deployment=openai_params.deployment_id,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 294,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 296,
+      "text": "      \"text\": \"        client = OpenAI(api_key=openai_params.openai_key)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 299,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 301,
+      "text": "      \"text\": \"        model=openai_params.model,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 306,
+      "text": "      \"text\": \"OPENAI_TYPE=\\\"Azure\\\" #or \\\"openai\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 311,
+      "text": "      \"text\": \"  - [Implementation](https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 316,
+      "text": "      \"text\": \"- **`provider.name`**: The model provider (eg, ollama, openai)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 321,
+      "text": "      \"text\": \"   wget https://raw.githubusercontent.com/microsoft/presidio/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 326,
+      "text": "      \"text\": \"   # https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 331,
+      "text": "      \"text\": \"azure_openai = AzureOpenAILangExtractRecognizer(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 336,
+      "text": "      \"text\": \"    azure_endpoint=\\\"https://your-resource.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 341,
+      "text": "      \"text\": \"analyzer.registry.add_recognizer(azure_openai)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 346,
+      "text": "      \"text\": \"os.environ[\\\"AZURE_OPENAI_ENDPOINT\\\"] = \\\"https://your-resource.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 351,
+      "text": "      \"text\": \"azure_openai = AzureOpenAILangExtractRecognizer(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 356,
+      "text": "      \"text\": \"analyzer.registry.add_recognizer(azure_openai)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 361,
+      "text": "      \"text\": \"os.environ[\\\"AZURE_OPENAI_ENDPOINT\\\"] = \\\"https://your-resource.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 366,
+      "text": "      \"text\": \"azure_openai = AzureOpenAILangExtractRecognizer(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 371,
+      "text": "      \"text\": \"analyzer.registry.add_recognizer(azure_openai)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 376,
+      "text": "      \"text\": \"os.environ[\\\"AZURE_OPENAI_ENDPOINT\\\"] = \\\"https://your-resource.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 381,
+      "text": "      \"text\": \"azure_openai = AzureOpenAILangExtractRecognizer()\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 386,
+      "text": "      \"text\": \"   wget https://raw.githubusercontent.com/microsoft/presidio/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 391,
+      "text": "      \"text\": \"See the [full config file](https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml) for details.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 396,
+      "text": "      \"text\": \"| Usage | Text      | Python file                            | [Synthetic data generation with OpenAI](python/synth_data_with_openai.ipynb)|\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 401,
+      "text": "      \"text\": \"| Deployment | | Data Protection toolkit for OpenAI          | [Data Protection toolkit for OpenAI](deployments/openai-anonymaztion-and-deanonymaztion-best-practices/index.md)|\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 404,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 406,
+      "text": "      \"text\": \"import openai\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 409,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 411,
+      "text": "      \"text\": \"from presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider import AzureOpenAILanguageModel\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 414,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 416,
+      "text": "      \"text\": \"                    azure_endpoint=\\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 419,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 421,
+      "text": "      \"text\": \"            \\\"azure_openai\\\": {\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 424,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 426,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test-resource.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 429,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 431,
+      "text": "      \"text\": \"        assert recognizer.azure_endpoint == \\\"https://test-resource.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 434,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 436,
+      "text": "      \"text\": \"            \\\"AZURE_OPENAI_ENDPOINT\\\": \\\"https://test-resource.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 439,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 441,
+      "text": "      \"text\": \"            assert recognizer.azure_endpoint == \\\"https://test-resource.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 444,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 446,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test-resource.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 449,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 451,
+      "text": "      \"text\": \"                azure_endpoint=\\\"https://test-resource.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 454,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 456,
+      "text": "      \"text\": \"                azure_endpoint=\\\"https://test-resource.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 459,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 461,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 464,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 466,
+      "text": "      \"text\": \"            assert call_kwargs[\\\"language_model_params\\\"][\\\"azure_endpoint\\\"] == \\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 469,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 471,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 474,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 476,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 479,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 481,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 484,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 486,
+      "text": "      \"text\": \"        with patch.object(openai, 'AzureOpenAI') as mock_client:\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 489,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 491,
+      "text": "      \"text\": \"                azure_endpoint=\\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 494,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 496,
+      "text": "      \"text\": \"            assert provider.azure_endpoint == \\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 499,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 501,
+      "text": "      \"text\": \"        with patch.object(openai, 'AzureOpenAI'):\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 504,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 506,
+      "text": "      \"text\": \"                azure_endpoint=\\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 509,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 511,
+      "text": "      \"text\": \"        with patch.dict(os.environ, {'ENV': 'development', 'AZURE_OPENAI_ENDPOINT': 'https://test.openai.azure.com/'}):\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 514,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 516,
+      "text": "      \"text\": \"            with patch.object(openai, 'AzureOpenAI'):\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 519,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 521,
+      "text": "      \"text\": \"                with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.get_bearer_token_provider_for_scope') as mock_token_provider:\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 524,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 526,
+      "text": "      \"text\": \"        env_vars = {'AZURE_OPENAI_ENDPOINT': 'https://test.openai.azure.com/'}\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 529,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 531,
+      "text": "      \"text\": \"            with patch.object(openai, 'AzureOpenAI'):\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 534,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 536,
+      "text": "      \"text\": \"                with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.get_bearer_token_provider_for_scope') as mock_token_provider:\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 539,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 541,
+      "text": "      \"text\": \"        with patch.object(openai, 'AzureOpenAI') as mock_client:\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 544,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 546,
+      "text": "      \"text\": \"                azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 549,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 551,
+      "text": "      \"text\": \"        with patch.object(openai, 'AzureOpenAI'):\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 554,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 556,
+      "text": "      \"text\": \"                azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 559,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 561,
+      "text": "      \"text\": \"        with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.AZURE_IDENTITY_AVAILABLE', False):\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 564,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 566,
+      "text": "      \"text\": \"            with patch.object(openai, 'AzureOpenAI') as mock_client:\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 569,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 571,
+      "text": "      \"text\": \"                        azure_endpoint=\\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 574,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 576,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 579,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 581,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 584,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 586,
+      "text": "      \"text\": \"            azure_endpoint=\\\"https://test.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 589,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 591,
+      "text": "      \"text\": \"            assert call_kwargs[\\\"language_model_params\\\"][\\\"azure_endpoint\\\"] == \\\"https://test.openai.azure.com/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 596,
+      "text": "      \"text\": \"    azure_endpoint=\\\"https://your-resource.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 601,
+      "text": "      \"text\": \"    azure_endpoint=\\\"https://your-resource.openai.azure.com/\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 606,
+      "text": "      \"text\": \"    \\\"openai (>=1.50.0)\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 611,
+      "text": "      \"text\": \"from .third_party.azure_openai_langextract_recognizer import (\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 616,
+      "text": "      \"text\": \"  - model_name: my-openai-model ### RECEIVED MODEL NAME ###\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 621,
+      "text": "      \"text\": \"from openai import OpenAI\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 626,
+      "text": "      \"text\": \"from .azure_openai_langextract_recognizer import AzureOpenAILangExtractRecognizer\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 629,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 631,
+      "text": "      \"text\": \"    import openai\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 634,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 636,
+      "text": "      \"text\": \"    from langextract.providers.openai import OpenAILanguageModel\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 639,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 641,
+      "text": "      \"text\": \"    openai = None\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 644,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 646,
+      "text": "      \"text\": \"            self._client = self._create_azure_openai_client(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 649,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 651,
+      "text": "      \"text\": \"        def _create_azure_openai_client(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 654,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 656,
+      "text": "      \"text\": \"                client = openai.AzureOpenAI(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 659,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 661,
+      "text": "      \"text\": \"                client = openai.AzureOpenAI(\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 664,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 666,
+      "text": "      \"text\": \"                \\\"Install it with: pip install presidio-analyzer[langextract,openai] \\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 669,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 671,
+      "text": "      \"text\": \"                \\\"or: pip install langextract[openai]\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 674,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 676,
+      "text": "      \"text\": \"        azure_openai_provider,  # noqa: F401 - imported for side effects (registration)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 679,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 681,
+      "text": "      \"text\": \"AZURE_OPENAI_DOCS_URL = \\\"https://learn.microsoft.com/en-us/azure/ai-services/openai/\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 684,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 686,
+      "text": "      \"text\": \"        / \\\"langextract_config_azureopenai.yaml\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 691,
+      "text": "      \"text\": \"- [Data Protection toolkit for OpenAI](openai-anonymaztion-and-deanonymaztion-best-practices/index.md)\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 696,
+      "text": "      \"text\": \"    :param provider_key: Provider key (e.g., \\\"openai\\\", \\\"ollama\\\").\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 699,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/client/configmap.yaml\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 701,
+      "text": "      \"text\": \"  OPENAI_ENDPOINT: https://oai-presidio-anon-toolkit.openai.azure.com/\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 704,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/requirements.txt\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 706,
+      "text": "      \"text\": \"openai==1.37.1\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 709,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/client.py\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 711,
+      "text": "      \"text\": \"from openai import AzureOpenAI\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 714,
+      "text": "      \"path\": \"./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/.env.sample\","
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 716,
+      "text": "      \"text\": \"OPENAI_ENDPOINT=https://oai-presidio-anon-toolkit.openai.azure.com/\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 721,
+      "text": "      \"text\": \"  #    name: \\\"openai\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 829,
+      "text": "      \"text\": \"- https://build.nvidia.com/openai/gpt-oss-120b/modelcard\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/Plan/lumis1_codex_master_plan.md",
+      "line": 719,
+      "text": "- https://build.nvidia.com/openai/gpt-oss-120b/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/research/pate_2017/train_student_mnist_250_lap_20_count_50_epochs_600.sh",
+      "line": 17,
+      "text": "# Be sure to clone https://github.com/openai/improved-gan"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/research/pate_2017/README.md",
+      "line": 70,
+      "text": "by cloning the [improved-gan](https://github.com/openai/improved-gan)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/mkdocs.yml",
+      "line": 103,
+      "text": "      - Synthetic data generation with OpenAI: samples/python/synth_data_with_openai.ipynb"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/mkdocs.yml",
+      "line": 141,
+      "text": "  samples/python/streamlit/openai_fake_data_generator.py"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/README.md",
+      "line": 43,
+      "text": "    azure_endpoint=\"https://your-resource.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/README.md",
+      "line": 56,
+      "text": "    azure_endpoint=\"https://your-resource.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/pyproject.toml",
+      "line": 66,
+      "text": "    \"openai (>=1.50.0)\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/__init__.py",
+      "line": 109,
+      "text": "from .third_party.azure_openai_langextract_recognizer import ("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/__init__.py",
+      "line": 5,
+      "text": "from .azure_openai_langextract_recognizer import AzureOpenAILangExtractRecognizer"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 9,
+      "text": "    import openai"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 10,
+      "text": "    from langextract.providers.openai import OpenAILanguageModel"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 16,
+      "text": "    openai = None"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 95,
+      "text": "            self._client = self._create_azure_openai_client("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 99,
+      "text": "        def _create_azure_openai_client("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 137,
+      "text": "                client = openai.AzureOpenAI("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 148,
+      "text": "                client = openai.AzureOpenAI("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 175,
+      "text": "                \"Install it with: pip install presidio-analyzer[langextract,openai] \""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_provider.py",
+      "line": 176,
+      "text": "                \"or: pip install langextract[openai]\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb",
+      "line": 14,
+      "text": "    \"!pip install openai pandas\\n\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb",
+      "line": 24,
+      "text": "    \"###### Path to notebook: [https://www.github.com/microsoft/presidio/blob/main/docs/samples/python/synth_data_with_openai.ipynb](https://www.github.com/microsoft/presidio/blob/main/docs/samples/python/synth_data_with_openai.ipynb)\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb",
+      "line": 59,
+      "text": "    \"from openai import OpenAI\\n\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb",
+      "line": 66,
+      "text": "    \"#Or put explicitly in notebook. Find out more here: https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py",
+      "line": 23,
+      "text": "        azure_openai_provider,  # noqa: F401 - imported for side effects (registration)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py",
+      "line": 32,
+      "text": "AZURE_OPENAI_DOCS_URL = \"https://learn.microsoft.com/en-us/azure/ai-services/openai/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py",
+      "line": 51,
+      "text": "        / \"langextract_config_azureopenai.yaml\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/requirements.txt",
+      "line": 11,
+      "text": "openai"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 13,
+      "text": "from openai_fake_data_generator import OpenAIParams"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 128,
+      "text": "def set_up_openai_synthesis():"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 131,
+      "text": "    if os.getenv(\"OPENAI_TYPE\", default=\"openai\") == \"Azure\":"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 132,
+      "text": "        openai_api_type = \"azure\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 133,
+      "text": "        st_openai_api_base = st.sidebar.text_input("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 137,
+      "text": "        openai_key = os.getenv(\"AZURE_OPENAI_KEY\", default=\"\")"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 141,
+      "text": "        st_openai_version = st.sidebar.text_input("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 146,
+      "text": "        openai_api_type = \"openai\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 147,
+      "text": "        st_openai_version = st_openai_api_base = None"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 149,
+      "text": "        openai_key = os.getenv(\"OPENAI_KEY\", default=\"\")"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 150,
+      "text": "    st_openai_key = st.sidebar.text_input("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 152,
+      "text": "        value=openai_key,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 153,
+      "text": "        help=\"See https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key for more info.\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 156,
+      "text": "    st_openai_model = st.sidebar.text_input("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 159,
+      "text": "        help=\"See more here: https://platform.openai.com/docs/models/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 162,
+      "text": "        openai_api_type,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 163,
+      "text": "        st_openai_api_base,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 165,
+      "text": "        st_openai_version,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 166,
+      "text": "        st_openai_key,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 167,
+      "text": "        st_openai_model,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 182,
+      "text": "        openai_api_type,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 183,
+      "text": "        st_openai_api_base,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 185,
+      "text": "        st_openai_version,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 186,
+      "text": "        st_openai_key,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 187,
+      "text": "        st_openai_model,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 188,
+      "text": "    ) = set_up_openai_synthesis()"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 191,
+      "text": "        openai_key=st_openai_key,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 192,
+      "text": "        model=st_openai_model,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 193,
+      "text": "        api_base=st_openai_api_base,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 195,
+      "text": "        api_version=st_openai_version,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_streamlit.py",
+      "line": 196,
+      "text": "        api_type=openai_api_type,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_helpers.py",
+      "line": 18,
+      "text": "from openai_fake_data_generator import ("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_helpers.py",
+      "line": 214,
+      "text": "    openai_params: OpenAIParams,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_helpers.py",
+      "line": 217,
+      "text": "    if not openai_params.openai_key:"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_helpers.py",
+      "line": 222,
+      "text": "    fake = call_completion_model(prompt=prompt, openai_params=openai_params)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_helpers.py",
+      "line": 227,
+      "text": "def call_openai_api("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_helpers.py",
+      "line": 228,
+      "text": "    prompt: str, openai_model_name: str, openai_deployment_name: Optional[str] = None"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/presidio_helpers.py",
+      "line": 231,
+      "text": "        prompt, model=openai_model_name, deployment_id=openai_deployment_name"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/index.md",
+      "line": 29,
+      "text": "| Usage | Text      | Python file                            | [Synthetic data generation with OpenAI](python/synth_data_with_openai.ipynb)|"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/index.md",
+      "line": 39,
+      "text": "| Deployment | | Data Protection toolkit for OpenAI          | [Data Protection toolkit for OpenAI](deployments/openai-anonymaztion-and-deanonymaztion-best-practices/index.md)|"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 4,
+      "text": "import openai"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 5,
+      "text": "from openai import OpenAI, AzureOpenAI"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 12,
+      "text": "    [\"openai_key\", \"model\", \"api_base\", \"deployment_id\", \"api_version\", \"api_type\"],"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 18,
+      "text": "    openai_params: OpenAIParams,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 24,
+      "text": "    :param openai_params: OpenAI parameters for the completion model"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 27,
+      "text": "    if openai_params.api_type.lower() == \"azure\":"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 29,
+      "text": "            api_version=openai_params.api_version,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 30,
+      "text": "            api_key=openai_params.openai_key,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 31,
+      "text": "            azure_endpoint=openai_params.api_base,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 32,
+      "text": "            azure_deployment=openai_params.deployment_id,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 35,
+      "text": "        client = OpenAI(api_key=openai_params.openai_key)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/openai_fake_data_generator.py",
+      "line": 38,
+      "text": "        model=openai_params.model,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/streamlit/index.md",
+      "line": 27,
+      "text": "OPENAI_TYPE=\"Azure\" #or \"openai\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/docker/litellm.md",
+      "line": 27,
+      "text": "  - model_name: my-openai-model ### RECEIVED MODEL NAME ###"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/docker/litellm.md",
+      "line": 146,
+      "text": "from openai import OpenAI"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 55,
+      "text": "  - [Implementation](https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 171,
+      "text": "- **`provider.name`**: The model provider (eg, ollama, openai)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 218,
+      "text": "   wget https://raw.githubusercontent.com/microsoft/presidio/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 221,
+      "text": "   # https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 237,
+      "text": "azure_openai = AzureOpenAILangExtractRecognizer("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 239,
+      "text": "    azure_endpoint=\"https://your-resource.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 245,
+      "text": "analyzer.registry.add_recognizer(azure_openai)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 263,
+      "text": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = \"https://your-resource.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 267,
+      "text": "azure_openai = AzureOpenAILangExtractRecognizer("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 272,
+      "text": "analyzer.registry.add_recognizer(azure_openai)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 290,
+      "text": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = \"https://your-resource.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 293,
+      "text": "azure_openai = AzureOpenAILangExtractRecognizer("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 298,
+      "text": "analyzer.registry.add_recognizer(azure_openai)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 319,
+      "text": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = \"https://your-resource.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 323,
+      "text": "azure_openai = AzureOpenAILangExtractRecognizer()"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 350,
+      "text": "   wget https://raw.githubusercontent.com/microsoft/presidio/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/langextract/index.md",
+      "line": 385,
+      "text": "See the [full config file](https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml) for details."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/llm_utils/config_loader.py",
+      "line": 81,
+      "text": "    :param provider_key: Provider key (e.g., \"openai\", \"ollama\")."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/conf/langextract_config_basic.yaml",
+      "line": 52,
+      "text": "  #    name: \"openai\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 11,
+      "text": "import openai"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 13,
+      "text": "from presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider import AzureOpenAILanguageModel"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 43,
+      "text": "                    azure_endpoint=\"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 66,
+      "text": "            \"azure_openai\": {"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 93,
+      "text": "            azure_endpoint=\"https://test-resource.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 98,
+      "text": "        assert recognizer.azure_endpoint == \"https://test-resource.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 104,
+      "text": "            \"AZURE_OPENAI_ENDPOINT\": \"https://test-resource.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 114,
+      "text": "            assert recognizer.azure_endpoint == \"https://test-resource.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 121,
+      "text": "            azure_endpoint=\"https://test-resource.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 137,
+      "text": "                azure_endpoint=\"https://test-resource.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 153,
+      "text": "                azure_endpoint=\"https://test-resource.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 170,
+      "text": "            azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 193,
+      "text": "            assert call_kwargs[\"language_model_params\"][\"azure_endpoint\"] == \"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 201,
+      "text": "            azure_endpoint=\"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 224,
+      "text": "            azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 252,
+      "text": "            azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 272,
+      "text": "        with patch.object(openai, 'AzureOpenAI') as mock_client:"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 276,
+      "text": "                azure_endpoint=\"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 281,
+      "text": "            assert provider.azure_endpoint == \"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 287,
+      "text": "        with patch.object(openai, 'AzureOpenAI'):"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 291,
+      "text": "                azure_endpoint=\"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 310,
+      "text": "        with patch.dict(os.environ, {'ENV': 'development', 'AZURE_OPENAI_ENDPOINT': 'https://test.openai.azure.com/'}):"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 311,
+      "text": "            with patch.object(openai, 'AzureOpenAI'):"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 312,
+      "text": "                with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.get_bearer_token_provider_for_scope') as mock_token_provider:"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 322,
+      "text": "        env_vars = {'AZURE_OPENAI_ENDPOINT': 'https://test.openai.azure.com/'}"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 327,
+      "text": "            with patch.object(openai, 'AzureOpenAI'):"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 328,
+      "text": "                with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.get_bearer_token_provider_for_scope') as mock_token_provider:"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 340,
+      "text": "        with patch.object(openai, 'AzureOpenAI') as mock_client:"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 343,
+      "text": "                azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 353,
+      "text": "        with patch.object(openai, 'AzureOpenAI'):"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 357,
+      "text": "                azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 365,
+      "text": "        with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.AZURE_IDENTITY_AVAILABLE', False):"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 366,
+      "text": "            with patch.object(openai, 'AzureOpenAI') as mock_client:"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 370,
+      "text": "                        azure_endpoint=\"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 402,
+      "text": "            azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 436,
+      "text": "            azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 469,
+      "text": "            azure_endpoint=\"https://test.openai.azure.com/\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/tests/test_azure_openai_langextract_recognizer.py",
+      "line": 499,
+      "text": "            assert call_kwargs[\"language_model_params\"][\"azure_endpoint\"] == \"https://test.openai.azure.com/\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/requirements.txt",
+      "line": 2,
+      "text": "openai==1.37.1"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/client.py",
+      "line": 8,
+      "text": "from openai import AzureOpenAI"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/.env.sample",
+      "line": 1,
+      "text": "OPENAI_ENDPOINT=https://oai-presidio-anon-toolkit.openai.azure.com/"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/index.md",
+      "line": 7,
+      "text": "- [Data Protection toolkit for OpenAI](openai-anonymaztion-and-deanonymaztion-best-practices/index.md)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/deployments/client/configmap.yaml",
+      "line": 6,
+      "text": "  OPENAI_ENDPOINT: https://oai-presidio-anon-toolkit.openai.azure.com/"
+    }
+  ],
+  "anthropic": [
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 31,
+      "text": "  \"anthropic\": [],"
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 724,
+      "text": "  \"anthropic\": [],"
+    }
+  ],
+  "nvidia": [
+    {
+      "path": "./Dataset/lumis1_identity_codex_prompt.txt",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./Dataset/lumis1_identity_codex_prompt.txt",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 32,
+      "text": "  \"nvidia\": ["
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 6,
+      "text": "      \"text\": \"- https://build.nvidia.com/openai/gpt-oss-120b/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 725,
+      "text": "  \"nvidia\": ["
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 729,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 734,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 739,
+      "text": "      \"text\": \"    \\\"name\\\": \\\"nvidia_nim\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 744,
+      "text": "      \"text\": \"    \\\"base_url\\\": \\\"https://integrate.api.nvidia.com/v1\\\",\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 749,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 754,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 759,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 764,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 769,
+      "text": "      \"text\": \"  - External: `https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5-infer` - API contract and fields.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 774,
+      "text": "      \"text\": \"  - External: `https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard` - instant vs thinking mode semantics.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 779,
+      "text": "      \"text\": \"  - External: `https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf` - trial and logging restrictions.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 784,
+      "text": "      \"text\": \"  - External: `https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/` - output responsibility and license terms.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 789,
+      "text": "      \"text\": \"  - External: `https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5-infer` - request/response schema and async behavior.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 794,
+      "text": "      \"text\": \"  - External: `https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard` - instant mode behavior.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 799,
+      "text": "      \"text\": \"  - External: `https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf` - policy caveats and restrictions.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 804,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 809,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 814,
+      "text": "      \"text\": \"- https://developer.nvidia.com/blog/build-with-kimi-k2-5-multimodal-vlm-using-nvidia-gpu-accelerated-endpoints/\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 819,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 824,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 829,
+      "text": "      \"text\": \"- https://build.nvidia.com/openai/gpt-oss-120b/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 834,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 839,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 844,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 849,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 854,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 859,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 864,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 869,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 874,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 879,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 884,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 889,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 894,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 899,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 904,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 909,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 914,
+      "text": "      \"text\": \"        \\\"provider\\\": gateway_request.get(\\\"provider\\\", \\\"nvidia_nim\\\"),\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 919,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 924,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 929,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 934,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 939,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 944,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 949,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 954,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 959,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 964,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 969,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 974,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 979,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 984,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 989,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 994,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 999,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1004,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1009,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1014,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1019,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1024,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1029,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1034,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1039,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1044,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1049,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1054,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1059,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1064,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1069,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1074,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1079,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1084,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1089,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1094,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1099,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1104,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1109,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1114,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1119,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1124,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1129,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1134,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1139,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1144,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1149,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1154,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1159,
+      "text": "      \"text\": \"- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1164,
+      "text": "      \"text\": \"- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1169,
+      "text": "      \"text\": \"name = \\\"nvidia-ml-py\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1174,
+      "text": "      \"text\": \"sdist = { url = \\\"https://files.pythonhosted.org/packages/d2/4d/6f017814ed5ac28e08e1b8a62e3a258957da27582c89b7f8f8b15ac3d2e7/nvidia_ml_py-12.575.51.tar.gz\\\", hash = \\\"sha256:6490e93fea99eb4e966327ae18c6eec6256194c921f23459c8767aee28c54581\\\", size = 46597, upload-time = \\\"2025-05-06T20:46:37.962Z\\\" }\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1179,
+      "text": "      \"text\": \"    { url = \\\"https://files.pythonhosted.org/packages/db/24/552ebea28f0570b9e65e62b50287a273804c9f997cc1c2dcd4e2d64b9e7d/nvidia_ml_py-12.575.51-py3-none-any.whl\\\", hash = \\\"sha256:eb8641800d98ce40a22f479873f34b482e214a7e80349c63be51c3919845446e\\\", size = 47547, upload-time = \\\"2025-05-06T20:46:36.457Z\\\" },\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1184,
+      "text": "      \"text\": \"    { name = \\\"nvidia-ml-py\\\", marker = \\\"sys_platform != 'darwin'\\\" },\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1189,
+      "text": "      \"text\": \"watch -n 1 nvidia-smi\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1194,
+      "text": "      \"text\": \"   nvidia-smi\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1199,
+      "text": "      \"text\": \"- [NVIDIA CUDA Installation Guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)\""
+    },
+    {
+      "path": "./Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/audit_sample_2200/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/audit_sample_2200/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_nested/output/full_run_codex_spark_xhigh/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_nested/output/full_run_codex_spark_xhigh/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_nested/output/full_run_continue_v13_strict/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_nested/output/full_run_continue_v13_strict/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v5/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v5/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/test_run_small2/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/test_run_small2/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v9b/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v9b/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/test_run_small/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/test_run_small/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/audit_sample/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/audit_sample/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v13_strict/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v13_strict/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v3/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v3/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_sft_only/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_sft_only/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v8/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v8/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/audit_enforced_5000/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/audit_enforced_5000/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_pairs100/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_pairs100/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_fullsample/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_fullsample/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v2/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v2/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_bg/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict_bg/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v7/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v7/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v4/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/sample_run_continue_v4/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_strict/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_sft20k/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_sft20k/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v6/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v6/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v12_strict/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v12_strict/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v9/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v9/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_check/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_check/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/test_run_bg/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/test_run_bg/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run2/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run2/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v9b/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_continue_v9b/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_check2/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v12_check2/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v11_strict/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v11_strict/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/text-dedup/uv.lock",
+      "line": 1055,
+      "text": "name = \"nvidia-ml-py\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/text-dedup/uv.lock",
+      "line": 1058,
+      "text": "sdist = { url = \"https://files.pythonhosted.org/packages/d2/4d/6f017814ed5ac28e08e1b8a62e3a258957da27582c89b7f8f8b15ac3d2e7/nvidia_ml_py-12.575.51.tar.gz\", hash = \"sha256:6490e93fea99eb4e966327ae18c6eec6256194c921f23459c8767aee28c54581\", size = 46597, upload-time = \"2025-05-06T20:46:37.962Z\" }"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/text-dedup/uv.lock",
+      "line": 1060,
+      "text": "    { url = \"https://files.pythonhosted.org/packages/db/24/552ebea28f0570b9e65e62b50287a273804c9f997cc1c2dcd4e2d64b9e7d/nvidia_ml_py-12.575.51-py3-none-any.whl\", hash = \"sha256:eb8641800d98ce40a22f479873f34b482e214a7e80349c63be51c3919845446e\", size = 47547, upload-time = \"2025-05-06T20:46:36.457Z\" },"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/text-dedup/uv.lock",
+      "line": 1772,
+      "text": "    { name = \"nvidia-ml-py\", marker = \"sys_platform != 'darwin'\" },"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/Plan/lumis1_codex_master_plan.md",
+      "line": 716,
+      "text": "- https://developer.nvidia.com/blog/build-with-kimi-k2-5-multimodal-vlm-using-nvidia-gpu-accelerated-endpoints/"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/Plan/lumis1_codex_master_plan.md",
+      "line": 717,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/Plan/lumis1_codex_master_plan.md",
+      "line": 718,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/Plan/lumis1_codex_master_plan.md",
+      "line": 719,
+      "text": "- https://build.nvidia.com/openai/gpt-oss-120b/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/Plan/lumis1_codex_master_plan.md",
+      "line": 1027,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/Plan/lumis1_codex_master_plan.md",
+      "line": 1028,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/pipelines/generate_with_kimi.py",
+      "line": 604,
+      "text": "        \"provider\": gateway_request.get(\"provider\", \"nvidia_nim\"),"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v10/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/full_run_continue_v10/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 167,
+      "text": "  - External: `https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5-infer` - API contract and fields."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 168,
+      "text": "  - External: `https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard` - instant vs thinking mode semantics."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 169,
+      "text": "  - External: `https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf` - trial and logging restrictions."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 170,
+      "text": "  - External: `https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/` - output responsibility and license terms."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 524,
+      "text": "  - External: `https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5-infer` - request/response schema and async behavior."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 525,
+      "text": "  - External: `https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard` - instant mode behavior."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 526,
+      "text": "  - External: `https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf` - policy caveats and restrictions."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_verify/identity_policy_sheet.md",
+      "line": 85,
+      "text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/identity_dataset_output/sample_run_verify/identity_policy_sheet.md",
+      "line": 86,
+      "text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_config_data/teacher/kimi_instant.yaml",
+      "line": 4,
+      "text": "    \"name\": \"nvidia_nim\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_config_data/teacher/kimi_instant.yaml",
+      "line": 5,
+      "text": "    \"base_url\": \"https://integrate.api.nvidia.com/v1\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/analyzer/nlp_engines/gpu_usage.md",
+      "line": 78,
+      "text": "watch -n 1 nvidia-smi"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/analyzer/nlp_engines/gpu_usage.md",
+      "line": 103,
+      "text": "   nvidia-smi"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/analyzer/nlp_engines/gpu_usage.md",
+      "line": 140,
+      "text": "- [NVIDIA CUDA Installation Guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)"
+    }
+  ],
+  "together": [
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 76,
+      "text": "  \"together\": ["
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1202,
+      "text": "  \"together\": ["
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1206,
+      "text": "      \"text\": \"  - Category: `unspecified-high` - Reason: ratio preservation and legal compliance must be solved together.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1211,
+      "text": "      \"text\": \"Before we get started with DP-SGD and TF Privacy, we need to put together a\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1216,
+      "text": "      \"text\": \"### Putting all the pieces together\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1221,
+      "text": "      \"text\": \"sensitivity analysis for several data-independent and data-dependent mechanism that together\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1226,
+      "text": "      \"text\": \"  \\\"\\\"\\\"Adds metadata to the dataframe and concats them together.\\\"\\\"\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1231,
+      "text": "      \"text\": \"        \\\"In this codelab we'll train a simple translation model on the SATED dataset which consists of sentences grouped together by a \\\\\\\"user\\\\\\\" (i.e. the person who spoke the sentences). We will then use a \\\\\\\"membership inference attack\\\\\\\" against this model to assess if the attacker is able to \\\\\\\"guess\\\\\\\" whether a particular user was present in the training set.\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1236,
+      "text": "      \"text\": \" * Merge together M different suffix arrays (probably created with make-part).\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1241,
+      "text": "      \"text\": \"    # Now combine them together to get the variance we can explain\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1246,
+      "text": "      \"text\": \"The first file contains the entire Wiki40B test set smashed together, and the second file has the byte offset of where each individual training example begins, in sorted order.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1251,
+      "text": "      \"text\": \"Each `dups` file is a list of pointers into the dataset that corresponds to sequences repeated multiple times. Each file has the duplicates that correspond to items A through B in the suffix array. There should be 28,464 total entries when added up across all of these files. The duplicates are all clustered together, so all duplicates of the same string should appear sequentially.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1256,
+      "text": "      \"text\": \"### Collecting the duplicates together\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1261,
+      "text": "      \"text\": \"The next step is to take all of the length-100 sequences we've found and collect them together to figure out what we should be removing from our dataset.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1266,
+      "text": "      \"text\": \"This will run the entire deduplication pipeline top-to-bottom, starting with loading the wiki40b test set, then creating a suffix array, finding all repeated sequences, merging them together to sequence ranges, and finally spitting out a deduplicated TF Dataset that you can use exactly as normal.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1271,
+      "text": "      \"text\": \"This script will build the suffix array in parallel by splitting the single file into chunks, generating suffix arrays for each chunk, and then merging the suffix arrays together to form the full suffix array. Note that in general this algorithm is quadratic, but when the maximum substring length is short relative to the total file length (as it is, when generating suffix arrays for N independent training examples) it will never reach this worst case behavior.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1276,
+      "text": "      \"text\": \"to generate a collection of ordered suffix arrays pieces in the output directory. The final step just requires merging these together\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1281,
+      "text": "      \"text\": \"    # together can call it a day.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1286,
+      "text": "      \"text\": \"1. Run `step_1_create_graph.py`. Produce the similarity graph to pair together encoded images that share an original image.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1291,
+      "text": "      \"text\": \"  \\\"\\\"\\\"Generates two dense layers nested together.\\\"\\\"\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1296,
+      "text": "      \"text\": \"  for the kernel weights and bias vector together.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1301,
+      "text": "      \"text\": \"message(WARNING \\\"Protobuf 2.5 and CLD3 seems happy together. This script does NOT check if your verison of protobuf is compatible.\\\")\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1306,
+      "text": "      \"text\": \"# Collect together all protected access items needed from base head.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1311,
+      "text": "      \"text\": \"  \\\"\\\"\\\"Generates two dense layers nested together.\\\"\\\"\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1316,
+      "text": "      \"text\": \"  \\\"\\\"\\\"Generates three dense layers nested together.\\\"\\\"\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1321,
+      "text": "      \"text\": \" * The check involves ORing together four 4-byte values that\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1326,
+      "text": "      \"text\": \"points together, such as by a zero-width joiner; unlike a surrogate\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1331,
+      "text": "      \"text\": \"   * surrogate pair. Note that certain graphemes are the result of joining code points together,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1336,
+      "text": "      \"text\": \" surrogate pair. Note that certain graphemes are the result of joining code points together,\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1341,
+      "text": "      \"text\": \"                    \\\"entity_mapping and supported_entities cannot be used together\\\"\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1346,
+      "text": "      \"text\": \"together different\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1351,
+      "text": "      \"text\": \"        efficient bulk_process method, which processes multiple documents together\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1356,
+      "text": "      \"text\": \"Ó pò wón pò (He mixed them together) Poo, adv.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1361,
+      "text": "      \"text\": \"Ó ré lé rè (He plastered his house) Ré, v.i. to be friendly together.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1366,
+      "text": "      \"text\": \"It will not splice together different exons to produce a coding sequence.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1371,
+      "text": "      \"text\": \"Elphinstone has, for many years, put together some very competitive sports teams.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1376,
+      "text": "      \"text\": \"No, one, single person can do it all but together we can make a difference.\""
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1381,
+      "text": "      \"text\": \"As the moonlight dances over sparkling waters, stroll the upper deck together under a brilliant canopy of glittering stars.\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/legacy_stack/.sisyphus/plans/lumis1-posttraining-execution.md",
+      "line": 477,
+      "text": "  - Category: `unspecified-high` - Reason: ratio preservation and legal compliance must be solved together."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/src/main.rs",
+      "line": 1189,
+      "text": " * Merge together M different suffix arrays (probably created with make-part)."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tutorials/walkthrough/README.md",
+      "line": 50,
+      "text": "Before we get started with DP-SGD and TF Privacy, we need to put together a"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tutorials/walkthrough/README.md",
+      "line": 437,
+      "text": "### Putting all the pieces together"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/README.md",
+      "line": 77,
+      "text": "The first file contains the entire Wiki40B test set smashed together, and the second file has the byte offset of where each individual training example begins, in sorted order."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/README.md",
+      "line": 131,
+      "text": "Each `dups` file is a list of pointers into the dataset that corresponds to sequences repeated multiple times. Each file has the duplicates that correspond to items A through B in the suffix array. There should be 28,464 total entries when added up across all of these files. The duplicates are all clustered together, so all duplicates of the same string should appear sequentially."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/README.md",
+      "line": 161,
+      "text": "### Collecting the duplicates together"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/README.md",
+      "line": 163,
+      "text": "The next step is to take all of the length-100 sequences we've found and collect them together to figure out what we should be removing from our dataset."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/README.md",
+      "line": 260,
+      "text": "This will run the entire deduplication pipeline top-to-bottom, starting with loading the wiki40b test set, then creating a suffix array, finding all repeated sequences, merging them together to sequence ranges, and finally spitting out a deduplicated TF Dataset that you can use exactly as normal."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/README.md",
+      "line": 292,
+      "text": "This script will build the suffix array in parallel by splitting the single file into chunks, generating suffix arrays for each chunk, and then merging the suffix arrays together to form the full suffix array. Note that in general this algorithm is quadratic, but when the maximum substring length is short relative to the total file length (as it is, when generating suffix arrays for N independent training examples) it will never reach this worst case behavior."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/dedup-text-datasets/README.md",
+      "line": 310,
+      "text": "to generate a collection of ordered suffix arrays pieces in the output directory. The final step just requires merging these together"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/cld3/src/script_span/utf8statetable.cc",
+      "line": 87,
+      "text": " * The check involves ORing together four 4-byte values that"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/cld3/CMakeLists.txt",
+      "line": 11,
+      "text": "message(WARNING \"Protobuf 2.5 and CLD3 seems happy together. This script does NOT check if your verison of protobuf is compatible.\")"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/privacy_tests/membership_inference_attack/privacy_report.py",
+      "line": 83,
+      "text": "  \"\"\"Adds metadata to the dataframe and concats them together.\"\"\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/privacy_tests/membership_inference_attack/codelabs/third_party/seq2seq_membership_inference/seq2seq_membership_inference_codelab.ipynb",
+      "line": 36,
+      "text": "        \"In this codelab we'll train a simple translation model on the SATED dataset which consists of sentences grouped together by a \\\"user\\\" (i.e. the person who spoke the sentences). We will then use a \\\"membership inference attack\\\" against this model to assess if the attacker is able to \\\"guess\\\" whether a particular user was present in the training set.\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/research/pate_2018/README.md",
+      "line": 35,
+      "text": "sensitivity analysis for several data-independent and data-dependent mechanism that together"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/estimators/v1/head.py",
+      "line": 28,
+      "text": "# Collect together all protected access items needed from base head."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/twitter-text/java/src/main/java/com/twitter/twittertext/TwitterTextConfiguration.java",
+      "line": 186,
+      "text": "   * surrogate pair. Note that certain graphemes are the result of joining code points together,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/twitter-text/java/docs/api/com/twitter/twittertext/TwitterTextConfiguration.html",
+      "line": 413,
+      "text": " surrogate pair. Note that certain graphemes are the result of joining code points together,"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/fast_gradient_clipping/registry_functions/dense.py",
+      "line": 36,
+      "text": "  for the kernel weights and bias vector together."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/research/instahide_attack_2020/step_5_reconstruct.py",
+      "line": 50,
+      "text": "    # Now combine them together to get the variance we can explain"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/fast_gradient_clipping/gradient_clipping_utils_test.py",
+      "line": 29,
+      "text": "  \"\"\"Generates two dense layers nested together.\"\"\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/fast_gradient_clipping/gradient_clipping_utils_test.py",
+      "line": 43,
+      "text": "  \"\"\"Generates three dense layers nested together.\"\"\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/research/instahide_attack_2020/step_4_final_graph.py",
+      "line": 34,
+      "text": "    # together can call it a day."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/fast_gradient_clipping/clip_grads_test.py",
+      "line": 28,
+      "text": "  \"\"\"Generates two dense layers nested together.\"\"\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/research/instahide_attack_2020/README.md",
+      "line": 39,
+      "text": "1. Run `step_1_create_graph.py`. Produce the similarity graph to pair together encoded images that share an original image."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/twitter-text/config/README.md",
+      "line": 74,
+      "text": "points together, such as by a zero-width joiner; unlike a surrogate"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/lingua/src/accuracyReport/resources/language-testdata/word-pairs/en.txt",
+      "line": 568,
+      "text": "together different"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/lingua/src/accuracyReport/resources/language-testdata/sentences/yo.txt",
+      "line": 845,
+      "text": "Ó pò wón pò (He mixed them together) Poo, adv."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/lingua/src/accuracyReport/resources/language-testdata/sentences/yo.txt",
+      "line": 849,
+      "text": "Ó ré lé rè (He plastered his house) Ré, v.i. to be friendly together."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/lingua/src/accuracyReport/resources/language-testdata/sentences/en.txt",
+      "line": 7,
+      "text": "It will not splice together different exons to produce a coding sequence."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/lingua/src/accuracyReport/resources/language-testdata/sentences/en.txt",
+      "line": 430,
+      "text": "Elphinstone has, for many years, put together some very competitive sports teams."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/lingua/src/accuracyReport/resources/language-testdata/sentences/en.txt",
+      "line": 636,
+      "text": "No, one, single person can do it all but together we can make a difference."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/lingua/src/accuracyReport/resources/language-testdata/sentences/en.txt",
+      "line": 953,
+      "text": "As the moonlight dances over sparkling waters, stroll the upper deck together under a brilliant canopy of glittering stars."
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/predefined_recognizers/ner/gliner_recognizer.py",
+      "line": 86,
+      "text": "                    \"entity_mapping and supported_entities cannot be used together\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/presidio-analyzer/presidio_analyzer/nlp_engine/stanza_nlp_engine.py",
+      "line": 91,
+      "text": "        efficient bulk_process method, which processes multiple documents together"
+    }
+  ],
+  "deepseek": [
+    {
+      "path": "./workspace/reports/pattern_hits_paths.json",
+      "line": 102,
+      "text": "  \"deepseek\": [],"
+    },
+    {
+      "path": "./workspace/reports/pattern_hits_full.json",
+      "line": 1384,
+      "text": "  \"deepseek\": [],"
+    }
+  ],
+  "requests.post": [
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/e2e-tests/common/methods.py",
+      "line": 23,
+      "text": "    response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/e2e-tests/common/methods.py",
+      "line": 37,
+      "text": "    response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/e2e-tests/common/methods.py",
+      "line": 54,
+      "text": "        response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/e2e-tests/common/methods.py",
+      "line": 58,
+      "text": "        response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/e2e-tests/common/methods.py",
+      "line": 64,
+      "text": "    response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/example_remote_recognizer.py",
+      "line": 80,
+      "text": "        response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/redacting-telemetry/app/presidio_client.py",
+      "line": 23,
+      "text": "        response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/redacting-telemetry/app/presidio_client.py",
+      "line": 46,
+      "text": "        response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/client.py",
+      "line": 24,
+      "text": "    response = requests.post(url, json=body)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/client.py",
+      "line": 32,
+      "text": "    response = requests.post("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/hybrid_presidio_service.py",
+      "line": 40,
+      "text": "            analyze_response = requests.post(analyze_url, json=analyze_payload)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/http_presidio_service.py",
+      "line": 33,
+      "text": "            analyze_response = requests.post(analyze_url, json=analyze_payload)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/api/services/presidio/http_presidio_service.py",
+      "line": 45,
+      "text": "            anonymize_response = requests.post(anonymize_url, json=anonymize_payload)"
+    }
+  ],
+  "client.chat.completions": [
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/docker/litellm.md",
+      "line": 154,
+      "text": "chat_completion = client.chat.completions.create("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/python/synth_data_with_openai.ipynb",
+      "line": 93,
+      "text": "    \"    completion = client.chat.completions.create(\\n\","
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/presidio/docs/samples/deployments/openai-anonymaztion-and-deanonymaztion-best-practices/src/client_app/client.py",
+      "line": 50,
+      "text": "    response = client.chat.completions.create("
+    }
+  ],
+  "generate(": [
+    {
+      "path": "./notebooks/60_eval_export_smoke.ipynb",
+      "line": 16,
+      "text": "        \"from __future__ import annotations\\n\\nimport json\\nfrom pathlib import Path\\n\\nfrom lumis1.export_smoke import run_export_smoke\\n\\nREPO_ROOT = Path.cwd().resolve()\\nREPORTS = REPO_ROOT / \\\"workspace\\\" / \\\"reports\\\"\\nREPORTS.mkdir(parents=True, exist_ok=True)\\n\\nRUN_EVAL = False\\nRUN_EXPORT = False\\n\\nMODEL_DIR = REPO_ROOT / \\\"workspace\\\" / \\\"runs\\\" / \\\"dpo\\\" / \\\"latest\\\"\\nGGUF_DIR = REPO_ROOT / \\\"workspace\\\" / \\\"runs\\\" / \\\"export_gguf\\\"\\n\\nidentity_prompts = [\\n    \\\"What is your name?\\\",\\n    \\\"Who created you?\\\",\\n]\\nneutral_prompts = [\\n    \\\"Summarize this paragraph in one sentence.\\\",\\n    \\\"What is the weather process for rain formation?\\\",\\n    \\\"Rewrite this sentence in simpler English.\\\",\\n]\\nno_image_prompts = [\\n    \\\"Describe the image.\\\",\\n    \\\"What objects are visible here?\\\",\\n]\\n\\nresults = {\\n    \\\"run_eval\\\": RUN_EVAL,\\n    \\\"run_export\\\": RUN_EXPORT,\\n    \\\"checks\\\": {\\n        \\\"identity_correctness\\\": {\\\"status\\\": \\\"skipped\\\"},\\n        \\\"self_branding_rate\\\": {\\\"status\\\": \\\"skipped\\\"},\\n        \\\"vision_hallucination_on_no_image\\\": {\\\"status\\\": \\\"skipped\\\"},\\n        \\\"multimodal_correctness\\\": {\\\"status\\\": \\\"skipped\\\"},\\n    },\\n}\\n\\nif RUN_EVAL:\\n    from transformers import AutoModelForCausalLM, AutoTokenizer\\n    import torch\\n\\n    if not MODEL_DIR.exists():\\n        raise FileNotFoundError(f\\\"model dir not found: {MODEL_DIR}\\\")\\n\\n    tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)\\n    model = AutoModelForCausalLM.from_pretrained(MODEL_DIR, torch_dtype=torch.bfloat16)\\n    model.eval()\\n\\n    def generate(prompt: str, max_new_tokens: int = 128) -> str:\\n        toks = tokenizer(prompt, return_tensors=\\\"pt\\\")\\n        with torch.no_grad():\\n            out = model.generate(**toks, max_new_tokens=max_new_tokens)\\n        return tokenizer.decode(out[0], skip_special_tokens=True)\\n\\n    identity_outputs = [generate(p) for p in identity_prompts]\\n    identity_ok = all(\\n        (\\\"Lumis-1\\\" in t or \\\"Lumis\\\" in t) and (\\\"Eptesicus\\\" in t)\\n        for t in identity_outputs\\n    )\\n    results[\\\"checks\\\"][\\\"identity_correctness\\\"] = {\\n        \\\"status\\\": \\\"pass\\\" if identity_ok else \\\"fail\\\",\\n        \\\"outputs\\\": identity_outputs,\\n    }\\n\\n    neutral_outputs = [generate(p) for p in neutral_prompts]\\n    brand_hits = sum(1 for t in neutral_outputs if (\\\"Lumis\\\" in t or \\\"Eptesicus\\\" in t))\\n    results[\\\"checks\\\"][\\\"self_branding_rate\\\"] = {\\n        \\\"status\\\": \\\"pass\\\",\\n        \\\"rate\\\": brand_hits / max(len(neutral_outputs), 1),\\n        \\\"outputs\\\": neutral_outputs,\\n    }\\n\\n    no_image_outputs = [generate(p) for p in no_image_prompts]\\n    hallucination_hits = sum(1 for t in no_image_outputs if \\\"image\\\" not in t.lower() and \\\"can't\\\" not in t.lower())\\n    results[\\\"checks\\\"][\\\"vision_hallucination_on_no_image\\\"] = {\\n        \\\"status\\\": \\\"pass\\\" if hallucination_hits == 0 else \\\"warn\\\",\\n        \\\"hallucination_hits\\\": hallucination_hits,\\n        \\\"outputs\\\": no_image_outputs,\\n    }\\n\\n    eval_mm_path = REPO_ROOT / \\\"workspace\\\" / \\\"reports\\\" / \\\"eval_multimodal_prompts.json\\\"\\n    if eval_mm_path.exists():\\n        mm_items = json.loads(eval_mm_path.read_text(encoding=\\\"utf-8\\\"))\\n        results[\\\"checks\\\"][\\\"multimodal_correctness\\\"] = {\\n            \\\"status\\\": \\\"manual_review_required\\\",\\n            \\\"items_loaded\\\": len(mm_items),\\n        }\\n    else:\\n        results[\\\"checks\\\"][\\\"multimodal_correctness\\\"] = {\\n            \\\"status\\\": \\\"skipped\\\",\\n            \\\"reason\\\": \\\"workspace/reports/eval_multimodal_prompts.json not provided\\\",\\n        }\\n\\nparity_pairs_path = REPORTS / \\\"template_parity_pairs.json\\\"\\nparity_pairs = []\\nif parity_pairs_path.exists():\\n    parity_pairs = json.loads(parity_pairs_path.read_text(encoding=\\\"utf-8\\\"))\\n\\nif RUN_EXPORT and not GGUF_DIR.exists():\\n    raise FileNotFoundError(\\n        f\\\"RUN_EXPORT is true but GGUF dir is missing: {GGUF_DIR}\\\"\\n    )\\n\\nif GGUF_DIR.exists() and parity_pairs:\\n    results[\\\"export_smoke\\\"] = run_export_smoke(GGUF_DIR, parity_pairs)\\nelif GGUF_DIR.exists():\\n    results[\\\"export_smoke\\\"] = {\\n        \\\"status\\\": \\\"partial\\\",\\n        \\\"reason\\\": \\\"GGUF dir exists but template_parity_pairs.json missing\\\",\\n    }\\nelse:\\n    results[\\\"export_smoke\\\"] = {\\n        \\\"status\\\": \\\"skipped\\\",\\n        \\\"reason\\\": \\\"GGUF export directory not found\\\",\\n    }\\n\\nout = REPORTS / \\\"export_smoke.json\\\"\\nout.write_text(json.dumps(results, indent=2), encoding=\\\"utf-8\\\")\\nprint(json.dumps(results, indent=2))\\nprint(f\\\"saved: {out}\\\")\\n\""
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/twitter-text/objc/Rakefile",
+      "line": 41,
+      "text": "        s = JSON.pretty_generate(content)"
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/optimizers/dp_optimizer_keras_sparse_distributed_test.py",
+      "line": 36,
+      "text": "  @ds_combinations.generate("
+    },
+    {
+      "path": "./archive/legacy_generated/pre_2026_03_04_rebuild/Dataset/output/oss_refs/tf-privacy/tensorflow_privacy/privacy/keras_models/dp_keras_model_distributed_test.py",
+      "line": 64,
+      "text": "  @ds_combinations.generate("
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "type": "language_manifest",
+  "total_rows": 100000,
+  "language_breakdown": {
+    "ar": 9987,
+    "bg": 9947,
+    "de": 9864,
+    "en": 10136,
+    "es": 10065,
+    "fr": 10030,
+    "it": 9925,
+    "pt": 10119,
+    "ru": 9890,
+    "zh": 10037
+  },
+  "language_share": {
+    "de": 9.86,
+    "zh": 10.04,
+    "en": 10.14,
+    "ru": 9.89,
+    "ar": 9.99,
+    "fr": 10.03,
+    "es": 10.06,
+    "it": 9.93,
+    "pt": 10.12,
+    "bg": 9.95
+  },
+  "required_languages_coverage": {
+    "en": true,
+    "bg": true,
+    "es": true,
+    "fr": true,
+    "de": true,
+    "pt": true,
+    "it": true,
+    "ar": true,
+    "ru": true,
+    "zh": true
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "run_id": "identity-20260303T162023Z",
+  "generated_at_utc": "2026-03-03T16:26:29.607694+00:00",
+  "status": "completed",
+  "counts": {
+    "sft_rows_generated": 100000,
+    "preference_pairs_generated": 25000,
+    "candidate_count": 0
+  },
+  "sft_target": 100000,
+  "pair_target": 25000,
+  "within_targets": true,
+  "category_manifest": {
+    "type": "category_manifest",
+    "total_rows": 100000,
+    "category_breakdown": {
+      "adversarial_identity_pressure": 14920,
+      "capability_honesty": 10053,
+      "direct_identity_qa": 19588,
+      "indirect_identity_paraphrase": 19989,
+      "multilingual_identity": 10214,
+      "multimodal_identity": 10058,
+      "tone_style_control": 15178
+    },
+    "category_share": {
+      "indirect_identity_paraphrase": 19.99,
+      "tone_style_control": 15.18,
+      "capability_honesty": 10.05,
+      "multilingual_identity": 10.21,
+      "adversarial_identity_pressure": 14.92,
+      "multimodal_identity": 10.06,
+      "direct_identity_qa": 19.59
+    }
+  },
+  "language_manifest": {
+    "type": "language_manifest",
+    "total_rows": 100000,
+    "language_breakdown": {
+      "ar": 9987,
+      "bg": 9947,
+      "de": 9864,
+      "en": 10136,
+      "es": 10065,
+      "fr": 10030,
+      "it": 9925,
+      "pt": 10119,
+      "ru": 9890,
+      "zh": 10037
+    },
+    "language_share": {
+      "de": 9.86,
+      "zh": 10.04,
+      "en": 10.14,
+      "ru": 9.89,
+      "ar": 9.99,
+      "fr": 10.03,
+      "es": 10.06,
+      "it": 9.93,
+      "pt": 10.12,
+      "bg": 9.95
+    },
+    "required_languages_coverage": {
+      "en": true,
+      "bg": true,
+      "es": true,
+      "fr": true,
+      "de": true,
+      "pt": true,
+      "it": true,
+      "ar": true,
+      "ru": true,
+      "zh": true
+    }
+  },
+  "multimodal_manifest": {
+    "type": "multimodal_manifest",
+    "total_rows": 100000,
+    "multimodal_rows": 9515,
+    "text_only_rows": 90485,
+    "multimodal_share": 9.515,
+    "multimodal_breakdown": {
+      "multimodal": 9515,
+      "text_only": 90485
+    }
+  },
+  "filter_stats": {
+    "source": "chunked_supervisor"
+  },
+  "quality_warnings": [
+    "Deterministic deterministic chunks with local worker validation."
+  ]
+}

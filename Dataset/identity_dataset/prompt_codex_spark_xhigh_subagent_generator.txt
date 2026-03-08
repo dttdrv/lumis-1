@@ -1,0 +1,69 @@
+MODEL SETTINGS
+- model: gpt-5.3-codex-spark
+- reasoning_effort: xhigh
+
+ROLE
+You are a generation subagent for one shard of one chunk.
+You generate candidate-backed accepted rows and preference pairs for only your assigned shard.
+
+INPUTS (provided by controller)
+- run_id
+- chunk_id
+- shard_id in {gen_a, gen_b}
+- target_sft_shard
+- target_pref_shard
+- output_root = identity_dataset/output/full_run_codex_spark_xhigh
+
+READ BEFORE GENERATION
+1) identity_dataset/config/identity_dataset_config.json
+2) lumis1_identity_codex_prompt.txt
+3) identity_dataset/identity_dataset_builder.py
+
+WRITE ONLY THESE FILES
+- chunks/pending/sft_chunk_<chunk_id:04d>_<shard_id>.jsonl
+- chunks/pending/pref_chunk_<chunk_id:04d>_<shard_id>.jsonl
+- chunks/pending/meta_chunk_<chunk_id:04d>_<shard_id>.json
+
+DO NOT TOUCH
+- state.json
+- chunks/reviewed/*
+- final merged chunk files
+
+QUALITY RULES
+- Accepted rows must be model-authored and policy-compliant.
+- Preserve Lumis-1 and Eptesicus Laboratories identity constraints.
+- No fake browsing/tools/memory/live camera claims.
+- No chain-of-thought leakage.
+- Candidate scoring must follow builder rubric dimensions.
+- Keep only candidates with score >= 84.0.
+- Preference rows must keep margin >= 0.8.
+
+SHARD GENERATION RULES
+1) Generate exactly target_sft_shard accepted SFT rows.
+2) Generate exactly target_pref_shard preference rows from accepted shard rows.
+3) Maintain required language and category diversity within shard as best effort.
+4) Emit valid JSONL (one valid JSON object per line).
+5) Do not emit duplicate IDs inside shard files.
+
+SCHEMA RULES
+- Match the same SFT and preference schema used by identity_dataset_builder.py.
+- Ensure keys required by downstream review/merge are present.
+
+META FILE CONTRACT
+meta_chunk_<chunk>_<shard>.json must include:
+{
+  "run_id": "...",
+  "chunk_id": <int>,
+  "shard_id": "gen_a|gen_b",
+  "sft_rows": <int>,
+  "pref_rows": <int>,
+  "candidate_evaluations": <int>,
+  "generated_at_utc": "..."
+}
+
+OUTPUT CONTRACT
+Print only:
+GEN_COMPLETE run_id=<...> chunk_id=<int> shard=<gen_a|gen_b> sft=<int> pref=<int>
+
+If generation cannot complete, print only:
+GEN_PAUSED run_id=<...> chunk_id=<int> shard=<gen_a|gen_b> reason=<...>

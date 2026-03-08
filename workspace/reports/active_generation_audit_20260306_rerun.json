@@ -1,0 +1,2547 @@
+{
+  "active_status": "ACTIVE_PIPELINE_NO_GENERATION_PATHS_FOUND",
+  "active_scan_dirs": [
+    "notebooks",
+    "configs",
+    "lumis1",
+    "scripts"
+  ],
+  "legacy_scan_dirs": [
+    "archive"
+  ],
+  "active_summary": {
+    "line_counts": {
+      "openai": 0,
+      "anthropic": 0,
+      "nvidia": 9,
+      "together": 0,
+      "deepseek": 0,
+      "requests.post": 0,
+      "client.chat.completions": 0,
+      "generate(": 1
+    },
+    "file_counts": {
+      "openai": 0,
+      "anthropic": 0,
+      "nvidia": 4,
+      "together": 0,
+      "deepseek": 0,
+      "requests.post": 0,
+      "client.chat.completions": 0,
+      "generate(": 1
+    },
+    "violation_line_count": 0
+  },
+  "legacy_summary": {
+    "line_counts": {
+      "openai": 325,
+      "anthropic": 3,
+      "nvidia": 103,
+      "together": 33,
+      "deepseek": 0,
+      "requests.post": 13,
+      "client.chat.completions": 3,
+      "generate(": 2
+    },
+    "file_counts": {
+      "openai": 34,
+      "anthropic": 3,
+      "nvidia": 44,
+      "together": 21,
+      "deepseek": 0,
+      "requests.post": 6,
+      "client.chat.completions": 3,
+      "generate(": 2
+    },
+    "violation_line_count": 377
+  },
+  "active_hits": {
+    "openai": [],
+    "anthropic": [],
+    "nvidia": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\dataset_mixture.yaml",
+        "line": 76,
+        "line_text": "- source_id: \"nvidia/HelpSteer3\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\dataset_mixture.yaml",
+        "line": 111,
+        "line_text": "- \"nvidia/HelpSteer3\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\dataset_sources_allowlist.yaml",
+        "line": 60,
+        "line_text": "- source_id: \"nvidia/HelpSteer3\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\dataset_sources_allowlist.yaml",
+        "line": 68,
+        "line_text": "link: \"https://huggingface.co/datasets/nvidia/HelpSteer3\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\dataset_sources_allowlist.yaml",
+        "line": 147,
+        "line_text": "- source_id: \"nvidia/Nemotron-Post-Training-Dataset-v2\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\dataset_sources_allowlist.yaml",
+        "line": 157,
+        "line_text": "link: \"https://huggingface.co/datasets/nvidia/Nemotron-Post-Training-Dataset-v2\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\license_policy.yaml",
+        "line": 46,
+        "line_text": "- source_id: \"nvidia/Nemotron-Post-Training-Dataset-v2\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\license_policy.yaml",
+        "line": 48,
+        "line_text": "- source_id: \"nvidia/HelpSteer3\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\configs\\train_dpo.yaml",
+        "line": 41,
+        "line_text": "helpsteer3_path_hint: \"nvidia/HelpSteer3\""
+      }
+    ],
+    "together": [],
+    "deepseek": [],
+    "requests.post": [],
+    "client.chat.completions": [],
+    "generate(": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\notebooks\\60_eval_export_smoke.ipynb",
+        "line": 16,
+        "line_text": "\"from __future__ import annotations\\n\\nimport json\\nfrom pathlib import Path\\n\\nfrom lumis1.export_smoke import run_export_smoke\\n\\nREPO_ROOT = Path.cwd().resolve()\\nREPORTS = REPO_ROOT / \\\"workspace\\\" / \\\"reports\\\"\\nREPORTS.mkdir(parents=T"
+      }
+    ]
+  },
+  "legacy_hits": {
+    "openai": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 719,
+        "line_text": "- https://build.nvidia.com/openai/gpt-oss-120b/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\notepads\\lumis1-posttraining-execution\\learnings.md",
+        "line": 15,
+        "line_text": "- Task 11 teacher gateway validation is fail-closed when config enforces `gateway.mode=\"instant\"` and `thinking_disabled=true` while requiring OpenAI-style multimodal user parts (`text`, `image_url`)."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\CHANGELOG.md",
+        "line": 37,
+        "line_text": "- Azure OpenAI support for LangExtract recognizer with managed identity authentication for GPT-4o, GPT-4, etc. (#1801) (Thanks @dorlugasigal)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\CHANGELOG.md",
+        "line": 263,
+        "line_text": "- (Docs) Use Presidio across Anthropic, Bedrock, VertexAI, Azure OpenAI, etc. with LiteLLM Proxy (#1421) (Thanks @krrishdholakia)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\mkdocs.yml",
+        "line": 103,
+        "line_text": "- Synthetic data generation with OpenAI: samples/python/synth_data_with_openai.ipynb"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\mkdocs.yml",
+        "line": 141,
+        "line_text": "samples/python/streamlit/openai_fake_data_generator.py"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\research\\pate_2017\\README.md",
+        "line": 70,
+        "line_text": "by cloning the [improved-gan](https://github.com/openai/improved-gan)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\research\\pate_2017\\train_student_mnist_250_lap_20_count_50_epochs_600.sh",
+        "line": 17,
+        "line_text": "# Be sure to clone https://github.com/openai/improved-gan"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\pyproject.toml",
+        "line": 66,
+        "line_text": "\"openai (>=1.50.0)\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 20,
+        "line_text": "- **Azure OpenAI** - Cloud-based deployment with enterprise features"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 35,
+        "line_text": "**Azure OpenAI** (cloud models):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 38,
+        "line_text": "from presidio_analyzer.predefined_recognizers import AzureOpenAILangExtractRecognizer"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 41,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 43,
+        "line_text": "azure_endpoint=\"https://your-resource.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 47,
+        "line_text": "# Or use environment variables (AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 48,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 53,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 56,
+        "line_text": "azure_endpoint=\"https://your-resource.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 11,
+        "line_text": "import openai"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 12,
+        "line_text": "from presidio_analyzer.predefined_recognizers import AzureOpenAILangExtractRecognizer"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 13,
+        "line_text": "from presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider import AzureOpenAILanguageModel"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 31,
+        "line_text": "class TestAzureOpenAILangExtractRecognizerInitialization:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 32,
+        "line_text": "\"\"\"Test AzureOpenAILangExtractRecognizer initialization and configuration loading.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 41,
+        "line_text": "AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 43,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 53,
+        "line_text": "\"type\": \"AzureOpenAILangExtractRecognizer\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 66,
+        "line_text": "\"azure_openai\": {"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 78,
+        "line_text": "if not k.startswith('AZURE_OPENAI')}"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 82,
+        "line_text": "AzureOpenAILangExtractRecognizer(config_path=str(config_file))"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 85,
+        "line_text": "class TestAzureOpenAILangExtractRecognizerUsage:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 91,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 93,
+        "line_text": "azure_endpoint=\"https://test-resource.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 98,
+        "line_text": "assert recognizer.azure_endpoint == \"https://test-resource.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 104,
+        "line_text": "\"AZURE_OPENAI_ENDPOINT\": \"https://test-resource.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 105,
+        "line_text": "\"AZURE_OPENAI_API_KEY\": \"PLACEHOLDER_NOT_A_REAL_KEY\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 109,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 114,
+        "line_text": "assert recognizer.azure_endpoint == \"https://test-resource.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 119,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 121,
+        "line_text": "azure_endpoint=\"https://test-resource.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 135,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 137,
+        "line_text": "azure_endpoint=\"https://test-resource.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 151,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 153,
+        "line_text": "azure_endpoint=\"https://test-resource.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 163,
+        "line_text": "class TestAzureOpenAILangExtractRecognizerCallMethod:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 168,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 170,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 193,
+        "line_text": "assert call_kwargs[\"language_model_params\"][\"azure_endpoint\"] == \"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 199,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 201,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 222,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 224,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 250,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 252,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 267,
+        "line_text": "class TestAzureOpenAIProvider:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 268,
+        "line_text": "\"\"\"Test the internal Azure OpenAI provider implementation.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 272,
+        "line_text": "with patch.object(openai, 'AzureOpenAI') as mock_client:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 273,
+        "line_text": "provider = AzureOpenAILanguageModel("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 276,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 281,
+        "line_text": "assert provider.azure_endpoint == \"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 287,
+        "line_text": "with patch.object(openai, 'AzureOpenAI'):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 288,
+        "line_text": "provider = AzureOpenAILanguageModel("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 291,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 300,
+        "line_text": "env_without_endpoint = {k: v for k, v in os.environ.items() if k != 'AZURE_OPENAI_ENDPOINT'}"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 302,
+        "line_text": "with pytest.raises(ValueError, match=\"Azure OpenAI endpoint is required\"):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 303,
+        "line_text": "AzureOpenAILanguageModel("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 310,
+        "line_text": "with patch.dict(os.environ, {'ENV': 'development', 'AZURE_OPENAI_ENDPOINT': 'https://test.openai.azure.com/'}):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 311,
+        "line_text": "with patch.object(openai, 'AzureOpenAI'):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 312,
+        "line_text": "with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.get_bearer_token_provider_for_scope') as mock_token_provider:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 314,
+        "line_text": "AzureOpenAILanguageModel(model_id=\"gpt-4o\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 322,
+        "line_text": "env_vars = {'AZURE_OPENAI_ENDPOINT': 'https://test.openai.azure.com/'}"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 327,
+        "line_text": "with patch.object(openai, 'AzureOpenAI'):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 328,
+        "line_text": "with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.get_bearer_token_provider_for_scope') as mock_token_provider:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 330,
+        "line_text": "AzureOpenAILanguageModel(model_id=\"gpt-4o\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 340,
+        "line_text": "with patch.object(openai, 'AzureOpenAI') as mock_client:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 341,
+        "line_text": "AzureOpenAILanguageModel("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 343,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 353,
+        "line_text": "with patch.object(openai, 'AzureOpenAI'):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 354,
+        "line_text": "provider = AzureOpenAILanguageModel("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 357,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 365,
+        "line_text": "with patch('presidio_analyzer.predefined_recognizers.third_party.azure_openai_provider.AZURE_IDENTITY_AVAILABLE', False):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 366,
+        "line_text": "with patch.object(openai, 'AzureOpenAI') as mock_client:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 368,
+        "line_text": "AzureOpenAILanguageModel("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 370,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 375,
+        "line_text": "class TestAzureOpenAILangExtractRecognizerParameterConfiguration:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 400,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 402,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 434,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 436,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 467,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 469,
+        "line_text": "azure_endpoint=\"https://test.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\tests\\test_azure_openai_langextract_recognizer.py",
+        "line": 499,
+        "line_text": "assert call_kwargs[\"language_model_params\"][\"azure_endpoint\"] == \"https://test.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\conf\\langextract_config_azureopenai.yaml",
+        "line": 1,
+        "line_text": "# Azure OpenAI Configuration for LangExtract"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\conf\\langextract_config_basic.yaml",
+        "line": 52,
+        "line_text": "#    name: \"openai\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\llm_utils\\azure_auth_helper.py",
+        "line": 77,
+        "line_text": "This is commonly used with Azure OpenAI and other Azure Cognitive Services"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\llm_utils\\config_loader.py",
+        "line": 81,
+        "line_text": ":param provider_key: Provider key (e.g., \"openai\", \"ollama\")."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\__init__.py",
+        "line": 109,
+        "line_text": "from .third_party.azure_openai_langextract_recognizer import ("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\__init__.py",
+        "line": 110,
+        "line_text": "AzureOpenAILangExtractRecognizer,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\__init__.py",
+        "line": 192,
+        "line_text": "\"AzureOpenAILangExtractRecognizer\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 1,
+        "line_text": "\"\"\"Azure OpenAI LangExtract Recognizer for PII/PHI detection.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 23,
+        "line_text": "azure_openai_provider,  # noqa: F401 - imported for side effects (registration)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 32,
+        "line_text": "AZURE_OPENAI_DOCS_URL = \"https://learn.microsoft.com/en-us/azure/ai-services/openai/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 35,
+        "line_text": "class AzureOpenAILangExtractRecognizer(LangExtractRecognizer):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 37,
+        "line_text": "Concrete implementation of LangExtract recognizer using Azure OpenAI backend."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 39,
+        "line_text": "Provides Azure OpenAI-specific functionality including:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 40,
+        "line_text": "- Azure OpenAI endpoint and API key configuration"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 43,
+        "line_text": "- Integration with custom Azure OpenAI provider via LangExtract registry"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 51,
+        "line_text": "/ \"langextract_config_azureopenai.yaml\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 62,
+        "line_text": "name: str = \"Azure OpenAI LangExtract PII\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 65,
+        "line_text": "Initialize Azure OpenAI LangExtract recognizer for PII/PHI detection."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 67,
+        "line_text": "Note: Azure OpenAI endpoint and API configuration are not validated"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 73,
+        "line_text": "2. Environment variables (AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 74,
+        "line_text": "AZURE_OPENAI_API_VERSION)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 80,
+        "line_text": ":param model_id: Azure OpenAI deployment name (e.g., \"gpt-4\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 84,
+        "line_text": ":param azure_endpoint: Azure OpenAI endpoint URL (overrides env var)."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 85,
+        "line_text": ":param api_key: Azure OpenAI API key (overrides env var). If not"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 87,
+        "line_text": ":param api_version: Azure OpenAI API version (optional, defaults to"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 92,
+        "line_text": ":raises ValueError: If Azure OpenAI endpoint is not provided via"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 102,
+        "line_text": "self.azure_endpoint = azure_endpoint or os.environ.get(\"AZURE_OPENAI_ENDPOINT\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 105,
+        "line_text": "self.api_key = api_key or os.environ.get(\"AZURE_OPENAI_API_KEY\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 108,
+        "line_text": "or os.environ.get(\"AZURE_OPENAI_API_VERSION\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 131,
+        "line_text": "Validate that Azure OpenAI endpoint is provided."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 133,
+        "line_text": ":param azure_endpoint: Azure OpenAI endpoint URL."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 138,
+        "line_text": "\"Azure OpenAI endpoint is required. Provide 'azure_endpoint' parameter \""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 139,
+        "line_text": "f\"or set AZURE_OPENAI_ENDPOINT environment variable.\\n\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 140,
+        "line_text": "f\"See {AZURE_OPENAI_DOCS_URL} for details.\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_langextract_recognizer.py",
+        "line": 144,
+        "line_text": "\"\"\"Return Azure OpenAI-specific params.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 1,
+        "line_text": "\"\"\"Azure OpenAI Provider for LangExtract.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 9,
+        "line_text": "import openai"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 10,
+        "line_text": "from langextract.providers.openai import OpenAILanguageModel"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 11,
+        "line_text": "LANGEXTRACT_OPENAI_AVAILABLE = True"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 13,
+        "line_text": "LANGEXTRACT_OPENAI_AVAILABLE = False"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 15,
+        "line_text": "OpenAILanguageModel = None"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 16,
+        "line_text": "openai = None"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 32,
+        "line_text": "if LANGEXTRACT_OPENAI_AVAILABLE:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 33,
+        "line_text": "class AzureOpenAILanguageModel(OpenAILanguageModel):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 35,
+        "line_text": "Custom LangExtract provider for Azure OpenAI."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 37,
+        "line_text": "This provider extends OpenAILanguageModel to support Azure-specific"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 56,
+        "line_text": "Initialize Azure OpenAI provider."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 58,
+        "line_text": ":param model_id: Azure OpenAI deployment name or model identifier."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 59,
+        "line_text": ":param api_key: Azure OpenAI API key (or set AZURE_OPENAI_API_KEY"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 62,
+        "line_text": ":param azure_endpoint: Azure OpenAI endpoint URL"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 63,
+        "line_text": "(or set AZURE_OPENAI_ENDPOINT env var)."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 64,
+        "line_text": ":param api_version: Azure OpenAI API version"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 65,
+        "line_text": "(or set AZURE_OPENAI_API_VERSION env var)."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 78,
+        "line_text": "self.api_key = api_key or os.environ.get(\"AZURE_OPENAI_API_KEY\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 87,
+        "line_text": "\"AZURE_OPENAI_ENDPOINT\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 90,
+        "line_text": "\"AZURE_OPENAI_API_VERSION\", \"2024-02-15-preview\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 94,
+        "line_text": "# Validate and initialize Azure OpenAI client"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 95,
+        "line_text": "self._client = self._create_azure_openai_client("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 99,
+        "line_text": "def _create_azure_openai_client("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 104,
+        "line_text": "Create and configure Azure OpenAI client with appropriate authentication."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 107,
+        "line_text": ":return: Configured AzureOpenAI client instance"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 113,
+        "line_text": "\"Azure OpenAI endpoint is required. Set AZURE_OPENAI_ENDPOINT \""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 137,
+        "line_text": "client = openai.AzureOpenAI("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 144,
+        "line_text": "f\"Initialized Azure OpenAI provider with {credential_type}\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 148,
+        "line_text": "client = openai.AzureOpenAI("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 155,
+        "line_text": "\"Initialized Azure OpenAI provider with API key authentication\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 163,
+        "line_text": "For Azure OpenAI, this is the deployment name, not the base model name."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 169,
+        "line_text": "class AzureOpenAILanguageModel:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 174,
+        "line_text": "\"LangExtract with OpenAI support is not installed. \""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 175,
+        "line_text": "\"Install it with: pip install presidio-analyzer[langextract,openai] \""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 176,
+        "line_text": "\"or: pip install langextract[openai]\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 181,
+        "line_text": "if LANGEXTRACT_OPENAI_AVAILABLE:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 187,
+        "line_text": "class RegisteredAzureOpenAILanguageModel(AzureOpenAILanguageModel):"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 189,
+        "line_text": "Registered version of Azure OpenAI provider for LangExtract."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 197,
+        "line_text": "logger.debug(\"Azure OpenAI provider registered with LangExtract\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\azure_openai_provider.py",
+        "line": 199,
+        "line_text": "logger.error(f\"Failed to register Azure OpenAI provider: {e}\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\__init__.py",
+        "line": 5,
+        "line_text": "from .azure_openai_langextract_recognizer import AzureOpenAILangExtractRecognizer"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\third_party\\__init__.py",
+        "line": 11,
+        "line_text": "\"AzureOpenAILangExtractRecognizer\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\index.md",
+        "line": 29,
+        "line_text": "| Usage | Text      | Python file                            | [Synthetic data generation with OpenAI](python/synth_data_with_openai.ipynb)|"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\index.md",
+        "line": 39,
+        "line_text": "| Deployment | | Data Protection toolkit for OpenAI          | [Data Protection toolkit for OpenAI](deployments/openai-anonymaztion-and-deanonymaztion-best-practices/index.md)|"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\index.md",
+        "line": 7,
+        "line_text": "- [Data Protection toolkit for OpenAI](openai-anonymaztion-and-deanonymaztion-best-practices/index.md)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 1,
+        "line_text": "# LiteLLM (OpenAI Proxy) with Presidio"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 20,
+        "line_text": "export OPENAI_API_KEY=\"sk-...\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 27,
+        "line_text": "- model_name: my-openai-model ### RECEIVED MODEL NAME ###"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 146,
+        "line_text": "from openai import OpenAI"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 148,
+        "line_text": "client = OpenAI("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 150,
+        "line_text": "api_key=os.environ.get(\"OPENAI_API_KEY\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 216,
+        "line_text": "api_key: os.environ/OPENAI_API_KEY"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 14,
+        "line_text": "\"!pip install openai pandas\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 24,
+        "line_text": "\"###### Path to notebook: [https://www.github.com/microsoft/presidio/blob/main/docs/samples/python/synth_data_with_openai.ipynb](https://www.github.com/microsoft/presidio/blob/main/docs/samples/python/synth_data_with_openai.ipynb)\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 33,
+        "line_text": "\"# Use Presidio + OpenAI to turn real text into fake text\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 35,
+        "line_text": "\"This notebook uses Presidio to turn text with PII into text where PII entities are replaced with placeholders, e.g. \\\"`My name is David`\\\" turns into \\\"`My name is {{PERSON}}`\\\". Then, it calls the OpenAI API to create a fake record which "
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 43,
+        "line_text": "\"Note that OpenAI completion models could possibly detect PII values and replace them in one call, but it is suggested to validate that all PII entities are indeed detected.\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 45,
+        "line_text": "\"## Imports and set up OpenAI Key\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 59,
+        "line_text": "\"from openai import OpenAI\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 63,
+        "line_text": "\"client = OpenAI(\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 64,
+        "line_text": "\"    api_key=os.environ.get(\\\"OPENAI_API_KEY\\\"),\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 66,
+        "line_text": "\"#Or put explicitly in notebook. Find out more here: https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 75,
+        "line_text": "\"## Define request for the OpenAI service\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 86,
+        "line_text": "\"    \\\"\\\"\\\"Creates a request for the OpenAI Completion service and returns the response.\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 89,
+        "line_text": "\"    :param model: OpenAI model name\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 718,
+        "line_text": "\"This notebook demonstrates how to leverage OpenAI models for fake/surrogate data generation. It uses Presidio to first de-identify data (as de-identification might be required prior to passing the model to OpenAI), and then uses OpenAI com"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 28,
+        "line_text": "1. **Azure OpenAI** - Cloud-based Azure OpenAI Service (GPT-4o, GPT-4, GPT-3.5-turbo, etc.)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 31,
+        "line_text": "## Choosing Between Azure OpenAI and Ollama"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 33,
+        "line_text": "| Feature | Azure OpenAI | Ollama |"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 45,
+        "line_text": "- **Use Azure OpenAI** for production workloads requiring enterprise security, compliance (HIPAA, SOC 2, etc.), and managed infrastructure"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 54,
+        "line_text": "- **`AzureOpenAILangExtractRecognizer`**: Concrete implementation for Azure OpenAI Service"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 55,
+        "line_text": "- [Implementation](https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/predefined_recognizers/third_party/azure_openai_langextract_recognizer.py)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 56,
+        "line_text": "- **`BasicLangExtractRecognizer`**: Concrete implementation where ModelConfig is configured from YAML (supporting Ollama, OpenAI, Gemini, and other providers)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 61,
+        "line_text": "## Using Azure OpenAI (Cloud Models)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 63,
+        "line_text": "Azure OpenAI provides cloud-based access to OpenAI models (GPT-4o, GPT-4, GPT-3.5-turbo) with enterprise security and compliance features."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 171,
+        "line_text": "- **`provider.name`**: The model provider (eg, ollama, openai)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 172,
+        "line_text": "- **`provider.kwargs`**: kwargs to pass to the model provider (eg, `model_url` for Ollama, `base_url` for OpenAI)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 194,
+        "line_text": "## Using Azure OpenAI (Cloud Models)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 196,
+        "line_text": "Azure OpenAI provides cloud-based access to OpenAI models (GPT-4o, GPT-4, GPT-3.5-turbo) with enterprise security and compliance features."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 205,
+        "line_text": "This installs `langextract` with OpenAI support, including the OpenAI Python SDK and Azure Identity libraries."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 209,
+        "line_text": "3. **Azure OpenAI Resource**:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 210,
+        "line_text": "- Create an Azure OpenAI resource in [Azure Portal](https://portal.azure.com)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 218,
+        "line_text": "wget https://raw.githubusercontent.com/microsoft/presidio/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 221,
+        "line_text": "# https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 226,
+        "line_text": "Azure OpenAI supports multiple authentication methods with flexible configuration:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 234,
+        "line_text": "from presidio_analyzer.predefined_recognizers import AzureOpenAILangExtractRecognizer"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 237,
+        "line_text": "azure_openai = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 239,
+        "line_text": "azure_endpoint=\"https://your-resource.openai.azure.com/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 245,
+        "line_text": "analyzer.registry.add_recognizer(azure_openai)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 260,
+        "line_text": "from presidio_analyzer.predefined_recognizers import AzureOpenAILangExtractRecognizer"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 263,
+        "line_text": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = \"https://your-resource.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 264,
+        "line_text": "os.environ[\"AZURE_OPENAI_API_KEY\"] = \"your-api-key-here\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 267,
+        "line_text": "azure_openai = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 272,
+        "line_text": "analyzer.registry.add_recognizer(azure_openai)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 287,
+        "line_text": "from presidio_analyzer.predefined_recognizers import AzureOpenAILangExtractRecognizer"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 290,
+        "line_text": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = \"https://your-resource.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 293,
+        "line_text": "azure_openai = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 298,
+        "line_text": "analyzer.registry.add_recognizer(azure_openai)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 319,
+        "line_text": "os.environ[\"AZURE_OPENAI_ENDPOINT\"] = \"https://your-resource.openai.azure.com/\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 320,
+        "line_text": "# AZURE_OPENAI_API_KEY not set - uses DefaultAzureCredential in development mode"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 323,
+        "line_text": "azure_openai = AzureOpenAILangExtractRecognizer()"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 329,
+        "line_text": "2. Grant the managed identity **\"Cognitive Services OpenAI User\"** role on your Azure OpenAI resource"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 350,
+        "line_text": "wget https://raw.githubusercontent.com/microsoft/presidio/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 358,
+        "line_text": "recognizer = AzureOpenAILangExtractRecognizer("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 379,
+        "line_text": "- `model.model_id`: Azure OpenAI deployment name (e.g., \"gpt-4o\", \"gpt-4\", \"gpt-35-turbo\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 385,
+        "line_text": "See the [full config file](https://github.com/microsoft/presidio/blob/main/presidio-analyzer/presidio_analyzer/conf/langextract_config_azureopenai.yaml) for details."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\index.md",
+        "line": 27,
+        "line_text": "OPENAI_TYPE=\"Azure\" #or \"openai\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\index.md",
+        "line": 28,
+        "line_text": "OPENAI_KEY=YOUR_OPENAI_KEY"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\index.md",
+        "line": 29,
+        "line_text": "OPENAI_API_VERSION = \"2023-05-15\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\index.md",
+        "line": 30,
+        "line_text": "AZURE_OPENAI_ENDPOINT=YOUR_AZURE_OPENAI_AZURE_OPENAI_ENDPOINT"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\index.md",
+        "line": 31,
+        "line_text": "AZURE_OPENAI_DEPLOYMENT=text-davinci-003"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 4,
+        "line_text": "import openai"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 5,
+        "line_text": "from openai import OpenAI, AzureOpenAI"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 10,
+        "line_text": "OpenAIParams = namedtuple("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 12,
+        "line_text": "[\"openai_key\", \"model\", \"api_base\", \"deployment_id\", \"api_version\", \"api_type\"],"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 18,
+        "line_text": "openai_params: OpenAIParams,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 21,
+        "line_text": "\"\"\"Creates a request for the OpenAI Completion service and returns the response."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 24,
+        "line_text": ":param openai_params: OpenAI parameters for the completion model"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 27,
+        "line_text": "if openai_params.api_type.lower() == \"azure\":"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 28,
+        "line_text": "client = AzureOpenAI("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 29,
+        "line_text": "api_version=openai_params.api_version,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 30,
+        "line_text": "api_key=openai_params.openai_key,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 31,
+        "line_text": "azure_endpoint=openai_params.api_base,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 32,
+        "line_text": "azure_deployment=openai_params.deployment_id,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 35,
+        "line_text": "client = OpenAI(api_key=openai_params.openai_key)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\openai_fake_data_generator.py",
+        "line": 38,
+        "line_text": "model=openai_params.model,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 18,
+        "line_text": "from openai_fake_data_generator import ("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 20,
+        "line_text": "OpenAIParams,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 214,
+        "line_text": "openai_params: OpenAIParams,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 216,
+        "line_text": "\"\"\"Creates a synthetic version of the text using OpenAI APIs\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 217,
+        "line_text": "if not openai_params.openai_key:"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 218,
+        "line_text": "return \"Please provide your OpenAI key\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 222,
+        "line_text": "fake = call_completion_model(prompt=prompt, openai_params=openai_params)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 227,
+        "line_text": "def call_openai_api("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 228,
+        "line_text": "prompt: str, openai_model_name: str, openai_deployment_name: Optional[str] = None"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_helpers.py",
+        "line": 231,
+        "line_text": "prompt, model=openai_model_name, deployment_id=openai_deployment_name"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 13,
+        "line_text": "from openai_fake_data_generator import OpenAIParams"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 112,
+        "line_text": "- Synthesize: Replace with fake values (requires an OpenAI key)\\n"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 128,
+        "line_text": "def set_up_openai_synthesis():"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 129,
+        "line_text": "\"\"\"Set up the OpenAI API key and model for text synthesis.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 131,
+        "line_text": "if os.getenv(\"OPENAI_TYPE\", default=\"openai\") == \"Azure\":"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 132,
+        "line_text": "openai_api_type = \"azure\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 133,
+        "line_text": "st_openai_api_base = st.sidebar.text_input("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 134,
+        "line_text": "\"Azure OpenAI base URL\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 135,
+        "line_text": "value=os.getenv(\"AZURE_OPENAI_ENDPOINT\", default=\"\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 137,
+        "line_text": "openai_key = os.getenv(\"AZURE_OPENAI_KEY\", default=\"\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 139,
+        "line_text": "\"Deployment name\", value=os.getenv(\"AZURE_OPENAI_DEPLOYMENT\", default=\"\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 141,
+        "line_text": "st_openai_version = st.sidebar.text_input("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 142,
+        "line_text": "\"OpenAI version\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 143,
+        "line_text": "value=os.getenv(\"OPENAI_API_VERSION\", default=\"2023-05-15\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 146,
+        "line_text": "openai_api_type = \"openai\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 147,
+        "line_text": "st_openai_version = st_openai_api_base = None"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 149,
+        "line_text": "openai_key = os.getenv(\"OPENAI_KEY\", default=\"\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 150,
+        "line_text": "st_openai_key = st.sidebar.text_input("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 151,
+        "line_text": "\"OPENAI_KEY\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 152,
+        "line_text": "value=openai_key,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 153,
+        "line_text": "help=\"See https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key for more info.\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 156,
+        "line_text": "st_openai_model = st.sidebar.text_input("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 157,
+        "line_text": "\"OpenAI model for text synthesis\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 158,
+        "line_text": "value=os.getenv(\"OPENAI_MODEL\", default=\"text-davinci-003\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 159,
+        "line_text": "help=\"See more here: https://platform.openai.com/docs/models/\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 162,
+        "line_text": "openai_api_type,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 163,
+        "line_text": "st_openai_api_base,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 165,
+        "line_text": "st_openai_version,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 166,
+        "line_text": "st_openai_key,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 167,
+        "line_text": "st_openai_model,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 182,
+        "line_text": "openai_api_type,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 183,
+        "line_text": "st_openai_api_base,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 185,
+        "line_text": "st_openai_version,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 186,
+        "line_text": "st_openai_key,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 187,
+        "line_text": "st_openai_model,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 188,
+        "line_text": ") = set_up_openai_synthesis()"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 190,
+        "line_text": "open_ai_params = OpenAIParams("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 191,
+        "line_text": "openai_key=st_openai_key,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 192,
+        "line_text": "model=st_openai_model,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 193,
+        "line_text": "api_base=st_openai_api_base,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 195,
+        "line_text": "api_version=st_openai_version,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 196,
+        "line_text": "api_type=openai_api_type,"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 251,
+        "line_text": "- Generate synthetic text with Microsoft Presidio and OpenAI."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\presidio_streamlit.py",
+        "line": 328,
+        "line_text": "st.subheader(f\"OpenAI Generated output\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\streamlit\\requirements.txt",
+        "line": 11,
+        "line_text": "openai"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\index.md",
+        "line": 1,
+        "line_text": "# Invisio - Data Protection toolkit for OpenAI"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\index.md",
+        "line": 6,
+        "line_text": "In this sample, we will demonstrate best practices for creating meaningful conversations with OpenAI while ensuring that all Personally Identifiable Information (PII) is anonymized before being sent to the OpenAI API. Additionally, we will "
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\index.md",
+        "line": 11,
+        "line_text": "The primary challenge we aim to address is: how can we ensure that the responses processed by OpenAI, which are also anonymized, remain meaningful to the user?"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 8,
+        "line_text": "from openai import AzureOpenAI"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 44,
+        "line_text": "client = AzureOpenAI("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 45,
+        "line_text": "api_key=os.getenv(\"OPENAI_API_KEY\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 46,
+        "line_text": "api_version=os.getenv(\"OPENAI_API_VERSION\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 47,
+        "line_text": "azure_endpoint=os.getenv(\"OPENAI_ENDPOINT\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 49,
+        "line_text": "deployment_name = os.getenv(\"OPENAI_DEPLOYMENT_NAME\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\README.md",
+        "line": 23,
+        "line_text": "- add your OpenAI API settings if you'd like to chat with an LLM"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\requirements.txt",
+        "line": 2,
+        "line_text": "openai==1.37.1"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\docs\\sample_for_presidio_pr\\anonymization_toolkit_sample.md",
+        "line": 14,
+        "line_text": "The toolkit serves enterprises that: Require PII to remain internal while leveraging external OpenAI APIs, and Aim to safeguard PII from being displayed post-OpenAI processing."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\deployments\\client\\configmap.yaml",
+        "line": 6,
+        "line_text": "OPENAI_ENDPOINT: https://oai-presidio-anon-toolkit.openai.azure.com/"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\deployments\\client\\configmap.yaml",
+        "line": 7,
+        "line_text": "OPENAI_API_VERSION: 2023-03-15-preview"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\deployments\\client\\configmap.yaml",
+        "line": 8,
+        "line_text": "OPENAI_DEPLOYMENT_NAME: gpt-4o"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\deployments\\client\\deployment.yaml",
+        "line": 26,
+        "line_text": "- name: OPENAI_API_KEY"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\deployments\\client\\deployment.yaml",
+        "line": 30,
+        "line_text": "key: OPENAI_API_KEY"
+      }
+    ],
+    "anthropic": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\CHANGELOG.md",
+        "line": 263,
+        "line_text": "- (Docs) Use Presidio across Anthropic, Bedrock, VertexAI, Azure OpenAI, etc. with LiteLLM Proxy (#1421) (Thanks @krrishdholakia)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\index.md",
+        "line": 31,
+        "line_text": "| Usage | Text     | LiteLLM Proxy                           | [PII Masking LLM calls across Anthropic/Gemini/Bedrock/Azure, etc.](docker/litellm.md)|"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 3,
+        "line_text": "Run Presidio PII Masking across Anthropic/Gemini/Bedrock/etc. calls with [LiteLLM](https://github.com/BerriAI/litellm)"
+      }
+    ],
+    "nvidia": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\pipelines\\generate_with_kimi.py",
+        "line": 604,
+        "line_text": "\"provider\": gateway_request.get(\"provider\", \"nvidia_nim\"),"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 12,
+        "line_text": "4. **Teacher policy:** external teacher is **optional but beneficial**. If used, prefer **Kimi K2.5 in instant mode** via NVIDIA\u2019s free prototyping endpoints for multimodal synthetic data generation. Optionally use a second text-only judge/"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 77,
+        "line_text": "**if and only if** data generation and data curation are mostly done off the GPU (for example with NVIDIA\u2019s free hosted endpoints plus CPU preprocessing)."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 110,
+        "line_text": "**Primary teacher:** `moonshotai/kimi-k2.5` via NVIDIA **instant mode**"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 112,
+        "line_text": "- Exposed on NVIDIA endpoints with free prototyping access"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 640,
+        "line_text": "- synthetic generation through free NVIDIA endpoints"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 701,
+        "line_text": "Use **Kimi K2.5 via NVIDIA instant mode** as the primary synthetic multimodal teacher if a teacher is used."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 716,
+        "line_text": "- https://developer.nvidia.com/blog/build-with-kimi-k2-5-multimodal-vlm-using-nvidia-gpu-accelerated-endpoints/"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 717,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 718,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 719,
+        "line_text": "- https://build.nvidia.com/openai/gpt-oss-120b/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 1027,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 1028,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\Plan\\lumis1_codex_master_plan.md",
+        "line": 1128,
+        "line_text": "- Kimi K2.5 on NVIDIA supports both **thinking** and **instant** modes, and instant mode can be requested explicitly."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 167,
+        "line_text": "- External: `https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5-infer` - API contract and fields."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 168,
+        "line_text": "- External: `https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard` - instant vs thinking mode semantics."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 169,
+        "line_text": "- External: `https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf` - trial and logging restrictions."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 170,
+        "line_text": "- External: `https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/` - output responsibility and license terms."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 524,
+        "line_text": "- External: `https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5-infer` - request/response schema and async behavior."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 525,
+        "line_text": "- External: `https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard` - instant mode behavior."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 526,
+        "line_text": "- External: `https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf` - policy caveats and restrictions."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_config_data\\teacher\\kimi_instant.yaml",
+        "line": 4,
+        "line_text": "\"name\": \"nvidia_nim\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_config_data\\teacher\\kimi_instant.yaml",
+        "line": 5,
+        "line_text": "\"base_url\": \"https://integrate.api.nvidia.com/v1\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\audit_enforced_5000\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\audit_enforced_5000\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\audit_sample\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\audit_sample\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\audit_sample_2200\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\audit_sample_2200\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v2\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v2\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v3\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v3\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v4\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v4\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v5\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\sample_run_continue_v5\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\installation.md",
+        "line": 68,
+        "line_text": "- **Linux with NVIDIA GPU**: `pip install \"spacy[cuda12x]\"` (or the version matching your CUDA installation)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\README.md",
+        "line": 91,
+        "line_text": "- **Linux with NVIDIA GPU**: cupy-cuda12x (or the version matching your CUDA installation)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\getting_started\\getting_started_text.md",
+        "line": 100,
+        "line_text": "- **Linux with NVIDIA GPU**: cupy-cuda12x (or the version matching your CUDA installation)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\langextract\\index.md",
+        "line": 107,
+        "line_text": "> This option provides better performance with GPU acceleration (e.g., on Mac with Metal Performance Shaders or systems with NVIDIA GPUs)."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\analyzer\\nlp_engines\\gpu_usage.md",
+        "line": 33,
+        "line_text": "| **NVIDIA GPU** | CUDA Toolkit 11.x or 12.x |"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\analyzer\\nlp_engines\\gpu_usage.md",
+        "line": 39,
+        "line_text": "=== \"NVIDIA GPU\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\analyzer\\nlp_engines\\gpu_usage.md",
+        "line": 77,
+        "line_text": "# For NVIDIA GPUs"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\analyzer\\nlp_engines\\gpu_usage.md",
+        "line": 78,
+        "line_text": "watch -n 1 nvidia-smi"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\analyzer\\nlp_engines\\gpu_usage.md",
+        "line": 103,
+        "line_text": "nvidia-smi"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\analyzer\\nlp_engines\\gpu_usage.md",
+        "line": 140,
+        "line_text": "- [NVIDIA CUDA Installation Guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\is.txt",
+        "line": 304,
+        "line_text": "Er n\u00fana a\u00f0 downloada Omega drivers sem eru unsupported drivers fyrir Nvidia."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\is.txt",
+        "line": 337,
+        "line_text": "Fr\u00e9tt: Nvidia frums\u00fdnir NV30 \u00e1 Comdex Fall \u00ed n\u00f3vember."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v10\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v10\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v11_strict\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v11_strict\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_check\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_check\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_check2\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_check2\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_sft20k\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_sft20k\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_bg\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_bg\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_fullsample\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_fullsample\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_pairs100\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_pairs100\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_sft_only\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v12_strict_sft_only\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v13_strict\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v13_strict\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v9b\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\full_run_continue_v9b\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run2\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run2\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v12_strict\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v12_strict\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v6\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v6\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v7\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v7\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v8\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v8\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v9\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v9\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v9b\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_continue_v9b\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_verify\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\sample_run_verify\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\test_run_bg\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\test_run_bg\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\test_run_small\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\test_run_small\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\test_run_small2\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_output\\test_run_small2\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_nested\\output\\full_run_codex_spark_xhigh\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_nested\\output\\full_run_codex_spark_xhigh\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_nested\\output\\full_run_continue_v13_strict\\identity_policy_sheet.md",
+        "line": 85,
+        "line_text": "- https://docs.api.nvidia.com/nim/reference/moonshotai-kimi-k2-5"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\identity_dataset_nested\\output\\full_run_continue_v13_strict\\identity_policy_sheet.md",
+        "line": 86,
+        "line_text": "- https://build.nvidia.com/moonshotai/kimi-k2.5/modelcard"
+      }
+    ],
+    "together": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\legacy_stack\\.sisyphus\\plans\\lumis1-posttraining-execution.md",
+        "line": 477,
+        "line_text": "- Category: `unspecified-high` - Reason: ratio preservation and legal compliance must be solved together."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\cld3\\CMakeLists.txt",
+        "line": 11,
+        "line_text": "message(WARNING \"Protobuf 2.5 and CLD3 seems happy together. This script does NOT check if your verison of protobuf is compatible.\")"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\dedup-text-datasets\\README.md",
+        "line": 77,
+        "line_text": "The first file contains the entire Wiki40B test set smashed together, and the second file has the byte offset of where each individual training example begins, in sorted order."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\dedup-text-datasets\\README.md",
+        "line": 131,
+        "line_text": "Each `dups` file is a list of pointers into the dataset that corresponds to sequences repeated multiple times. Each file has the duplicates that correspond to items A through B in the suffix array. There should be 28,464 total entries when "
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\dedup-text-datasets\\README.md",
+        "line": 161,
+        "line_text": "### Collecting the duplicates together"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\dedup-text-datasets\\README.md",
+        "line": 163,
+        "line_text": "The next step is to take all of the length-100 sequences we've found and collect them together to figure out what we should be removing from our dataset."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\dedup-text-datasets\\README.md",
+        "line": 260,
+        "line_text": "This will run the entire deduplication pipeline top-to-bottom, starting with loading the wiki40b test set, then creating a suffix array, finding all repeated sequences, merging them together to sequence ranges, and finally spitting out a de"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\dedup-text-datasets\\README.md",
+        "line": 292,
+        "line_text": "This script will build the suffix array in parallel by splitting the single file into chunks, generating suffix arrays for each chunk, and then merging the suffix arrays together to form the full suffix array. Note that in general this algo"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\dedup-text-datasets\\README.md",
+        "line": 310,
+        "line_text": "to generate a collection of ordered suffix arrays pieces in the output directory. The final step just requires merging these together"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\twitter-text\\config\\README.md",
+        "line": 74,
+        "line_text": "points together, such as by a zero-width joiner; unlike a surrogate"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tutorials\\walkthrough\\README.md",
+        "line": 50,
+        "line_text": "Before we get started with DP-SGD and TF Privacy, we need to put together a"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tutorials\\walkthrough\\README.md",
+        "line": 437,
+        "line_text": "### Putting all the pieces together"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\fast_gradient_clipping\\clip_grads_test.py",
+        "line": 28,
+        "line_text": "\"\"\"Generates two dense layers nested together.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\fast_gradient_clipping\\gradient_clipping_utils_test.py",
+        "line": 29,
+        "line_text": "\"\"\"Generates two dense layers nested together.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\fast_gradient_clipping\\gradient_clipping_utils_test.py",
+        "line": 43,
+        "line_text": "\"\"\"Generates three dense layers nested together.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\optimizers\\dp_optimizer_keras_sparse.py",
+        "line": 52,
+        "line_text": "`num_microbatches`. Together with the sparse updates, this provides"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\privacy_tests\\membership_inference_attack\\privacy_report.py",
+        "line": 83,
+        "line_text": "\"\"\"Adds metadata to the dataframe and concats them together.\"\"\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\privacy_tests\\membership_inference_attack\\codelabs\\third_party\\seq2seq_membership_inference\\seq2seq_membership_inference_codelab.ipynb",
+        "line": 36,
+        "line_text": "\"In this codelab we'll train a simple translation model on the SATED dataset which consists of sentences grouped together by a \\\"user\\\" (i.e. the person who spoke the sentences). We will then use a \\\"membership inference attack\\\" against th"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\fast_gradient_clipping\\registry_functions\\dense.py",
+        "line": 36,
+        "line_text": "for the kernel weights and bias vector together."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\estimators\\v1\\head.py",
+        "line": 28,
+        "line_text": "# Collect together all protected access items needed from base head."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\research\\instahide_attack_2020\\README.md",
+        "line": 39,
+        "line_text": "1. Run `step_1_create_graph.py`. Produce the similarity graph to pair together encoded images that share an original image."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\research\\instahide_attack_2020\\step_4_final_graph.py",
+        "line": 34,
+        "line_text": "# together can call it a day."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\research\\instahide_attack_2020\\step_5_reconstruct.py",
+        "line": 50,
+        "line_text": "# Now combine them together to get the variance we can explain"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\research\\pate_2018\\README.md",
+        "line": 35,
+        "line_text": "sensitivity analysis for several data-independent and data-dependent mechanism that together"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\nlp_engine\\stanza_nlp_engine.py",
+        "line": 91,
+        "line_text": "efficient bulk_process method, which processes multiple documents together"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\presidio-analyzer\\presidio_analyzer\\predefined_recognizers\\ner\\gliner_recognizer.py",
+        "line": 86,
+        "line_text": "\"entity_mapping and supported_entities cannot be used together\""
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\en.txt",
+        "line": 7,
+        "line_text": "It will not splice together different exons to produce a coding sequence."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\en.txt",
+        "line": 430,
+        "line_text": "Elphinstone has, for many years, put together some very competitive sports teams."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\en.txt",
+        "line": 636,
+        "line_text": "No, one, single person can do it all but together we can make a difference."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\en.txt",
+        "line": 953,
+        "line_text": "As the moonlight dances over sparkling waters, stroll the upper deck together under a brilliant canopy of glittering stars."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\yo.txt",
+        "line": 845,
+        "line_text": "\u00d3 p\u00f2 w\u00f3\uf025n p\u00f2\uf025 (He mixed them together) Poo, adv."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\sentences\\yo.txt",
+        "line": 849,
+        "line_text": "\u00d3 r\u00e9\uf025 l\u00e9 r\u00e8\uf025 (He plastered his house) R\u00e9\uf025, v.i. to be friendly together."
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\lingua\\src\\accuracyReport\\resources\\language-testdata\\word-pairs\\en.txt",
+        "line": 568,
+        "line_text": "together different"
+      }
+    ],
+    "deepseek": [],
+    "requests.post": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\e2e-tests\\common\\methods.py",
+        "line": 23,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\e2e-tests\\common\\methods.py",
+        "line": 37,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\e2e-tests\\common\\methods.py",
+        "line": 54,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\e2e-tests\\common\\methods.py",
+        "line": 58,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\e2e-tests\\common\\methods.py",
+        "line": 64,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\example_remote_recognizer.py",
+        "line": 80,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\redacting-telemetry\\app\\presidio_client.py",
+        "line": 23,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\redacting-telemetry\\app\\presidio_client.py",
+        "line": 46,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 24,
+        "line_text": "response = requests.post(url, json=body)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 32,
+        "line_text": "response = requests.post("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\api\\services\\presidio\\http_presidio_service.py",
+        "line": 33,
+        "line_text": "analyze_response = requests.post(analyze_url, json=analyze_payload)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\api\\services\\presidio\\http_presidio_service.py",
+        "line": 45,
+        "line_text": "anonymize_response = requests.post(anonymize_url, json=anonymize_payload)"
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\api\\services\\presidio\\hybrid_presidio_service.py",
+        "line": 40,
+        "line_text": "analyze_response = requests.post(analyze_url, json=analyze_payload)"
+      }
+    ],
+    "client.chat.completions": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\docker\\litellm.md",
+        "line": 154,
+        "line_text": "chat_completion = client.chat.completions.create("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\python\\synth_data_with_openai.ipynb",
+        "line": 93,
+        "line_text": "\"    completion = client.chat.completions.create(\\n\","
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\presidio\\docs\\samples\\deployments\\openai-anonymaztion-and-deanonymaztion-best-practices\\src\\client_app\\client.py",
+        "line": 50,
+        "line_text": "response = client.chat.completions.create("
+      }
+    ],
+    "generate(": [
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\keras_models\\dp_keras_model_distributed_test.py",
+        "line": 64,
+        "line_text": "@ds_combinations.generate("
+      },
+      {
+        "path": "C:\\Users\\deyan\\Projects\\Lumis-1\\archive\\legacy_generated\\pre_2026_03_04_rebuild\\Dataset\\output\\oss_refs\\tf-privacy\\tensorflow_privacy\\privacy\\optimizers\\dp_optimizer_keras_sparse_distributed_test.py",
+        "line": 36,
+        "line_text": "@ds_combinations.generate("
+      }
+    ]
+  }
+}

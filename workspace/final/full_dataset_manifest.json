@@ -1,0 +1,40 @@
+{
+  "composition": {
+    "bucket_histogram": {
+      "general_polished": 2019,
+      "identity": 1250,
+      "multilingual": 938,
+      "real_user": 1250,
+      "utility": 793
+    },
+    "modality_histogram": {
+      "multimodal": 750,
+      "text": 5500
+    },
+    "source_histogram": {
+      "HuggingFaceH4/ultrachat_200k": 449,
+      "HuggingFaceM4/Docmatix": 323,
+      "HuggingFaceTB/smoltalk": 776,
+      "HuggingFaceTB/smoltalk2": 641,
+      "allenai/WildChat-1M": 1250,
+      "facebook/textvqa": 171,
+      "fallback/general": 143,
+      "fallback/general_polished": 9,
+      "fallback/multilingual": 938,
+      "fallback/topup": 1,
+      "fallback/utility": 163,
+      "identity_pack": 1250,
+      "lmms-lab/DocVQA": 136
+    }
+  },
+  "counts": {
+    "full_preference_rows": 2181,
+    "full_sft_rows": 6250
+  },
+  "files": {
+    "full_preferences": "workspace/final/full_preferences.jsonl",
+    "full_sft": "workspace/final/full_sft.jsonl"
+  },
+  "project": "Lumis-1",
+  "schema_version": "1.0"
+}

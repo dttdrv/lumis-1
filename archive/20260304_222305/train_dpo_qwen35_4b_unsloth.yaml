@@ -1,0 +1,49 @@
+version: "1.0"
+model:
+  base_model: "Qwen/Qwen3.5-4B-Base"
+  sft_adapter_or_merged_path: "workspace/runs/sft/latest"
+  thinking_mode: "off"
+  vision_mode: "on"
+  max_seq_length: 4096
+  dtype: "bf16"
+peft:
+  target_modules: "all-linear"
+  modules_to_save: ["lm_head", "embed_tokens"]
+  r: 32
+  lora_alpha: 64
+  lora_dropout: 0.05
+  random_state: 3407
+dpo:
+  beta: 0.1
+  learning_rate: 6.0e-7
+  epoch_fraction_min: 0.4
+  epoch_fraction_max: 0.6
+  loss_preference: "length_normalized_if_available_else_standard_dpo"
+  fallback_note: "If length-normalized DPO is not cleanly supported in installed stack, use TRL DPO default and log explicit deviation."
+  preference_mix:
+    identity_custom: 0.55
+    ultrafeedback_cleaned: 0.25
+    smoltalk2_or_equivalent_no_think: 0.20
+training:
+  optimizer: "adamw_8bit"
+  betas: [0.9, 0.95]
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  scheduler: "cosine"
+  warmup_ratio: 0.03
+  gradient_checkpointing: "unsloth"
+profiles:
+  default_96gb:
+    microbatch: 4
+    grad_accum: 16
+  safe_fallback:
+    microbatch: 2
+    grad_accum: 32
+io:
+  preference_manifest_path: "workspace/final/preference_manifest.json"
+  output_root: "workspace/runs/dpo"
+  run_manifest_name: "run_manifest.json"
+runtime:
+  dry_run: true
+  small_sample: true
+  resume_from_checkpoint: null

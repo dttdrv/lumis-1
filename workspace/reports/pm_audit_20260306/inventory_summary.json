@@ -1,0 +1,15 @@
+﻿{
+    "generated_at":  "2026-03-06T02:13:34.4493534+02:00",
+    "total_files":  3810,
+    "by_status":  {
+                      "active":  3810
+                  },
+    "by_category":  {
+                        "yaml":  157,
+                        "doc":  254,
+                        "text":  533,
+                        "json":  647,
+                        "notebook":  35,
+                        "misc":  2184
+                    }
+}

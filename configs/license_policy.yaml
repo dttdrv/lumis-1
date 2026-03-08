@@ -1,0 +1,51 @@
+﻿version: "2.0"
+policy_name: "lumis1_license_policy"
+default_action: "deny"
+
+allowed_licenses:
+  - "MIT"
+  - "Apache-2.0"
+  - "ODC-BY"
+  - "CC-BY-4.0"
+
+review_required_licenses:
+  - "subset_specific"
+
+denied_licenses:
+  - "unknown"
+  - "unspecified"
+  - "proprietary"
+  - "non_redistributable"
+
+enforcement:
+  fail_on_unlisted_source: true
+  fail_on_missing_license: true
+  fail_on_denied_license: true
+  fail_on_private_local_enabled_without_attestation: true
+
+private_local_requirements:
+  source_mode_must_equal: "local"
+  required_fields:
+    - "provenance_attestation"
+    - "license"
+    - "redistribution_allowed"
+    - "pii_policy"
+  field_types:
+    provenance_attestation: "string"
+    license: "string"
+    redistribution_allowed: "bool"
+    pii_policy: "string"
+
+source_specific_rules:
+  - source_id: "HuggingFaceTB/smoltalk2"
+    rule: "only_no_think_subsets_or_rows_with_chat_template_kwargs_enable_thinking_false"
+  - source_id: "HuggingFaceM4/the_cauldron"
+    rule: "subset_allowlist_required_before_ingestion"
+  - source_id: "HuggingFaceM4/FineVision"
+    rule: "disabled_by_default; subset_allowlist_and_license_review_required_before_ingestion"
+  - source_id: "nvidia/Nemotron-Post-Training-Dataset-v2"
+    rule: "disabled_by_default; explicit operator provenance and licensing approval required"
+  - source_id: "nvidia/HelpSteer3"
+    rule: "allowed for preference/alignment usage with no local synthetic generation"
+  - source_id: "allenai/tulu-3-sft-mixture"
+    rule: "must_remain_disabled_unless_operator_approval_and_subset_allowlist"

@@ -1,0 +1,126 @@
+version: "2.1"
+project: "Lumis-1"
+
+identity_pack:
+  required_files:
+    sft_candidates:
+      - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/sft_dataset.jsonl"
+      - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_sft.jsonl"
+    preferences_candidates:
+      - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/preference_dataset.jsonl"
+      - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_preferences.jsonl"
+    report_pdf_optional_candidates:
+      - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_pack_report.pdf"
+  required_counts:
+    sft_rows: 100000
+    preference_rows: 25000
+  fixed_share_of_final_sft_tokens: 0.20
+  enforce_exact_token_share: true
+
+token_budgets:
+  global_sft_tokens:
+    mode: "derive_from_identity_exact_share"
+    explicit_value: null
+  open_sft_budget:
+    mode: "derive_from_identity_exact_share"
+    dry_run_tokens: 50000
+  per_source_default_tokens: 20000000
+  preferences_global_token_budget: 120000000
+
+targets:
+  category_share:
+    polished_general_assistant: 0.30
+    real_user_conversations: 0.20
+    multilingual: 0.15
+    utility_tasks: 0.15
+    identity_behavior: 0.20
+  modality_share:
+    text: 0.88
+    image_text: 0.12
+  tolerance:
+    row_share_abs: 0.0100
+    token_share_abs: 0.0150
+
+non_identity_multimodal_derivation:
+  formula: "(overall_mm - identity_share * identity_mm) / (1 - identity_share)"
+  inputs:
+    overall_mm: 0.12
+    identity_share: 0.20
+    identity_mm_source: "computed_from_notebook_10"
+  enforce: true
+
+ingestion_defaults:
+  source_mode: "hf"
+  streaming_preferred: true
+  max_records_scanned_per_source: 2000000
+  enforce_allowlist: true
+
+sources:
+  - source_id: "HuggingFaceH4/ultrachat_200k"
+    category: "polished_general_assistant"
+    modality: "text"
+    token_budget: 130000000
+  - source_id: "CohereLabs/aya_dataset"
+    category: "multilingual"
+    modality: "text"
+    token_budget: 90000000
+  - source_id: "allenai/WildChat-4.8M"
+    category: "real_user_conversations"
+    modality: "text"
+    token_budget: 120000000
+  - source_id: "HuggingFaceTB/smoltalk2"
+    category: "utility_tasks"
+    modality: "text"
+    token_budget: 75000000
+    subset_rule: "no_think_only"
+  - source_id: "nvidia/HelpSteer3"
+    category: "utility_tasks"
+    modality: "text"
+    token_budget: 35000000
+    preference_candidate: true
+  - source_id: "argilla/ultrafeedback-binarized-preferences-cleaned"
+    category: "utility_tasks"
+    modality: "text"
+    token_budget: 40000000
+    preference_candidate: true
+  - source_id: "HuggingFaceM4/the_cauldron"
+    category: "utility_tasks"
+    modality: "image_text"
+    token_budget: 16000000
+  - source_id: "HuggingFaceM4/Docmatix"
+    category: "utility_tasks"
+    modality: "image_text"
+    token_budget: 14000000
+  - source_id: "facebook/textvqa"
+    category: "utility_tasks"
+    modality: "image_text"
+    token_budget: 10000000
+  - source_id: "lmms-lab/DocVQA"
+    category: "utility_tasks"
+    modality: "image_text"
+    token_budget: 10000000
+
+preferences:
+  required_output: "workspace/final/full_preferences.jsonl"
+  mix_targets:
+    identity_preferences: 0.25
+    ultrafeedback_cleaned: 0.60
+    helpsteer3: 0.15
+  enabled_sources:
+    - "argilla/ultrafeedback-binarized-preferences-cleaned"
+    - "nvidia/HelpSteer3"
+  optional_additional_preferences:
+    enabled: false
+    sources: []
+
+output_paths:
+  open_sft_interim: "workspace/interim/open_sft.jsonl"
+  open_preferences_interim: "workspace/interim/open_preferences.jsonl"
+  final_sft: "workspace/final/full_sft.jsonl"
+  final_preferences: "workspace/final/full_preferences.jsonl"
+  manifest: "workspace/final/dataset_manifest.json"
+  reports:
+    open_corpus: "workspace/reports/open_corpus_build_report.json"
+    identity_validation: "workspace/reports/identity_validation.json"
+    full_validation: "workspace/reports/full_dataset_validation.json"
+    mixture_math: "workspace/reports/mixture_math.json"

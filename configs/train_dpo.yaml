@@ -1,0 +1,60 @@
+﻿version: "2.0"
+mode: "dpo"
+
+model:
+  base_model: "Qwen/Qwen3.5-4B"
+  sft_checkpoint_or_adapter: "workspace/runs/manual-sft/artifacts/sft_model"
+  vision_capable: true
+  dtype: "bf16"
+  load_in_4bit: false
+
+lora:
+  enabled: true
+  r: 32
+  lora_alpha: 64
+  lora_dropout: 0.0
+  bias: "none"
+
+training:
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 16
+  learning_rate: 1.0e-5
+  warmup_steps: 50
+  max_steps: 2000
+  logging_steps: 5
+  save_steps: 200
+  lr_scheduler_type: "cosine"
+  optim: "adamw_torch"
+  bf16: true
+
+dpo:
+  beta: 0.1
+  loss_type: "sigmoid"
+  reference_free: false
+
+preferences:
+  required_identity_preferences_path: "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/preference_dataset.jsonl"
+  required_identity_preferences_candidates:
+    - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/preference_dataset.jsonl"
+    - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_preferences.jsonl"
+  ultrafeedback_path_hint: "argilla/ultrafeedback-binarized-preferences-cleaned"
+  helpsteer3_path_hint: "nvidia/HelpSteer3"
+  mix:
+    identity_preferences: 0.25
+    ultrafeedback_cleaned: 0.60
+    helpsteer3: 0.15
+  optional_additional_preferences:
+    enabled: false
+    sources: []
+
+chat_template_policy:
+  config_path: "configs/chat_template_policy.yaml"
+  enforce_enable_thinking_false: true
+
+outputs:
+  run_dir: "workspace/runs/manual-dpo/artifacts/dpo_model"
+  resolved_config_report: "workspace/reports/train_dpo_config_resolved.json"
+
+execution:
+  run_training_default: false
+  local_only: true

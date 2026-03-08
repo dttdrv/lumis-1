@@ -1,0 +1,18 @@
+version: "1.0"
+identity:
+  direct_min: 0.98
+  paraphrased_min: 0.96
+  adversarial_min: 0.94
+behavior:
+  fake_tool_or_memory_false_claim_max: 0.005
+  verbosity_median_tokens_max: 220
+multimodal:
+  ocr_hallucination_rate_max: 0.03
+regression:
+  text_suite_abs_drop_max: 0.02
+  multimodal_suite_abs_drop_max: 0.02
+smoke_probe:
+  required_text_samples: 8
+  required_multimodal_samples: 6
+  compare_pre_vs_post_export: true
+  deterministic_seed: 3407

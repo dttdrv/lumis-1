@@ -1,0 +1,16 @@
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.pyo
+
+workspace/runs/
+workspace/interim/*.jsonl
+workspace/final/full_sft.jsonl
+workspace/final/full_preferences.jsonl
+
+Dataset/identity_dataset/output/**/*.jsonl
+Dataset/identity_dataset/output/**/*.log
+Dataset/identity_dataset/output/**/*.sha256.txt
+Dataset/.pytest_cache/
+Dataset/.ruff_cache/
+archive/legacy_generated/

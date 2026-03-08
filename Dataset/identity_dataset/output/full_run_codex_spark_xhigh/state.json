@@ -1,0 +1,15 @@
+{
+  "run_id": "identity-20260303T162023Z",
+  "status": "finalized",
+  "next_chunk": 101,
+  "sft_written": 100000,
+  "pref_written": 25000,
+  "target_sft": 100000,
+  "target_pref": 25000,
+  "chunk_sft": 1000,
+  "chunk_pref": 250,
+  "chunk_sft_min": 125,
+  "chunk_pref_min": 32,
+  "consecutive_failures": 0,
+  "updated_at_utc": "2026-03-03T16:26:39.160591+00:00"
+}

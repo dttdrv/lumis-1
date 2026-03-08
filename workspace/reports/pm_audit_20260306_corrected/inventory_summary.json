@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-03-06T02:25:46.474717+02:00",
+  "total_files": 3816,
+  "by_status": {
+    "active_scaffold": 51,
+    "cache": 37,
+    "archived_historical": 3661,
+    "current_identity_pipeline": 21,
+    "canonical_identity_output": 19,
+    "current_misc": 1,
+    "current_output": 26
+  },
+  "by_category": {
+    "misc": 946,
+    "doc": 254,
+    "notebook": 35,
+    "yaml": 157,
+    "json": 651,
+    "jsonl": 99,
+    "python": 802,
+    "text": 541,
+    "cache_binary": 196,
+    "binary_asset": 97,
+    "shell": 30,
+    "csv": 5,
+    "pdf": 3
+  }
+}

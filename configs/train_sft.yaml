@@ -1,0 +1,58 @@
+﻿version: "2.0"
+mode: "sft"
+
+model:
+  base_model: "Qwen/Qwen3.5-4B"
+  vision_capable: true
+  dtype: "bf16"
+  load_in_4bit: false
+  full_finetuning: false
+
+lora:
+  enabled: true
+  r: 32
+  lora_alpha: 64
+  lora_dropout: 0.0
+  bias: "none"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+training:
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 16
+  learning_rate: 2.0e-5
+  warmup_steps: 50
+  max_steps: 3000
+  logging_steps: 5
+  save_steps: 200
+  lr_scheduler_type: "cosine"
+  optim: "adamw_torch"
+  weight_decay: 0.01
+  bf16: true
+
+sanity_run:
+  enabled_by_default: true
+  max_steps: 50
+
+chat_template_policy:
+  config_path: "configs/chat_template_policy.yaml"
+  enforce_enable_thinking_false: true
+
+datasets:
+  train_sft_path: "workspace/final/full_sft.jsonl"
+  dataset_manifest_path: "workspace/final/dataset_manifest.json"
+
+outputs:
+  run_dir: "workspace/runs/manual-sft/artifacts/sft_model"
+  resolved_config_report: "workspace/reports/train_sft_config_resolved.json"
+  checkpoint_dir: "workspace/runs/manual-sft/artifacts/sft_model/checkpoints"
+
+execution:
+  run_training_default: false
+  local_only: true

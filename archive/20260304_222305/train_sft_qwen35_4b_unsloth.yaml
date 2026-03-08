@@ -1,0 +1,88 @@
+version: "1.0"
+model:
+  base_model: "Qwen/Qwen3.5-4B-Base"
+  thinking_mode: "off"
+  vision_mode: "on"
+  max_seq_length: 4096
+  dtype: "bf16"
+  chat_template_id: "qwen3_5_default_consistent"
+peft:
+  finetune_vision_layers: false
+  finetune_language_layers: true
+  finetune_attention_modules: true
+  finetune_mlp_modules: true
+  target_modules: "all-linear"
+  modules_to_save: ["lm_head", "embed_tokens"]
+  r: 32
+  lora_alpha: 64
+  lora_dropout: 0.05
+  random_state: 3407
+training:
+  optimizer: "adamw_8bit"
+  betas: [0.9, 0.95]
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  scheduler: "cosine"
+  warmup_ratio: 0.03
+  packing: true
+  gradient_checkpointing: "unsloth"
+profiles:
+  default_96gb:
+    text_microbatch: 8
+    text_grad_accum: 8
+    multimodal_microbatch: 4
+    multimodal_grad_accum: 16
+  safe_fallback:
+    text_microbatch: 4
+    text_grad_accum: 16
+    multimodal_microbatch: 2
+    multimodal_grad_accum: 32
+stages:
+  stage_a:
+    kind: "sft_core"
+    target_mix:
+      general_polished: 0.32
+      real_user: 0.22
+      multilingual: 0.18
+      utility: 0.16
+      identity: 0.12
+    image_text_target: 0.10
+    learning_rate: 4.0e-6
+    epoch_fraction: 0.8
+  stage_b:
+    kind: "sft_blend"
+    target_mix:
+      general_polished: 0.30
+      real_user: 0.20
+      multilingual: 0.15
+      utility: 0.15
+      identity: 0.20
+    image_text_target: 0.12
+    learning_rate: 2.0e-6
+    epoch_fraction_min: 0.4
+    epoch_fraction_max: 0.5
+  stage_c:
+    kind: "identity_lock"
+    target_mix:
+      identity: 0.45
+      general_replay: 0.40
+      multimodal_replay: 0.15
+    learning_rate: 8.0e-7
+    min_steps: 300
+    max_steps: 600
+optional_stage_e:
+  enabled_default: false
+  kind: "vision_rescue"
+  trigger: "multimodal_eval_underperforms_while_text_stable"
+  finetune_vision_layers: true
+  learning_rate: 5.0e-7
+  min_steps: 200
+  max_steps: 400
+io:
+  dataset_manifest_path: "workspace/final/full_dataset_manifest.json"
+  output_root: "workspace/runs/sft"
+  run_manifest_name: "run_manifest.json"
+runtime:
+  dry_run: true
+  small_sample: true
+  resume_from_checkpoint: null

@@ -1,0 +1,97 @@
+{
+  "schema_version": "2.0",
+  "project": "Lumis-1",
+  "created_utc": "2026-03-08T06:46:53.519506+00:00",
+  "paths": {
+    "full_sft": "C:\\Users\\deyan\\Projects\\Lumis-1\\workspace\\final\\full_sft.jsonl",
+    "full_preferences": "C:\\Users\\deyan\\Projects\\Lumis-1\\workspace\\final\\full_preferences.jsonl",
+    "validation_report": "C:\\Users\\deyan\\Projects\\Lumis-1\\workspace\\reports\\full_dataset_validation.json"
+  },
+  "sha256": {
+    "full_sft": "ec851d7d2202587378225f43897d2315d3da50023ad4a495dfe61ee00aa2620a",
+    "full_preferences": "2bbfa714161a80b4633fc8c940347e762fc66924731f26f93d5257befb094161"
+  },
+  "counts": {
+    "sft_rows_total": 6250,
+    "preferences_rows_total": 2181,
+    "identity_sft_rows": 1250,
+    "identity_preference_rows": 1199,
+    "invalid_sft_rows": 0,
+    "sft_tokens_total": 255429,
+    "identity_sft_tokens": 100447,
+    "open_sft_tokens": 154982
+  },
+  "shares": {
+    "row_weighted": {
+      "category": {
+        "identity_behavior": 0.2,
+        "multilingual": 0.15008,
+        "polished_general_assistant": 0.32304,
+        "real_user_conversations": 0.2,
+        "utility_tasks": 0.12688
+      },
+      "modality": {
+        "image_text": 0.12,
+        "text": 0.88
+      }
+    },
+    "token_weighted": {
+      "category": {
+        "identity_behavior": 0.39324822161931494,
+        "multilingual": 0.1138398537362633,
+        "polished_general_assistant": 0.2449643540866542,
+        "real_user_conversations": 0.15170556201527627,
+        "utility_tasks": 0.09624200854249126
+      },
+      "modality": {
+        "image_text": 0.12113738064197879,
+        "text": 0.8788626193580212
+      },
+      "identity_token_share": 0.39324822161931494
+    },
+    "identity_multimodal_share_tokens": 0.11243327778553279,
+    "required_non_identity_multimodal_share_tokens": 0.12189168055361678,
+    "actual_non_identity_multimodal_share_tokens": 0.12601463395749185
+  },
+  "targets": {
+    "category": {
+      "polished_general_assistant": 0.3,
+      "real_user_conversations": 0.2,
+      "multilingual": 0.15,
+      "utility_tasks": 0.15,
+      "identity_behavior": 0.2
+    },
+    "modality": {
+      "text": 0.88,
+      "image_text": 0.12
+    },
+    "tolerance": {
+      "row_share_abs": 0.01,
+      "token_share_abs": 0.015
+    },
+    "identity_token_share": 0.2
+  },
+  "validations": {
+    "cot_marker_count": 0,
+    "cot_marker_count_zero": true,
+    "no_invalid_rows": true,
+    "token_category_targets_within_tolerance": true,
+    "token_modality_targets_within_tolerance": true,
+    "identity_token_share_exact": false,
+    "non_identity_multimodal_share_within_tolerance": true,
+    "preferences_nonempty": true,
+    "row_drifts_secondary": {
+      "category": {
+        "polished_general_assistant": 0.023040000000000005,
+        "real_user_conversations": 0.0,
+        "multilingual": 7.999999999999674e-05,
+        "utility_tasks": 0.02312,
+        "identity_behavior": 0.0
+      },
+      "modality": {
+        "text": 0.0,
+        "image_text": 0.0
+      }
+    }
+  }
+}

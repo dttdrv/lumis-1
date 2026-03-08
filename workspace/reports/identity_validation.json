@@ -1,0 +1,31 @@
+{
+  "identity_paths": {
+    "preferred_sft_candidates": [
+      "C:\\Users\\deyan\\Projects\\Lumis-1\\Dataset\\identity_dataset\\output\\full_run_codex_spark_xhigh\\sft_dataset.jsonl",
+      "C:\\Users\\deyan\\Projects\\Lumis-1\\Dataset\\identity_dataset\\output\\full_run_codex_spark_xhigh\\identity_sft.jsonl"
+    ],
+    "preferred_preferences_candidates": [
+      "C:\\Users\\deyan\\Projects\\Lumis-1\\Dataset\\identity_dataset\\output\\full_run_codex_spark_xhigh\\preference_dataset.jsonl",
+      "C:\\Users\\deyan\\Projects\\Lumis-1\\Dataset\\identity_dataset\\output\\full_run_codex_spark_xhigh\\identity_preferences.jsonl"
+    ],
+    "resolved_sft": "C:\\Users\\deyan\\Projects\\Lumis-1\\Dataset\\identity_dataset\\output\\full_run_codex_spark_xhigh\\sft_dataset.jsonl",
+    "resolved_preferences": "C:\\Users\\deyan\\Projects\\Lumis-1\\Dataset\\identity_dataset\\output\\full_run_codex_spark_xhigh\\preference_dataset.jsonl",
+    "report_pdf_optional_exists": false
+  },
+  "counts": {
+    "sft_rows": 100000,
+    "preference_rows": 25000
+  },
+  "tokens": {
+    "sft_tokens_total": 8095130,
+    "text_tokens": 7184968,
+    "image_text_tokens": 910162,
+    "image_text_share_tokens": 0.11243327778553279
+  },
+  "modality": {
+    "text_rows": 90485,
+    "image_text_rows": 9515,
+    "image_text_share": 0.09515
+  },
+  "cot_marker_count_detected": 0
+}

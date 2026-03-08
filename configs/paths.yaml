@@ -1,0 +1,43 @@
+﻿version: "2.0"
+repo_root: "."
+
+workspace:
+  root: "workspace"
+  reports: "workspace/reports"
+  final: "workspace/final"
+  runs: "workspace/runs"
+  interim: "workspace/interim"
+
+identity_inputs:
+  base_dir: "Dataset/identity_dataset/output/full_run_codex_spark_xhigh"
+  sft: "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/sft_dataset.jsonl"
+  preferences: "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/preference_dataset.jsonl"
+  report_pdf_optional: "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_pack_report.pdf"
+  sft_candidates:
+    - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/sft_dataset.jsonl"
+    - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_sft.jsonl"
+  preferences_candidates:
+    - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/preference_dataset.jsonl"
+    - "Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_preferences.jsonl"
+
+configs:
+  allowlist: "configs/dataset_sources_allowlist.yaml"
+  mixture: "configs/dataset_mixture.yaml"
+  license_policy: "configs/license_policy.yaml"
+  train_sft: "configs/train_sft.yaml"
+  train_dpo: "configs/train_dpo.yaml"
+  run_profiles: "configs/run_profiles.yaml"
+  chat_template_policy: "configs/chat_template_policy.yaml"
+
+run_evidence:
+  root: "workspace/runs"
+  status_file: "STATUS.json"
+  summary_file: "SUMMARY.md"
+  required_children:
+    - "config_snapshot"
+    - "commands"
+    - "environment"
+    - "logs"
+    - "reports"
+    - "artifacts"
+    - "checksums"

@@ -1,0 +1,22 @@
+{
+  "type": "category_manifest",
+  "total_rows": 100000,
+  "category_breakdown": {
+    "adversarial_identity_pressure": 14920,
+    "capability_honesty": 10053,
+    "direct_identity_qa": 19588,
+    "indirect_identity_paraphrase": 19989,
+    "multilingual_identity": 10214,
+    "multimodal_identity": 10058,
+    "tone_style_control": 15178
+  },
+  "category_share": {
+    "indirect_identity_paraphrase": 19.99,
+    "tone_style_control": 15.18,
+    "capability_honesty": 10.05,
+    "multilingual_identity": 10.21,
+    "adversarial_identity_pressure": 14.92,
+    "multimodal_identity": 10.06,
+    "direct_identity_qa": 19.59
+  }
+}

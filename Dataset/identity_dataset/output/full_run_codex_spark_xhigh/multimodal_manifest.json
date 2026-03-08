@@ -1,0 +1,11 @@
+{
+  "type": "multimodal_manifest",
+  "total_rows": 100000,
+  "multimodal_rows": 9515,
+  "text_only_rows": 90485,
+  "multimodal_share": 9.515,
+  "multimodal_breakdown": {
+    "multimodal": 9515,
+    "text_only": 90485
+  }
+}

@@ -1,0 +1,23 @@
+﻿version: "2.0"
+profiles:
+  default_96gb:
+    description: "Primary profile for 96GB-class GPU memory budget"
+    sft:
+      per_device_train_batch_size: 2
+      gradient_accumulation_steps: 16
+      max_seq_length: 4096
+    dpo:
+      per_device_train_batch_size: 2
+      gradient_accumulation_steps: 16
+      max_seq_length: 4096
+
+  safe_fallback:
+    description: "Reduced memory profile for constrained GPUs"
+    sft:
+      per_device_train_batch_size: 1
+      gradient_accumulation_steps: 32
+      max_seq_length: 3072
+    dpo:
+      per_device_train_batch_size: 1
+      gradient_accumulation_steps: 32
+      max_seq_length: 3072
