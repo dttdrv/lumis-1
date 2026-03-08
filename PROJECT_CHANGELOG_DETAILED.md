@@ -563,3 +563,39 @@ git show HEAD:notebooks/90_colab_main_pipeline.ipynb
 
 ### Next recommended step
 - Delete the stale remote rehab branch so only `main` remains on the remote, then commit and push the notebook-instruction correction.
+
+## 2026-03-08T10:37:00+02:00 | session: notebook-wording-fix
+
+### Intent / objective
+- Remove the last contradictory wording inside notebook 90 after `main` became the default branch.
+
+### Repository areas inspected
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+
+### Files modified
+- `notebooks/90_colab_main_pipeline.ipynb`
+- `NOTEBOOK_OPERATOR_INSTRUCTIONS.md`
+- `PROJECT_CHANGELOG_DETAILED.md`
+- `PROJECT_TIME_CAPSULE.md`
+
+### Commands executed
+```bash
+git show HEAD:notebooks/90_colab_main_pipeline.ipynb
+```
+
+### Bugs / errors observed
+- The notebook markdown still said it bootstrapped the rehab branch even though the implementation now defaults to `main`.
+
+### Decisions made
+- Updated the notebook wording to match the current bootstrap behavior.
+- Added the absolute notebook path to the operator instruction document for direct discoverability.
+
+### Rationale for decisions
+- The contradiction made a valid notebook look untrustworthy and directly contributed to operator confusion.
+
+### Risks or uncertainties
+- This fixes discoverability and wording only; it does not change the unresolved multimodal SFT limitation.
+
+### Next recommended step
+- Push the notebook wording fix to `main`.

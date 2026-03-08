@@ -1,4 +1,4 @@
-# NOTEBOOK_OPERATOR_INSTRUCTIONS
+﻿# NOTEBOOK_OPERATOR_INSTRUCTIONS
 
 Status: Canonical | Descriptive
 
@@ -8,7 +8,7 @@ This file explains how to run the Lumis-1 notebook surfaces after the 2026-03-08
 
 The single sequential Colab notebook is:
 
-- `notebooks/90_colab_main_pipeline.ipynb`
+- `notebooks/90_colab_main_pipeline.ipynb`\r\n- `C:\\Users\\deyan\\Projects\\Lumis-1\\notebooks\\90_colab_main_pipeline.ipynb`
 
 It is a convenience wrapper for operators who cannot run the modular notebooks side by side.
 
@@ -94,3 +94,4 @@ If those directories are not populated, do not treat the run as complete.
 ## If You Want The Modular Path Instead
 
 Use `OPERATOR_RUN_ORDER.md` and run the canonical notebook sequence `00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60`.
+

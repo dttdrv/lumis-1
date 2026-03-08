@@ -566,3 +566,27 @@
 
 ### What the next agent should do without rereading everything
 - Delete the stale remote rehab branch, commit the notebook-instruction correction to `main`, push `main`, and only then continue work on the multimodal SFT gap.
+
+## 2026-03-08T10:37:00+02:00 | notebook-wording-fix
+
+### Canonical execution path as currently understood
+- `notebooks/90_colab_main_pipeline.ipynb` exists on `main` and defaults to bootstrapping `main`
+
+### Proven claims
+- The unified notebook is present and committed.
+- The last contradictory wording about a rehab branch has been removed locally.
+
+### Unproven claims
+- End-to-end Colab proof remains unproven.
+
+### Current blockers
+- The real blocker remains the multimodal SFT gap, not notebook discoverability.
+
+### Active defects
+- The notebook-path discoverability issue is addressed by the new instruction document plus corrected notebook wording.
+
+### What changed in understanding during this session
+- Part of the perceived breakage was wording drift inside notebook 90, not missing code.
+
+### What the next agent should do without rereading everything
+- Push the notebook wording fix to `main`, then continue only with substantive runtime work.
