@@ -69,3 +69,15 @@
 - Repaired the unified notebook handoff so DPO failure no longer aborts the full Colab run; export and eval now fall back to the SFT artifact while recording the DPO failure in run evidence.
 - Rebuilt notebook 90 from the generator again after the hostile review pass and re-ran the full suite: `47 passed`.
 - Repaired notebook 90 bootstrap so it now recovers Colab Drive mounting when `/content/drive` is already non-empty and auto-downloads missing identity files from `STnoui/lumis1-identity` before validation.
+- Added `lumis1/colab_unified_unsloth_first.py`, `scripts/build_colab_unified_unsloth_first_notebook.py`, and generated `notebooks/91_colab_unified_unsloth_first.ipynb` as the new canonical Colab surface.
+- Switched the default Colab contract from repo-pinned-first to Unsloth-first and added regression coverage for the new notebook 91 bootstrap/download/runtime guarantees.
+- Added `colab_g4_first_run` to `configs/run_profiles.yaml` for a conservative first serious Colab G4 path.
+- Updated project state and operator docs so notebook 91 is canonical and notebook 90 is legacy context only.
+
+## 2026-03-09
+
+- Generated `notebooks/91_colab_unified_unsloth_first.ipynb` from `scripts/build_colab_unified_unsloth_first_notebook.py` as the new canonical Colab surface.
+- Added `lumis1/colab_unified_unsloth_first.py` as the embedded runtime helper for notebook 91.
+- Switched the default Colab install contract to Unsloth-first and added a conservative `colab_g4_first_run` profile.
+- Added notebook-91 regression coverage for the Unsloth-first contract, HF identity bootstrap, safe Drive recovery, automatic final download, and self-contained runtime embedding.
+- Updated project/operator state so notebook 91 is canonical and notebook 90 is retained as legacy context.
