@@ -63,6 +63,10 @@ def test_legacy_colab_main_notebook_exists_and_compiles() -> None:
     assert "install_runtime_dependencies" in all_source
     assert "Cell 2: Strict constraints failed, falling back to requirements-only install..." in all_source
     assert "install_strategy" in all_source
+    assert "MAX_RECORDS_SCANNED_PER_SOURCE" in all_source
+    assert "MAX_UNMAPPED_ROWS_PER_SOURCE" in all_source
+    assert '"scan_cap_reached"' in all_source
+    assert '"unmapped_record_cap_reached"' in all_source
     assert "huggingface-hub>=1.4.0" in all_source
     assert "sentencepiece>=0.2.0" in all_source
     assert "safetensors>=0.6.0" in all_source

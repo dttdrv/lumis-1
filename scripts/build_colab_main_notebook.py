@@ -100,7 +100,7 @@ def build_notebook() -> dict:
                 IDENTITY_HF_REPO_ID = os.environ.get("LUMIS1_IDENTITY_HF_REPO", "STnoui/lumis1-identity")
                 IDENTITY_AUTO_DOWNLOAD = True
 
-                INSTALL_MODE = "repo_pinned"  # repo_pinned | unsloth_auto
+                INSTALL_MODE = "colab_auto"  # colab_auto | repo_pinned | unsloth_auto
                 STRICT_REPO_PINNED_SYNC = True
                 SOURCE_MODE = "hf"  # hf | local
                 STREAMING = True
@@ -196,6 +196,8 @@ def build_notebook() -> dict:
                 from __future__ import annotations
 
                 import importlib.metadata
+                import json
+                import os
                 import subprocess
                 import sys
 
@@ -214,12 +216,38 @@ def build_notebook() -> dict:
                     "sentencepiece": "sentencepiece",
                     "safetensors": "safetensors",
                 }
+                CORE_STACK_PACKAGES = {
+                    "unsloth",
+                    "unsloth_zoo",
+                    "torch",
+                    "transformers",
+                    "trl",
+                    "accelerate",
+                    "peft",
+                    "bitsandbytes",
+                    "torchvision",
+                }
+                SUPPLEMENTAL_REQUIREMENTS = [
+                    line.strip()
+                    for line in EMBEDDED_REQUIREMENTS_TEXT.splitlines()
+                    if line.strip()
+                    and not line.lstrip().startswith("#")
+                    and line.split(">=", 1)[0].split("==", 1)[0].strip() not in CORE_STACK_PACKAGES
+                ]
 
                 def installed_version(package_name: str) -> str | None:
                     try:
                         return importlib.metadata.version(package_name)
                     except importlib.metadata.PackageNotFoundError:
                         return None
+
+                def run_pip_command(args: list[str], *, capture: bool = False) -> subprocess.CompletedProcess[str]:
+                    return subprocess.run(
+                        [sys.executable, "-m", "pip", *args],
+                        check=not capture,
+                        text=True,
+                        capture_output=capture,
+                    )
 
                 def pip_install(requirements_text: str, constraints_text: str) -> None:
                     subprocess.run([sys.executable, "-m", "pip", "install", "-U", "pip"], check=True)
@@ -243,22 +271,98 @@ def build_notebook() -> dict:
                         check=True,
                     )
 
-                need_install = STRICT_REPO_PINNED_SYNC
-                if not need_install:
-                    for module_name, package_name in REQUIRED_MODULE_TO_PACKAGE.items():
-                        if installed_version(package_name) is None:
-                            need_install = True
-                            break
+                def pip_install_requirements_only(requirements_text: str) -> None:
+                    subprocess.run([sys.executable, "-m", "pip", "install", "-U", "pip"], check=True)
+                    install_root = WORK_ROOT / "_embedded_requirements"
+                    install_root.mkdir(parents=True, exist_ok=True)
+                    requirements_path = install_root / "requirements.txt"
+                    requirements_path.write_text(requirements_text, encoding="utf-8")
+                    subprocess.run(
+                        [
+                            sys.executable,
+                            "-m",
+                            "pip",
+                            "install",
+                            "-r",
+                            str(requirements_path),
+                        ],
+                        check=True,
+                    )
 
-                if INSTALL_MODE == "repo_pinned" and need_install:
-                    pip_install(EMBEDDED_REQUIREMENTS_TEXT, EMBEDDED_CONSTRAINTS_TEXT)
-                elif INSTALL_MODE == "unsloth_auto" and need_install:
+                def pip_install_supplemental(requirements: list[str]) -> None:
+                    if not requirements:
+                        return
+                    subprocess.run(
+                        [sys.executable, "-m", "pip", "install", *requirements],
+                        check=True,
+                    )
+
+                def run_unsloth_auto_install() -> None:
                     subprocess.run(
                         "wget -qO- https://raw.githubusercontent.com/unslothai/unsloth/main/unsloth/_auto_install.py | python -",
                         shell=True,
                         check=True,
                     )
-                    pip_install(EMBEDDED_REQUIREMENTS_TEXT, EMBEDDED_CONSTRAINTS_TEXT)
+
+                def install_runtime_dependencies() -> dict[str, object]:
+                    install_report: dict[str, object] = {
+                        "install_mode": INSTALL_MODE,
+                        "strict_repo_pinned_sync": STRICT_REPO_PINNED_SYNC,
+                        "steps": [],
+                        "install_strategy": None,
+                    }
+                    need_install = STRICT_REPO_PINNED_SYNC
+                    if not need_install:
+                        for package_name in REQUIRED_MODULE_TO_PACKAGE.values():
+                            if installed_version(package_name) is None:
+                                need_install = True
+                                break
+                    if not need_install:
+                        install_report["install_strategy"] = "preinstalled"
+                        return install_report
+
+                    if INSTALL_MODE == "repo_pinned":
+                        pip_install(EMBEDDED_REQUIREMENTS_TEXT, EMBEDDED_CONSTRAINTS_TEXT)
+                        install_report["steps"].append("repo_pinned")
+                        install_report["install_strategy"] = "repo_pinned"
+                        return install_report
+
+                    if INSTALL_MODE == "unsloth_auto":
+                        run_unsloth_auto_install()
+                        pip_install_supplemental(SUPPLEMENTAL_REQUIREMENTS)
+                        install_report["steps"].extend(["unsloth_auto", "supplemental_only"])
+                        install_report["install_strategy"] = "unsloth_auto_plus_supplemental"
+                        return install_report
+
+                    try:
+                        pip_install(EMBEDDED_REQUIREMENTS_TEXT, EMBEDDED_CONSTRAINTS_TEXT)
+                        install_report["steps"].append("repo_pinned")
+                        install_report["install_strategy"] = "repo_pinned"
+                        return install_report
+                    except subprocess.CalledProcessError as strict_exc:
+                        install_report["steps"].append("repo_pinned_failed")
+                        install_report["strict_failure_returncode"] = strict_exc.returncode
+                        print("Cell 2: Strict constraints failed, falling back to requirements-only install...")
+                    try:
+                        pip_install_requirements_only(EMBEDDED_REQUIREMENTS_TEXT)
+                        install_report["steps"].append("requirements_only")
+                        install_report["install_strategy"] = "requirements_only"
+                        return install_report
+                    except subprocess.CalledProcessError as req_exc:
+                        install_report["steps"].append("requirements_only_failed")
+                        install_report["requirements_only_failure_returncode"] = req_exc.returncode
+                        print("Cell 2: Requirements-only install failed, falling back to Unsloth auto-install...")
+
+                    run_unsloth_auto_install()
+                    pip_install_supplemental(SUPPLEMENTAL_REQUIREMENTS)
+                    install_report["steps"].extend(["unsloth_auto", "supplemental_only"])
+                    install_report["install_strategy"] = "unsloth_auto_plus_supplemental"
+                    return install_report
+
+                install_report = install_runtime_dependencies()
+                install_root = WORK_ROOT / "_embedded_requirements"
+                install_root.mkdir(parents=True, exist_ok=True)
+                (install_root / "install_report.json").write_text(json.dumps(install_report, indent=2), encoding="utf-8")
 
                 summary = {name: installed_version(name) for name in [
                     "unsloth",
@@ -274,7 +378,7 @@ def build_notebook() -> dict:
                     "sentencepiece",
                     "safetensors",
                 ]}
-                print(json.dumps(summary, indent=2))
+                print(json.dumps({"install_report": install_report, "versions": summary}, indent=2))
                 """
             ),
         }
@@ -526,6 +630,14 @@ def build_notebook() -> dict:
                 def source_license(source_id: str) -> str:
                     entry = ALLOWLIST_MAP.get(source_id) or {}
                     return str(entry.get("license") or "")
+
+                COLAB_SCAN_CAP = 512
+                LOCAL_SCAN_CAP = 2048
+                MAX_RECORDS_SCANNED_PER_SOURCE = min(
+                    int(DATASET_MIXTURE.get("ingestion_defaults", {}).get("max_records_scanned_per_source") or LOCAL_SCAN_CAP),
+                    COLAB_SCAN_CAP if IN_COLAB else LOCAL_SCAN_CAP,
+                )
+                MAX_UNMAPPED_ROWS_PER_SOURCE = 256 if IN_COLAB else 768
 
                 def resolve_identity_paths() -> dict[str, Path]:
                     for sft_name in DEFAULT_SFT_NAMES:
@@ -785,7 +897,18 @@ def build_notebook() -> dict:
                     for record in dataset:
                         if source_budget <= 0 or global_tokens >= open_token_budget_target:
                             break
+                        if rows_scanned >= MAX_RECORDS_SCANNED_PER_SOURCE:
+                            drop_reasons["scan_cap_reached"] += 1
+                            break
                         rows_scanned += 1
+                        if rows_scanned == 1 or rows_scanned % 64 == 0:
+                            print(json.dumps({
+                                "source_id": source_id,
+                                "rows_scanned": rows_scanned,
+                                "kept_rows": kept_rows,
+                                "kept_pref_rows": kept_pref_rows,
+                                "source_budget_remaining": source_budget,
+                            }, indent=2))
                         record_id = str(record.get("id") or f"{source_id.replace('/', '_')}-{rows_scanned:08d}" or uuid.uuid4())
                         if str(source_cfg.get("modality")) == "image_text":
                             row = build_multimodal_row_from_record(
@@ -804,6 +927,9 @@ def build_notebook() -> dict:
                             )
                         if row is None:
                             drop_reasons["unmapped_record"] += 1
+                            if drop_reasons["unmapped_record"] >= MAX_UNMAPPED_ROWS_PER_SOURCE:
+                                drop_reasons["unmapped_record_cap_reached"] += 1
+                                break
                             if DRY_RUN and rows_scanned >= 1000:
                                 break
                             continue

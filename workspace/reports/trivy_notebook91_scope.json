@@ -1,0 +1,10 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.69.1"
+  },
+  "ReportID": "019cd247-b241-7141-a927-d3c3dbc8a94d",
+  "CreatedAt": "2026-03-09T13:07:20.0010824+02:00",
+  "ArtifactName": "C:/Users/deyan/Projects/Lumis-1/workspace/trivy_scope_notebook91",
+  "ArtifactType": "filesystem"
+}
