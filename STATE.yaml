@@ -1,4 +1,4 @@
-timestamp: '2026-03-09T10:20:00+02:00'
+timestamp: '2026-03-09T22:37:16+02:00'
 project: Lumis-1 repository rehabilitation
 status: notebook_91_unsloth_first_colab_surface_generated
 mode: single_notebook_colab_operator_execution_required
@@ -36,6 +36,7 @@ authoritative_paths:
   legacy_notebooks:
     status: historical
     paths:
+      - notebooks/91_colab_unified_unsloth_first_old.ipynb
       - notebooks/90_colab_main_pipeline.ipynb
   runtime:
     status: canonical

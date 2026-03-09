@@ -11,6 +11,11 @@ The canonical Colab notebook is:
 - `notebooks/91_colab_unified_unsloth_first.ipynb`
 - `C:\Users\deyan\Projects\Lumis-1\notebooks\91_colab_unified_unsloth_first.ipynb`
 
+The older notebook-91 variant is preserved for comparison only at:
+
+- `notebooks/91_colab_unified_unsloth_first_old.ipynb`
+- `C:\Users\deyan\Projects\Lumis-1\notebooks\91_colab_unified_unsloth_first_old.ipynb`
+
 Legacy Colab context remains available at:
 
 - `notebooks/90_colab_main_pipeline.ipynb`

@@ -9,6 +9,7 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 - `configs/*.yaml`
 - `notebooks/00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60`
 - `notebooks/91_colab_unified_unsloth_first.ipynb` as the canonical standalone sequential Colab surface over the same active path
+- `notebooks/91_colab_unified_unsloth_first_old.ipynb` retained as the older historical notebook-91 snapshot for traceability only
 - `notebooks/90_colab_main_pipeline.ipynb` retained as a superseded legacy Colab notebook for traceability only
 - runtime helpers in `lumis1/*`
 - tests in `tests/*`
