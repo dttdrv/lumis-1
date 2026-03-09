@@ -859,3 +859,143 @@
 - Inspect `workspace/runs/<run_id>/reports/dpo_training.json` to see whether DPO completed or fell back to SFT.
 - Inspect `workspace/runs/<run_id>/reports/gguf_export.json` for `export_mode`, `direct_errors`, and `merge_error`.
 - Inspect `workspace/runs/<run_id>/reports/export_smoke.json` for the final loader path and keep all claims conservative until those artifacts exist.
+## Snapshot 2026-03-09 00:30:00 +02:00 - Session rehab-20260309-01
+
+### Canonical execution path
+- `configs/*.yaml`
+- `notebooks/00_env_sanity_and_pinning.ipynb`
+- `notebooks/10_validate_identity_pack.ipynb`
+- `notebooks/20_build_open_dataset_mix.ipynb`
+- `notebooks/30_merge_and_validate_full_dataset.ipynb`
+- `notebooks/40_train_sft_unsloth_qwen35_4b.ipynb`
+- `notebooks/50_train_dpo_unsloth_qwen35_4b.ipynb`
+- `notebooks/60_eval_export_smoke.ipynb`
+- `notebooks/91_colab_unified_unsloth_first.ipynb` as the canonical Colab convenience surface
+- `lumis1/*`
+
+### Proven claims
+- Notebook 91 now exists and is generated from `scripts/build_colab_unified_unsloth_first_notebook.py`.
+- Notebook 91 is self-contained at runtime in the sense required by the repository contract: it embeds runtime helper code and config snapshots rather than requiring manual YAML attachment.
+- Notebook 91 statically encodes an Unsloth-first install contract, safe Drive mount recovery, HF identity bootstrap, GGUF-first export flow, automatic final download, and default DPO skip for multimodal plus text-only-preference runs.
+- The new notebook-91 helper and notebook contract tests pass locally.
+
+### Unproven claims
+- A proof-bearing Colab G4 run of notebook 91 from bootstrap through final download.
+- That the heuristic multimodal source loaders still match the live HF schemas on the first serious run.
+- That the first-run export bundle is operationally correct on the real Colab runtime rather than only structurally encoded.
+
+### Current blockers
+- No real Colab G4 run evidence exists for notebook 91 yet.
+- The multimodal source mapping still depends on upstream HF schemas remaining close to the current assumptions.
+- Identity multimodal supervision still depends on surrogate image materialization.
+
+### Active defects
+- No new local static contract defect remains after the notebook-91 build/test pass.
+- Remaining defects are runtime-proof gaps, not repository-compilation gaps.
+
+### Current risk register
+- Real Colab G4 may still surface dependency or CUDA matrix mismatches despite the Unsloth-first fallback path.
+- Open-source multimodal source drift can still break the first-run dataset build.
+- Surrogate identity images still weaken the meaning of a multimodal training claim.
+
+### Current evidence-bearing artifacts
+- `notebooks/91_colab_unified_unsloth_first.ipynb`
+- `scripts/build_colab_unified_unsloth_first_notebook.py`
+- `lumis1/colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first_notebook.py`
+
+### Most trustworthy files
+- `scripts/build_colab_unified_unsloth_first_notebook.py`
+- `notebooks/91_colab_unified_unsloth_first.ipynb`
+- `lumis1/colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first_notebook.py`
+
+### Least trustworthy or stale files
+- any assumption that static notebook generation proves first-run Colab success
+- any belief that notebook 90 is still the canonical Colab truth surface
+- any interpretation of surrogate identity images as equivalent to curated originals
+
+### What changed in understanding during this session
+- The fix was not a small patch to notebook 90; the repo needed a clean notebook-91 contract with a different bootstrap philosophy.
+- The core install contract had to move to Unsloth-first and stay that way all the way through the generated source and tests.
+- The final artifact selection and browser download path needed to be a first-class notebook contract rather than an optional toggle.
+
+### What the next agent should do without rereading everything
+- Run notebook 91 on Colab G4.
+- Inspect `workspace/reports/bootstrap/drive_mount.json`, `workspace/reports/bootstrap/identity_download.json`, and `workspace/reports/bootstrap/install_strategy_and_versions.json`.
+- Confirm that `workspace/final/full_sft.jsonl` and `workspace/final/full_preferences.jsonl` are produced.
+- Confirm that the final selected artifact is downloaded automatically and that the emitted run tree contains the expected `STATUS.json` and `SUMMARY.md`.
+
+## Snapshot 2026-03-09 10:20:00 +02:00 - Session rehab-20260309-02
+
+### Canonical execution path
+- `configs/*.yaml`
+- `notebooks/00_env_sanity_and_pinning.ipynb`
+- `notebooks/10_validate_identity_pack.ipynb`
+- `notebooks/20_build_open_dataset_mix.ipynb`
+- `notebooks/30_merge_and_validate_full_dataset.ipynb`
+- `notebooks/40_train_sft_unsloth_qwen35_4b.ipynb`
+- `notebooks/50_train_dpo_unsloth_qwen35_4b.ipynb`
+- `notebooks/60_eval_export_smoke.ipynb`
+- `notebooks/91_colab_unified_unsloth_first.ipynb` as the canonical Colab convenience surface
+- `lumis1/*`
+
+### Legacy-only context
+- `notebooks/90_colab_main_pipeline.ipynb` remains in-tree for historical traceability, not as the default Colab bootstrap path.
+
+### Proven claims
+- Notebook 91 exists and is generated from its own builder.
+- Notebook 91 defaults to an Unsloth-first Colab install contract.
+- Notebook 91 embeds helper/runtime code and config snapshots rather than requiring manual YAML attachment.
+- Notebook-91 helper tests and notebook-contract tests pass locally.
+
+### Unproven claims
+- A proof-bearing Colab G4 run of notebook 91 from install through final artifact download.
+- That the current open multimodal-source mapping survives live upstream schemas without adjustment.
+- That surrogate identity images are sufficient for the intended multimodal training claim surface.
+
+### Current blockers
+- No real Colab G4 evidence tree exists yet for notebook 91.
+- Multimodal DPO remains intentionally skipped by default when only text preferences are available.
+- The export path is still only statically verified in this session.
+
+### Active defects
+- No new local compile or contract-test defect remains in the notebook-91 builder/helper surface.
+- Remaining defects are runtime truth gaps rather than local source defects.
+
+### Current risk register
+- Live Colab may still surface package conflicts or HF schema drift beyond the current static tests.
+- The final artifact packaging path may need adjustment if the effective multimodal export emits additional companion files on a real run.
+- Surrogate identity images still weaken the strength of any multimodal-quality claim.
+
+### Current evidence-bearing artifacts
+- `notebooks/91_colab_unified_unsloth_first.ipynb`
+- `scripts/build_colab_unified_unsloth_first_notebook.py`
+- `lumis1/colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first_notebook.py`
+
+### Most trustworthy files
+- `notebooks/91_colab_unified_unsloth_first.ipynb`
+- `scripts/build_colab_unified_unsloth_first_notebook.py`
+- `lumis1/colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first.py`
+- `tests/test_colab_unified_unsloth_first_notebook.py`
+
+### Least trustworthy or stale files
+- any assumption that notebook 91 is proof-bearing before a real Colab G4 run
+- any assumption that text-only preferences justify enabling multimodal DPO by default
+- any interpretation of surrogate identity images as equivalent to curated originals
+
+### What changed in understanding during this session
+- The cleanest way to replace notebook 90 was a new generated notebook plus a separate embedded runtime helper, not more notebook-90 patching.
+- The notebook contract needed explicit coverage for Unsloth-first bootstrap, final browser download, and the ban on repo-side runtime imports.
+- The generated notebook source itself had to avoid literal contract-violating strings like `workspace/runs/<run_id>/`.
+
+### What the next agent should do without rereading everything
+- Run notebook 91 on Colab G4.
+- Inspect `workspace/reports/bootstrap/drive_mount.json`, `workspace/reports/bootstrap/identity_download.json`, and `workspace/reports/bootstrap/install_strategy_and_versions.json`.
+- Confirm the merged dataset contains concrete image rows before SFT.
+- Check the selected final artifact and whether the browser download produced a single GGUF file or `final_deliverables.zip`.

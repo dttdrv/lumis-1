@@ -1,6 +1,6 @@
-timestamp: '2026-03-08T12:01:00+02:00'
+timestamp: '2026-03-09T10:20:00+02:00'
 project: Lumis-1 repository rehabilitation
-status: colab_standalone_multimodal_pipeline_reimplemented
+status: notebook_91_unsloth_first_colab_surface_generated
 mode: single_notebook_colab_operator_execution_required
 
 status_taxonomy:
@@ -32,6 +32,10 @@ authoritative_paths:
       - notebooks/40_train_sft_unsloth_qwen35_4b.ipynb
       - notebooks/50_train_dpo_unsloth_qwen35_4b.ipynb
       - notebooks/60_eval_export_smoke.ipynb
+      - notebooks/91_colab_unified_unsloth_first.ipynb
+  legacy_notebooks:
+    status: historical
+    paths:
       - notebooks/90_colab_main_pipeline.ipynb
   runtime:
     status: canonical
@@ -54,6 +58,7 @@ proven_claims:
 partially_proven_claims:
   - The notebook-driven open/full dataset path produces sample-scale artifacts under workspace/interim and workspace/final.
   - A single sequential Colab notebook now exists for the active path, is self-contained at runtime, and is only statically verified so far.
+  - Notebook 91 now exists as a generated self-contained Colab-first surface with an Unsloth-first default install contract, bootstrap evidence reports, HF identity auto-download, multimodal SFT preparation, GGUF-first export packaging, and automatic browser download.
   - The Colab notebook now embeds config/runtime code, enforces explicit Qwen3.5 non-thinking chat-template probes, accepts alias-aware identity bootstrap, and writes dedicated export-run evidence layout, but still lacks a proof-bearing Colab run.
   - The DPO runtime surfaces now normalize preference prompts from either prompt strings or prompt_messages, and the merge path rewrites identity preference rows into the canonical current shape.
   - The single Colab notebook now installs dependencies in place without a forced restart, auto-selects a safer profile from detected GPU memory, materializes surrogate local image assets for placeholder-only identity rows, emits multimodal image blocks with public-compatible `image` / `path` / `image_path` keys, and loads PEFT adapter outputs correctly for DPO/eval/export.
@@ -90,6 +95,7 @@ defects:
   - The notebook now survives DPO failures by falling back to the SFT artifact, but that is an operational continuity measure rather than proof that multimodal DPO is sound on this stack.
   - The eval fallback now tries a FastVisionModel loader when causal-loader reuse fails, but that recovery path is still statically verified only and needs a real Colab G4 run.
   - The new HF identity bootstrap path is statically verified only and still needs a real Colab G4 run against the public dataset repo.
+  - Notebook 91 is statically verified only; the generated notebook still needs a real Colab G4 run before any end-to-end training or export claim becomes proof-bearing.
 
 verification:
   unit_tests: passed_2026-03-08_47_passed
@@ -112,12 +118,14 @@ verification:
   colab_eval_effective_final_model_fallback: repaired_2026-03-08
   colab_drive_mount_recovery: repaired_2026-03-08
   colab_identity_hf_bootstrap: repaired_2026-03-08
+  notebook_91_generation: repaired_2026-03-09
+  notebook_91_contract_tests: passed_2026-03-09
 
 next_steps:
-  - Run notebooks/90_colab_main_pipeline.ipynb on Colab G4 and confirm the default `STnoui/lumis1-identity` auto-download path works without manual file staging.
-  - Confirm the standalone notebook can stream the supported HF sources (`Docmatix`, `TextVQA`, `DocVQA`, text sources) without schema drift on Colab.
+  - Run notebooks/91_colab_unified_unsloth_first.ipynb on Colab G4 and confirm the default `STnoui/lumis1-identity` auto-download path works without manual file staging.
+  - Confirm notebook 91 can stream the supported HF sources (`Docmatix`, `TextVQA`, `DocVQA`, text sources) without schema drift on Colab.
   - Decide whether the surrogate identity screenshot/document assets are acceptable as an interim multimodal bridge or whether identity multimodal rows must be backed by curated real image assets before training claims are made.
-  - Confirm whether multimodal DPO succeeds on the real Colab stack or consistently falls back to the SFT artifact; do not claim DPO completion unless the DPO run evidence is populated and successful.
-  - Confirm GGUF export produces both q8_0 and q4 variants under workspace/runs/<run_id>/artifacts/gguf.
-  - Decide whether `structural_only` export completion is acceptable long-term or whether notebook 90 must gain automatic parity-pair generation and GGUF inference checks.
+  - Confirm whether multimodal DPO should remain skipped by default on the real Colab stack or whether a multimodal preference path is stable enough to enable experimentally.
+  - Confirm GGUF export produces both q8_0 and q4 variants under the notebook 91 run tree artifacts.
+  - Decide whether `structural_only` export completion is acceptable long-term or whether notebook 91 must gain automatic parity-pair generation and GGUF inference checks.
   - Treat SFT, DPO, eval, and export as unproven until workspace/runs/<run_id>/STATUS.json and evidence children are populated.

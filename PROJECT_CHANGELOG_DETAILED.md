@@ -1020,3 +1020,87 @@ otebooks/90_colab_main_pipeline.ipynb with automatic Drive mount recovery and HF
 - If the public HF bootstrap path becomes undesirable, disable auto-download and provide the files directly in identity_input or override LUMIS1_IDENTITY_HF_REPO.
 ### Next recommended step
 - On Colab G4, run notebook 90 from a fresh runtime and confirm the first phase now mounts Drive cleanly and writes workspace/reports/identity_download.json before validation.
+## Entry 2026-03-09 00:30:00 +02:00 - Session rehab-20260309-01
+### Objective
+- Replace notebook 90 as the canonical Colab surface with a new notebook 91 that is Unsloth-first, self-contained at runtime, and aimed at producing a downloadable GGUF artifact on the first serious Colab run.
+### Repository areas inspected
+- scripts/build_colab_main_notebook.py
+- lumis1/colab_standalone.py
+- configs/dataset_mixture.yaml
+- configs/dataset_sources_allowlist.yaml
+- configs/train_sft.yaml
+- configs/train_dpo.yaml
+- configs/run_profiles.yaml
+- PROJECT_BRIEF.md
+- STATE.yaml
+- LOG.md
+- NOTEBOOK_OPERATOR_INSTRUCTIONS.md
+### Files modified
+- lumis1/colab_unified_unsloth_first.py
+- scripts/build_colab_unified_unsloth_first_notebook.py
+- notebooks/91_colab_unified_unsloth_first.ipynb
+- tests/test_colab_unified_unsloth_first.py
+- tests/test_colab_unified_unsloth_first_notebook.py
+- configs/run_profiles.yaml
+- NOTEBOOK_OPERATOR_INSTRUCTIONS.md
+- STATE.yaml
+- LOG.md
+- PROJECT_CHANGELOG_DETAILED.md
+- PROJECT_TIME_CAPSULE.md
+### Commands executed
+`bash
+# python scripts/build_colab_unified_unsloth_first_notebook.py
+# python -m pytest -q tests/test_colab_unified_unsloth_first.py tests/test_colab_unified_unsloth_first_notebook.py
+`
+### Outputs / reports produced
+- Generated `notebooks/91_colab_unified_unsloth_first.ipynb`.
+- Added a repo-tested embedded helper surface for notebook 91.
+- Added notebook-91 contract tests for Unsloth-first install, HF identity bootstrap, safe Drive recovery, automatic final download, and self-contained runtime embedding.
+### Bugs / errors observed
+- A one-shot large `apply_patch` for the new builder failed on Windows with a filename/extension-too-long error and had to be replaced with incremental patching.
+- The first implementation pass missed the explicit `unsloth_zoo` token expected by the matrix-install contract tests and leaked the literal `workspace/runs/<run_id>/` string into notebook 91 source.
+### Assumptions made
+- The current default DPO policy for the multimodal first-run path should be `skip` when only text preferences are available.
+- The first proof-bearing export must come from SFT rather than from an optional later stage.
+### Decisions made
+- Make notebook 91 the canonical Colab surface and notebook 90 legacy-only context.
+- Use Unsloth-first install as the default Colab bootstrap strategy.
+- Keep runtime/config embedding inside notebook 91 so no manual YAML attachment is required.
+- Auto-download the final artifact or `final_deliverables.zip` at the end of the notebook.
+### Rationale
+- The prior canonical Colab surface still encoded a broken default install strategy for a first serious Colab run.
+- The user explicitly required a new notebook rather than a light patch of notebook 90.
+### Risks / uncertainties
+- Notebook 91 is still statically verified only; no proof-bearing Colab G4 run has been produced yet.
+- The open-source multimodal source mapping remains heuristic and susceptible to upstream schema drift.
+- Surrogate identity images remain an interim bridge rather than proof of ideal multimodal supervision.
+### Rollback / recovery notes
+- Notebook 90 remains available as a historical fallback surface, but it should not be promoted back to canonical status without a stronger reason than static familiarity.
+### Next recommended step
+- Run `notebooks/91_colab_unified_unsloth_first.ipynb` on a real Colab G4 runtime and inspect the emitted `workspace/runs/` evidence tree, especially bootstrap reports, merged dataset outputs, SFT artifacts, and the final downloaded bundle.
+
+## 2026-03-09 10:20 +02:00 - Notebook 91 canonicalized
+
+### Summary
+- Added `lumis1/colab_unified_unsloth_first.py` as the repo-tested embedded runtime helper for the new unified Colab path.
+- Added `scripts/build_colab_unified_unsloth_first_notebook.py` and generated `notebooks/91_colab_unified_unsloth_first.ipynb` from it.
+- Added `tests/test_colab_unified_unsloth_first.py` and `tests/test_colab_unified_unsloth_first_notebook.py` to lock the new Colab-first contract.
+- Added `colab_g4_first_run` to `configs/run_profiles.yaml`.
+- Updated project memory so notebook 91 is now the canonical Colab surface and notebook 90 is legacy-only context.
+
+### Contract changes
+- Default install path is now Unsloth-first, not repo-pinned-first.
+- Notebook 91 embeds runtime code and config snapshots and does not require manual YAML attachment.
+- Notebook 91 auto-downloads `sft_dataset.jsonl` and `preference_dataset.jsonl` from `STnoui/lumis1-identity` when needed.
+- Notebook 91 records bootstrap reports for Drive mount, identity download, and install strategy/version capture.
+- Notebook 91 treats multimodal SFT as the main path, exports GGUF first, and automatically downloads the final artifact or `final_deliverables.zip`.
+- Notebook 91 defaults DPO to a recorded skip on multimodal runs that only have text preferences.
+
+### Verification
+- `python scripts/build_colab_unified_unsloth_first_notebook.py`
+- `python -m pytest -q tests/test_colab_unified_unsloth_first.py tests/test_colab_unified_unsloth_first_notebook.py`
+
+### Remaining gaps
+- No proof-bearing Colab G4 run has been recorded yet.
+- The open-source multimodal source mapping remains heuristic until a live Colab run confirms it.
+- Surrogate identity images remain an interim bridge, not ideal multimodal supervision evidence.

@@ -1,19 +1,24 @@
-﻿# NOTEBOOK_OPERATOR_INSTRUCTIONS
+# NOTEBOOK_OPERATOR_INSTRUCTIONS
 
 Status: Canonical | Descriptive
 
-This file explains how to run the Lumis-1 notebook surfaces after the 2026-03-08 rehab pass.
+This file explains how to run the Lumis-1 notebook surfaces after the 2026-03-09 notebook 91 pass.
 
 ## The Unified Notebook
 
-The single sequential Colab notebook is:
+The canonical Colab notebook is:
+
+- `notebooks/91_colab_unified_unsloth_first.ipynb`
+- `C:\Users\deyan\Projects\Lumis-1\notebooks\91_colab_unified_unsloth_first.ipynb`
+
+Legacy Colab context remains available at:
 
 - `notebooks/90_colab_main_pipeline.ipynb`
-- `C:\\Users\\deyan\\Projects\\Lumis-1\\notebooks\\90_colab_main_pipeline.ipynb`
+- `C:\Users\deyan\Projects\Lumis-1\notebooks\90_colab_main_pipeline.ipynb`
 
-It is a convenience wrapper for operators who cannot run the modular notebooks side by side.
+Notebook 91 is the operator-facing path. Notebook 90 is historical context and should not be treated as the default bootstrap surface anymore.
 
-It does not replace repository truth. The underlying canonical stages are still:
+The underlying canonical modular stages are still:
 
 1. `notebooks/00_env_sanity_and_pinning.ipynb`
 2. `notebooks/10_validate_identity_pack.ipynb`
@@ -23,107 +28,127 @@ It does not replace repository truth. The underlying canonical stages are still:
 6. `notebooks/50_train_dpo_unsloth_qwen35_4b.ipynb`
 7. `notebooks/60_eval_export_smoke.ipynb`
 
-## What Notebook 90 Actually Does
+## What Notebook 91 Actually Does
 
-`90_colab_main_pipeline.ipynb` is intended to run the current active path in one Colab session:
+`91_colab_unified_unsloth_first.ipynb` is intended to run the active path in one Colab G4 session:
 
-1. Mount Drive and create one working root under `/content/lumis1_main`
-2. Install the pinned dependency baseline embedded inside the notebook
-3. Materialize the notebook’s embedded runtime/config surface locally
-4. Validate the identity dataset
-5. Rewrite placeholder identity image references into concrete surrogate local image assets
-6. Build the open corpus from allowlisted HF sources and materialize supported multimodal images into local rows carrying `image`, `path`, and `image_path`
-7. Merge and validate the final dataset
-8. Run SFT
-9. Run DPO
-10. If DPO fails, record that failure in run evidence and continue downstream from the SFT artifact
-11. Export GGUF first
-12. Run eval/export smoke against the effective final model
-13. Copy artifacts to Drive and optionally download one GGUF file to the browser
+1. Create a working root under `/content/lumis1_unified` and a single evidence root under `workspace/runs/<run_id>/`
+2. Recover Drive mounting safely when `/content/drive` already exists and is non-empty
+3. Install Unsloth first using the official pip path, then apply only supplemental packages after the Unsloth core stack is in place
+4. Materialize embedded runtime/config code locally so no repo-side YAML or `lumis1.*` imports are required upfront
+5. Auto-download canonical identity files from `STnoui/lumis1-identity` with `snapshot_download` if they are not already present locally
+6. Build the open dataset mix from the allowlisted HF sources and materialize concrete local image assets for supported multimodal rows
+7. Merge identity plus open data into canonical outputs `workspace/final/full_sft.jsonl` and `workspace/final/full_preferences.jsonl`
+8. Build a processor-ready multimodal SFT dataset in memory and fail early if the merged dataset has no concrete image rows
+9. Run multimodal SFT as the main training path
+10. Export GGUF first from the strongest completed artifact of the same run
+11. Skip DPO by default when the run is multimodal and only text preferences are available, while recording the exact skip reason in evidence
+12. Select the best available final artifact and automatically download it to the browser, or download `final_deliverables.zip` when multiple files are required
 
 ## Identity Input
 
-Notebook 90 uses this input folder:
-
-- `/content/drive/MyDrive/lumis1_colab/identity_input`
-
-If the folder already contains the identity files, the notebook uses them directly.
-
-If the files are missing, notebook 90 now auto-downloads them from the default Hugging Face dataset repo:
+Notebook 91 defaults to the public dataset repo:
 
 - `STnoui/lumis1-identity`
 
-The expected canonical filenames are:
+The required canonical filenames are:
 
 - `sft_dataset.jsonl`
 - `preference_dataset.jsonl`
 
-The accepted aliases are still:
+If those files are missing locally, notebook 91 downloads them automatically with `snapshot_download(..., allow_patterns=[...])` and records the result under:
 
-- `identity_sft.jsonl`
-- `identity_preferences.jsonl`
+- `workspace/reports/bootstrap/identity_download.json`
 
-You only need to override this behavior if:
+Manual YAML attachment is not part of the notebook 91 flow.
 
-- you want a different HF dataset repo, in which case set `LUMIS1_IDENTITY_HF_REPO`
-- you want to disable auto-download and provide the files yourself
+## Install Strategy
 
-Notebook 90 now defaults `PROFILE` to `auto`, which resolves to a safer memory profile from the detected GPU rather than assuming a 96 GB class device.
+Notebook 91 defaults to:
 
-Notebook 90 now installs pinned dependencies in place without intentionally killing the kernel. It also retries Colab Drive mounting safely when `/content/drive` is already present and non-empty in the runtime.
+- `INSTALL_STRATEGY = "unsloth_first"`
+
+That means:
+
+- the first serious Colab path is `pip install unsloth`
+- only after Unsloth imports cleanly does the notebook install supplemental packages from the embedded requirements surface
+- the notebook does not use repo-pinned-first bootstrap as the default Colab path
+- the notebook records the chosen install path and package versions under `workspace/reports/bootstrap/install_strategy_and_versions.json`
 
 ## What Is Proven vs Unproven
 
 Proven:
 
-- The notebook exists on `main`.
-- The notebook compiles.
-- The repo test suite passed after the current rehab work.
-- The canonical identity dataset remains the strongest completed artifact.
+- Notebook 91 exists on disk.
+- Notebook 91 is generated from a dedicated builder, not by lightly patching notebook 90.
+- Notebook 91 compiles cell-by-cell during generation.
+- The helper-layer and notebook-contract tests for notebook 91 pass locally.
 
 Unproven:
 
-- A real proof-bearing end-to-end Colab run using notebook 90.
-- Production-scale open/full dataset assembly from notebook 90.
-- Completed SFT, DPO, eval, or GGUF export until `workspace/runs/<run_id>/` contains real evidence.
-- A proof-bearing multimodal Qwen3.5 SFT path for the current mixed dataset.
+- A real proof-bearing end-to-end Colab G4 run using notebook 91.
+- Production-scale open/full dataset assembly from notebook 91.
+- Completed SFT, optional DPO, eval, or GGUF export until `workspace/runs/<run_id>/` contains real evidence.
+- Whether the surrogate identity image bridge is good enough for the intended multimodal claim surface.
 
 ## Important Current Limitation
 
-Notebook 90 is no longer text-only by design. It now tries to build a real multimodal SFT surface by:
+Notebook 91 does not pretend multimodal DPO is stable if only text preferences are available.
 
-- rewriting placeholder identity image references into surrogate local screenshot/document images
-- materializing supported HF multimodal records into concrete local image rows with public-compatible `image`, `path`, and `image_path` keys
-- switching to `FastVisionModel` SFT when multimodal rows are present
+Its default policy is:
 
-It also no longer treats DPO as a single point of failure. If the DPO stage fails, notebook 90 records that failure under the DPO run evidence tree and continues export/eval from the SFT artifact instead of aborting the whole Colab session.
+- run multimodal SFT
+- export GGUF from the SFT artifact first
+- skip DPO with an explicit evidence record when the multimodal path only has text preferences
+- continue to the final artifact selection and browser download instead of blocking the entire run late
 
-The GGUF export stage also now retries direct Unsloth loads from both merged and adapter-backed model directories instead of giving up after the first generic merge failure.
+Two important risks remain:
 
-That still does not make the path proof-bearing yet. Two important risks remain:
-
-- identity multimodal rows are trained against surrogate images, not curated original screenshots/documents
-- the HF multimodal source mapping is heuristic and still unproven on a real Colab run
+- identity multimodal rows still rely on surrogate local images rather than curated original screenshots/documents
+- the HF multimodal source mapping is still heuristic and needs a real Colab G4 run to prove that it survives current upstream schemas
 
 ## Expected Evidence
 
-Treat training, DPO, evaluation, and export as real only when the notebook writes evidence under:
+Treat notebook 91 output as real only when the run writes evidence under:
 
 - `workspace/runs/<run_id>/STATUS.json`
 - `workspace/runs/<run_id>/SUMMARY.md`
-- `workspace/runs/<run_id>/config_snapshot/`
-- `workspace/runs/<run_id>/commands/`
-- `workspace/runs/<run_id>/environment/`
-- `workspace/runs/<run_id>/logs/`
-- `workspace/runs/<run_id>/reports/`
+- `workspace/runs/<run_id>/bootstrap/`
+- `workspace/runs/<run_id>/dataset/`
+- `workspace/runs/<run_id>/sft/`
+- `workspace/runs/<run_id>/export_sft/`
+- `workspace/runs/<run_id>/dpo/`
+- `workspace/runs/<run_id>/export_final/`
+- `workspace/runs/<run_id>/eval/`
 - `workspace/runs/<run_id>/artifacts/`
 - `workspace/runs/<run_id>/checksums/`
 
-If those directories are not populated, do not treat the run as complete.
+The bootstrap reports that should always exist are:
 
-If `workspace/runs/<run_id>/reports/export_smoke.json` reports `status = structural_only`, the notebook completed unattended and produced the required GGUF variants, but parity-pair verification was not available. Treat that as structurally usable, not as exact parity proof.
+- `workspace/reports/bootstrap/drive_mount.json`
+- `workspace/reports/bootstrap/identity_download.json`
+- `workspace/reports/bootstrap/install_strategy_and_versions.json`
+
+The final report outputs that should always exist are:
+
+- `workspace/reports/final_run_report.json`
+- `workspace/reports/final_run_report.md`
+
+## Final Artifact Download Behavior
+
+Notebook 91 automatically selects the best available final deliverable in this order:
+
+1. post-DPO export bundle if fully successful
+2. otherwise the SFT export bundle
+
+If the best output is a single small-enough file, notebook 91 downloads that file directly.
+
+If the best output is large or requires multiple files such as GGUF plus companion assets, notebook 91 creates and downloads:
+
+- `final_deliverables.zip`
+
+No manual download flag is required.
 
 ## If You Want The Modular Path Instead
 
 Use `OPERATOR_RUN_ORDER.md` and run the canonical notebook sequence `00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60`.
-

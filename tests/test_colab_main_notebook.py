@@ -3,12 +3,14 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+"""Legacy coverage for notebook 90 after notebook 91 became canonical."""
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_PATH = REPO_ROOT / "notebooks" / "90_colab_main_pipeline.ipynb"
 
 
-def test_colab_main_notebook_exists_and_compiles() -> None:
+def test_legacy_colab_main_notebook_exists_and_compiles() -> None:
     assert NOTEBOOK_PATH.exists()
 
     notebook = json.loads(NOTEBOOK_PATH.read_text(encoding="utf-8"))
@@ -27,6 +29,7 @@ def test_colab_main_notebook_exists_and_compiles() -> None:
     assert "IDENTITY_INPUT_DIR" in all_source
     assert 'IDENTITY_HF_REPO_ID = os.environ.get("LUMIS1_IDENTITY_HF_REPO", "STnoui/lumis1-identity")' in all_source
     assert "IDENTITY_AUTO_DOWNLOAD = True" in all_source
+    assert 'INSTALL_MODE = "colab_auto"' in all_source
     assert "RUN_SFT" in all_source
     assert "RUN_DPO" in all_source
     assert "RUN_EXPORT" in all_source
@@ -56,6 +59,10 @@ def test_colab_main_notebook_exists_and_compiles() -> None:
     assert "mount_drive_safely" in all_source
     assert "identity_download.json" in all_source
     assert "ensure_identity_inputs()" in all_source
+    assert "SUPPLEMENTAL_REQUIREMENTS" in all_source
+    assert "install_runtime_dependencies" in all_source
+    assert "Cell 2: Strict constraints failed, falling back to requirements-only install..." in all_source
+    assert "install_strategy" in all_source
     assert "huggingface-hub>=1.4.0" in all_source
     assert "sentencepiece>=0.2.0" in all_source
     assert "safetensors>=0.6.0" in all_source
