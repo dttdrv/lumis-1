@@ -53,4 +53,4 @@ The shared validator normalizes legacy preference rows and enforces:
 - `thinking = "off"`
 - `chat_template_kwargs.enable_thinking = false`
 
-Notebook `THE NOTEBOOK-updated.ipynb` and `scripts/validate_identity_pack.py` hard-fail on missing files or count mismatches.
+Notebooks `THE NOTEBOOK-sanity.ipynb` and `THE NOTEBOOK-updated.ipynb`, plus `scripts/validate_identity_pack.py`, hard-fail on missing files or count mismatches.

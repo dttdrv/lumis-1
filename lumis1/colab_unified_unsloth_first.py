@@ -132,7 +132,9 @@ def resolve_sft_model_plan(train_sft_cfg: dict[str, Any]) -> dict[str, Any]:
         "bias": str(lora_cfg.get("bias", "none")),
         "random_state": int(lora_cfg.get("random_state", 3407)),
         "use_rslora": bool(lora_cfg.get("use_rslora", False)),
-        "finetune_vision_layers": bool(lora_cfg.get("finetune_vision_layers", False)),
+        "finetune_vision_layers": bool(
+            lora_cfg.get("finetune_vision_layers", bool(model_cfg.get("vision_capable", False)))
+        ),
         "finetune_language_layers": bool(lora_cfg.get("finetune_language_layers", True)),
         "finetune_attention_modules": bool(lora_cfg.get("finetune_attention_modules", True)),
         "finetune_mlp_modules": bool(lora_cfg.get("finetune_mlp_modules", True)),
@@ -147,6 +149,40 @@ def resolve_sft_model_plan(train_sft_cfg: dict[str, Any]) -> dict[str, Any]:
         "lora_enabled": lora_enabled,
         "peft_kwargs": peft_kwargs,
     }
+
+
+def select_notebook_profile(
+    run_profiles: dict[str, Any],
+    *,
+    profile_override: str | None = None,
+    gpu_name: str | None = None,
+    total_memory_gb: float | None = None,
+) -> str:
+    profiles = run_profiles.get("profiles") if isinstance(run_profiles, dict) else None
+    if not isinstance(profiles, dict) or not profiles:
+        raise ValueError("run_profiles must define a non-empty profiles mapping")
+
+    override = normalize_text(profile_override)
+    if override:
+        if override not in profiles:
+            raise KeyError(f"unknown notebook profile override: {override}")
+        return override
+
+    if total_memory_gb is not None and float(total_memory_gb) >= 80.0:
+        for candidate in ("colab_g4_max", "default_96gb"):
+            if candidate in profiles:
+                return candidate
+
+    normalized_gpu_name = normalize_text(gpu_name).lower()
+    if "rtx pro 6000" in normalized_gpu_name:
+        for candidate in ("colab_g4_max", "default_96gb"):
+            if candidate in profiles:
+                return candidate
+
+    if "colab_g4_first_run" in profiles:
+        return "colab_g4_first_run"
+
+    return next(iter(profiles))
 
 
 def normalize_text(value: Any) -> str:

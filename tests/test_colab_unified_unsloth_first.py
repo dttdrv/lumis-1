@@ -13,6 +13,7 @@ from lumis1.colab_unified_unsloth_first import (
     create_final_report_payload,
     extract_preference_triplet,
     materialize_processor_ready_sft_rows,
+    select_notebook_profile,
     resolve_sft_model_plan,
     resolve_source_stream_plan,
     resolve_dpo_policy,
@@ -388,6 +389,7 @@ def test_resolve_sft_model_plan_enables_lora_for_quantized_training() -> None:
             "model": {
                 "load_in_4bit": True,
                 "full_finetuning": False,
+                "vision_capable": True,
             },
             "lora": {
                 "enabled": True,
@@ -405,7 +407,7 @@ def test_resolve_sft_model_plan_enables_lora_for_quantized_training() -> None:
     assert plan["peft_kwargs"]["r"] == 32
     assert plan["peft_kwargs"]["lora_alpha"] == 64
     assert plan["peft_kwargs"]["target_modules"] == ["q_proj", "k_proj"]
-    assert plan["peft_kwargs"]["finetune_vision_layers"] is False
+    assert plan["peft_kwargs"]["finetune_vision_layers"] is True
     assert plan["peft_kwargs"]["finetune_language_layers"] is True
 
 
@@ -426,4 +428,37 @@ def test_resolve_sft_model_plan_rejects_quantized_full_finetuning() -> None:
         assert "quantized" in str(exc)
     else:
         raise AssertionError("expected quantized full-finetuning plan to be rejected")
+
+
+def test_select_notebook_profile_prefers_g4_max_for_96gb_gpu() -> None:
+    profile = select_notebook_profile(
+        {
+            "profiles": {
+                "colab_g4_first_run": {},
+                "colab_g4_max": {},
+                "safe_fallback": {},
+            }
+        },
+        gpu_name="NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        total_memory_gb=94.971,
+    )
+
+    assert profile == "colab_g4_max"
+
+
+def test_select_notebook_profile_allows_explicit_override() -> None:
+    profile = select_notebook_profile(
+        {
+            "profiles": {
+                "colab_g4_first_run": {},
+                "colab_g4_max": {},
+                "safe_fallback": {},
+            }
+        },
+        profile_override="safe_fallback",
+        gpu_name="NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        total_memory_gb=94.971,
+    )
+
+    assert profile == "safe_fallback"
 

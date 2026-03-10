@@ -1,7 +1,7 @@
-﻿version: "2.0"
+version: "2.0"
 profiles:
   colab_g4_first_run:
-    description: "Primary Colab G4 profile for notebook 91 first-run multimodal export"
+    description: "Conservative first serious Colab G4 profile for notebook 91"
     sft:
       per_device_train_batch_size: 1
       gradient_accumulation_steps: 16
@@ -11,26 +11,26 @@ profiles:
       gradient_accumulation_steps: 16
       max_seq_length: 3072
 
-  colab_g4_first_run:
-    description: "Default first serious Colab G4 profile for notebook 91"
-    sft:
-      per_device_train_batch_size: 1
-      gradient_accumulation_steps: 16
-      max_seq_length: 3072
-    dpo:
-      per_device_train_batch_size: 1
-      gradient_accumulation_steps: 16
-      max_seq_length: 3072
-
-  default_96gb:
-    description: "Primary profile for 96GB-class GPU memory budget"
+  colab_g4_max:
+    description: "Higher-throughput Colab G4 profile for RTX PRO 6000 Blackwell class GPUs"
     sft:
       per_device_train_batch_size: 2
-      gradient_accumulation_steps: 16
+      gradient_accumulation_steps: 8
       max_seq_length: 4096
     dpo:
       per_device_train_batch_size: 2
-      gradient_accumulation_steps: 16
+      gradient_accumulation_steps: 8
+      max_seq_length: 4096
+
+  default_96gb:
+    description: "Compatibility alias for a 96GB-class GPU memory budget"
+    sft:
+      per_device_train_batch_size: 2
+      gradient_accumulation_steps: 8
+      max_seq_length: 4096
+    dpo:
+      per_device_train_batch_size: 2
+      gradient_accumulation_steps: 8
       max_seq_length: 4096
 
   safe_fallback:

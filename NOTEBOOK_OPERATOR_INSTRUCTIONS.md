@@ -4,18 +4,20 @@ Status: Canonical | Descriptive
 
 This file explains how to run the active Lumis-1 notebook surface.
 
-## Canonical Notebook
+## Active Notebooks
 
-The only active Colab notebook is:
+The active Colab notebooks are:
 
+- `THE NOTEBOOK-sanity.ipynb`
+- `C:\Users\deyan\Projects\Lumis-1\THE NOTEBOOK-sanity.ipynb`
 - `THE NOTEBOOK-updated.ipynb`
 - `C:\Users\deyan\Projects\Lumis-1\THE NOTEBOOK-updated.ipynb`
 
-No other notebook in the active tree is part of the canonical operator path.
+Use the sanity notebook for a short proving pass and the updated notebook for the full run.
 
 ## What Notebook 91 Actually Does
 
-`THE NOTEBOOK-updated.ipynb` is intended to run the active path in one Colab G4 session:
+`THE NOTEBOOK-sanity.ipynb` and `THE NOTEBOOK-updated.ipynb` run the same active path in one Colab G4 session:
 
 1. Create a working root under `/content/lumis1_unified` and a single evidence root under `workspace/runs/<run_id>/`
 2. Recover Drive mounting safely when `/content/drive` already exists and is non-empty
@@ -47,9 +49,15 @@ If those files are missing locally, notebook 91 downloads them automatically wit
 
 Manual YAML attachment is not part of the notebook 91 flow.
 
+## Sanity vs Full
+
+- `THE NOTEBOOK-sanity.ipynb` runs the bounded sanity SFT step budget from `configs/train_sft.yaml`
+- `THE NOTEBOOK-updated.ipynb` runs the full configured SFT step budget
+- there is no `LUMIS1_SANITY_ONLY` switch in the notebook surface anymore
+
 ## Install Strategy
 
-Notebook 91 defaults to:
+Both notebook surfaces default to:
 
 - `INSTALL_STRATEGY = "unsloth_first"`
 
@@ -64,15 +72,15 @@ That means:
 
 Proven:
 
-- Notebook 91 exists on disk.
-- Notebook 91 is generated from a dedicated builder, not by lightly patching notebook 90.
-- Notebook 91 compiles cell-by-cell during generation.
-- The helper-layer and notebook-contract tests for notebook 91 pass locally.
+- Both notebook surfaces exist on disk.
+- Both notebook surfaces are generated from a dedicated builder, not by lightly patching notebook 90.
+- Both notebooks compile cell-by-cell during generation.
+- The helper-layer and notebook-contract tests for both notebooks pass locally.
 
 Unproven:
 
-- A real proof-bearing end-to-end Colab G4 run using notebook 91.
-- Production-scale open/full dataset assembly from notebook 91.
+- A real proof-bearing end-to-end Colab G4 run using either notebook surface.
+- Production-scale open/full dataset assembly from the full notebook surface.
 - Completed SFT, optional DPO, eval, or GGUF export until `workspace/runs/<run_id>/` contains real evidence.
 - Whether the surrogate identity image bridge is good enough for the intended multimodal claim surface.
 

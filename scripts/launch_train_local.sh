@@ -10,5 +10,6 @@ python scripts/validate_full_dataset.py --allow-small-sample --strict
 python scripts/render_dataset_manifest.py --allow-small-sample
 
 echo
-echo "Canonical notebook:"
-echo "1. THE NOTEBOOK-updated.ipynb"
+echo "Active notebooks:"
+echo "1. THE NOTEBOOK-sanity.ipynb"
+echo "2. THE NOTEBOOK-updated.ipynb"

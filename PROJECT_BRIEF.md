@@ -7,7 +7,7 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 ## Canonical Execution Path
 
 - `configs/*.yaml`
-- `THE NOTEBOOK-updated.ipynb` as the canonical standalone Colab surface
+- `THE NOTEBOOK-sanity.ipynb` and `THE NOTEBOOK-updated.ipynb` as the active standalone Colab surfaces
 - runtime helpers in `lumis1/*`
 - tests in `tests/*`
 - current evidence in `workspace/reports/*`
@@ -45,6 +45,7 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 - Qwen3.5 non-thinking execution must be probed through the tokenizer chat template with `enable_thinking=False`; `/nothink`-style assumptions are not treated as sufficient proof.
 - Notebook 91 embeds its own runtime/config surface, so the operator does not need to attach repo YAML files separately.
 - Notebook 91 follows an Unsloth-first install contract, records the chosen install path and versions under `workspace/reports/bootstrap/`, and only installs supplemental packages after the Unsloth core stack is in place.
+- Notebook 91 now ships as two explicit surfaces: `THE NOTEBOOK-sanity.ipynb` for bounded proving runs and `THE NOTEBOOK-updated.ipynb` for the full configured run, while still auto-selecting a higher-throughput G4 profile on RTX PRO 6000 Blackwell / ~96GB-class runtimes.
 - Notebook 91 recovers Colab Drive mounting when `/content/drive` is already non-empty, auto-downloads missing identity files from `STnoui/lumis1-identity`, builds canonical merged datasets, and auto-downloads the final artifact or `final_deliverables.zip` to the local browser session.
 - Notebook 91 materializes surrogate local image assets for placeholder-only identity rows, writes multimodal blocks with public-compatible `image` / `path` / `image_path` keys for supported HF multimodal sources, and treats multimodal SFT as the primary training path.
 - Notebook 91 exports GGUF first from the strongest completed artifact of the same run and records a DPO skip reason when the multimodal path only has text preferences.

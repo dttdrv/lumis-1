@@ -6,8 +6,21 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_PATH = REPO_ROOT / "THE NOTEBOOK-updated.ipynb"
 RUNTIME_PATH = REPO_ROOT / "lumis1" / "colab_unified_unsloth_first.py"
+NOTEBOOK_SPECS = [
+    {
+        "filename": "THE NOTEBOOK-sanity.ipynb",
+        "title": "THE NOTEBOOK-sanity",
+        "status": "Sanity Colab surface",
+        "run_sanity_only": True,
+    },
+    {
+        "filename": "THE NOTEBOOK-updated.ipynb",
+        "title": "THE NOTEBOOK-updated",
+        "status": "Canonical full-run Colab surface",
+        "run_sanity_only": False,
+    },
+]
 CONFIG_NAMES = [
     "dataset_mixture.yaml",
     "dataset_sources_allowlist.yaml",
@@ -22,21 +35,22 @@ def _src(text: str) -> list[str]:
     return text.splitlines(keepends=True)
 
 
-def _compile_notebook_code_cells(notebook: dict) -> None:
+def _compile_notebook_code_cells(notebook: dict, output_path: Path) -> None:
     for idx, cell in enumerate(notebook.get("cells", [])):
         if cell.get("cell_type") != "code":
             continue
         source = "".join(cell.get("source", []))
-        compile(source, f"{OUTPUT_PATH}#cell{idx}", "exec")
+        compile(source, f"{output_path}#cell{idx}", "exec")
 
 
-def build_notebook() -> dict:
+def build_notebook(*, filename: str, title: str, status: str, run_sanity_only: bool) -> dict:
     runtime_source = RUNTIME_PATH.read_text(encoding="utf-8")
     embedded_configs = {
         name: (REPO_ROOT / "configs" / name).read_text(encoding="utf-8")
         for name in CONFIG_NAMES
     }
     requirements_text = (REPO_ROOT / "requirements.txt").read_text(encoding="utf-8")
+    output_path = REPO_ROOT / filename
 
     cells: list[dict] = []
     
@@ -61,10 +75,10 @@ def build_notebook() -> dict:
         )
 
     add_markdown(
-        """
-        # THE NOTEBOOK-updated
+        f"""
+        # {title}
 
-        Status: Canonical Colab surface | Draft until a real Colab G4 run produces `workspace/runs/<run_id>/`.
+        Status: {status} | Draft until a real Colab G4 run produces `workspace/runs/<run_id>/`.
 
         Guarantees:
         1. self-contained runtime bootstrap from embedded helper code and embedded config snapshots
@@ -107,7 +121,9 @@ def build_notebook() -> dict:
         IDENTITY_INPUT_DIR = WORK_ROOT / "identity_input"
         IDENTITY_REPO_ID = os.environ.get("LUMIS1_IDENTITY_HF_REPO", "STnoui/lumis1-identity")
         INSTALL_STRATEGY = "unsloth_first"
-        PROFILE = "colab_g4_first_run"
+        PROFILE = "auto"
+        PROFILE_OVERRIDE = os.environ.get("LUMIS1_PROFILE")
+        RUN_SANITY_ONLY = {str(run_sanity_only)}
         BASE_MODEL = "Qwen/Qwen3.5-4B"
         EXPORT_QUANTIZATION_METHODS = ["q4_k_m", "q8_0"]
         EXPERIMENTAL_DPO = False
@@ -136,7 +152,7 @@ def build_notebook() -> dict:
         EMBEDDED_CONFIG_TEXT = {json.dumps(embedded_configs, ensure_ascii=False)}
         EMBEDDED_RUNTIME_SOURCE = {json.dumps(runtime_source, ensure_ascii=False)}
         EMBEDDED_REQUIREMENTS_TEXT = {json.dumps(requirements_text, ensure_ascii=False)}
-        OUTPUT_PATH = REPO_ROOT / "THE NOTEBOOK-updated.ipynb"
+        OUTPUT_PATH = REPO_ROOT / {json.dumps(filename)}
 
         for path in [
             WORK_ROOT,
@@ -158,6 +174,8 @@ def build_notebook() -> dict:
             "run_root": str(RUN_ROOT),
             "install_strategy": INSTALL_STRATEGY,
             "profile": PROFILE,
+            "profile_override": PROFILE_OVERRIDE,
+            "run_sanity_only": RUN_SANITY_ONLY,
             "base_model": BASE_MODEL,
             "identity_repo_id": IDENTITY_REPO_ID,
         }}, indent=2))
@@ -395,9 +413,11 @@ def build_notebook() -> dict:
             resolve_source_stream_plan,
             resolve_dpo_policy,
             resolve_unsloth_matrix_install_command,
+            select_notebook_profile,
             sha256_file,
         )
 
+        import torch
         import yaml
         from datasets import load_dataset
         from huggingface_hub import snapshot_download
@@ -411,7 +431,33 @@ def build_notebook() -> dict:
         TRAIN_SFT_CFG = yaml.safe_load(EMBEDDED_CONFIG_TEXT["train_sft.yaml"])
         TRAIN_DPO_CFG = yaml.safe_load(EMBEDDED_CONFIG_TEXT["train_dpo.yaml"])
         RUN_PROFILES = yaml.safe_load(EMBEDDED_CONFIG_TEXT["run_profiles.yaml"])
+
+        if torch.cuda.is_available():
+            gpu_props = torch.cuda.get_device_properties(0)
+            GPU_RUNTIME = {{
+                "name": gpu_props.name,
+                "total_memory_gb": round(float(gpu_props.total_memory) / (1024 ** 3), 3),
+                "device_count": torch.cuda.device_count(),
+            }}
+        else:
+            GPU_RUNTIME = {{
+                "name": "cpu",
+                "total_memory_gb": None,
+                "device_count": 0,
+            }}
+
+        PROFILE = select_notebook_profile(
+            RUN_PROFILES,
+            profile_override=PROFILE_OVERRIDE,
+            gpu_name=GPU_RUNTIME["name"],
+            total_memory_gb=GPU_RUNTIME["total_memory_gb"],
+        )
         PROFILE_CFG = RUN_PROFILES["profiles"][PROFILE]
+        SFT_MAX_STEPS = (
+            int(TRAIN_SFT_CFG.get("sanity_run", {{}}).get("max_steps", 50))
+            if RUN_SANITY_ONLY
+            else int(TRAIN_SFT_CFG["training"]["max_steps"])
+        )
 
         import_report = {{
             "runtime_module": str(EMBEDDED_RUNTIME_PATH),
@@ -419,6 +465,9 @@ def build_notebook() -> dict:
             "required_imports": ["FastVisionModel", "UnslothVisionDataCollator", "AutoProcessor", "load_dataset", "snapshot_download"],
             "profile": PROFILE,
             "profile_cfg": PROFILE_CFG,
+            "gpu_runtime": GPU_RUNTIME,
+            "sft_max_steps": SFT_MAX_STEPS,
+            "run_sanity_only": RUN_SANITY_ONLY,
         }}
         write_json(BOOTSTRAP_ROOT / "embedded_runtime_imports.json", import_report)
         print(json.dumps(import_report, indent=2))
@@ -712,11 +761,11 @@ def build_notebook() -> dict:
                 output_dir=str(SFT_MODEL_DIR),
                 per_device_train_batch_size=PROFILE_CFG["sft"]["per_device_train_batch_size"],
                 gradient_accumulation_steps=PROFILE_CFG["sft"]["gradient_accumulation_steps"],
-                max_steps=min(int(TRAIN_SFT_CFG["training"]["max_steps"]), 50),
+                max_steps=SFT_MAX_STEPS,
                 logging_steps=int(TRAIN_SFT_CFG["training"]["logging_steps"]),
                 save_steps=int(TRAIN_SFT_CFG["training"]["save_steps"]),
                 bf16=True,
-                max_length=None,
+                max_length=int(PROFILE_CFG["sft"]["max_seq_length"]),
             ),
         )
         trainer.train()
@@ -726,9 +775,13 @@ def build_notebook() -> dict:
             "output_dir": str(SFT_MODEL_DIR),
             "rows_used": len(multimodal_rows),
             "base_model": BASE_MODEL,
+            "profile": PROFILE,
+            "profile_cfg": PROFILE_CFG,
             "load_in_4bit": sft_model_plan["load_in_4bit"],
             "lora_enabled": sft_model_plan["lora_enabled"],
-            "max_length": None,
+            "max_length": int(PROFILE_CFG["sft"]["max_seq_length"]),
+            "max_steps": SFT_MAX_STEPS,
+            "run_sanity_only": RUN_SANITY_ONLY,
             "run_training_default": True,
         }
         write_json(SFT_RUN_ROOT / "sft_report.json", sft_report)
@@ -870,7 +923,7 @@ def build_notebook() -> dict:
                 "Whether the current text-only preference surface supports a stable multimodal DPO stage.",
             ],
             highest_risk_unresolved_issue="The first proof-bearing Colab G4 run still needs to confirm that upstream multimodal dataset schemas and surrogate identity images behave acceptably end to end.",
-            exact_next_step="Run THE NOTEBOOK-updated.ipynb on a real Colab G4 runtime and inspect the emitted workspace/runs tree for the generated run ID.",
+            exact_next_step={json.dumps(f"Run {filename} on a real Colab G4 runtime and inspect the emitted workspace/runs tree for the generated run ID.")},
         )
         final_checksums = collect_file_checksums(RUN_ARTIFACTS_DIR)
         write_json(RUN_ROOT / "checksums" / "artifacts.json", final_checksums)
@@ -925,15 +978,22 @@ def build_notebook() -> dict:
         "nbformat_minor": 5,
     }
     _ = runtime_source, embedded_configs, requirements_text
-    _compile_notebook_code_cells(notebook)
+    _compile_notebook_code_cells(notebook, output_path)
     return notebook
 
 
 def main() -> None:
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    notebook = build_notebook()
-    OUTPUT_PATH.write_text(json.dumps(notebook, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"wrote {OUTPUT_PATH}")
+    for spec in NOTEBOOK_SPECS:
+        output_path = REPO_ROOT / spec["filename"]
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        notebook = build_notebook(
+            filename=spec["filename"],
+            title=spec["title"],
+            status=spec["status"],
+            run_sanity_only=bool(spec["run_sanity_only"]),
+        )
+        output_path.write_text(json.dumps(notebook, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"wrote {output_path}")
 
 
 if __name__ == "__main__":

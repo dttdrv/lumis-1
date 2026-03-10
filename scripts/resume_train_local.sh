@@ -5,6 +5,7 @@ echo "Status: non-canonical convenience wrapper."
 echo "Resume is notebook-driven, not script-driven."
 echo
 echo "Use these active files:"
+echo "- THE NOTEBOOK-sanity.ipynb"
 echo "- THE NOTEBOOK-updated.ipynb"
 echo "- configs/train_sft.yaml"
 echo "- configs/train_dpo.yaml"

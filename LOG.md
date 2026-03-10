@@ -97,3 +97,7 @@
 - Repaired THE NOTEBOOK SFT stage so it now derives quantization and LoRA adapter attachment from `train_sft.yaml`, attaches LoRA adapters before constructing `SFTTrainer`, and fails closed if a quantized run is configured without adapters.
 - Hardened HelpSteer3 preference extraction so DPO prompts preserve full multi-turn chat history and fallback winner selection aggregates annotator scores instead of trusting the first vote.
 - Rebuilt `THE NOTEBOOK.ipynb` again and re-ran the focused notebook/runtime regression suite after the SFT-plan repair: `20 passed`.
+- Added a higher-throughput `colab_g4_max` profile for RTX PRO 6000 Blackwell / ~96GB-class G4 runtimes, removed the duplicate `colab_g4_first_run` entry, and kept `default_96gb` as a compatibility alias.
+- Repaired notebook 91 profile handling so it now auto-selects the max G4 profile from detected GPU VRAM, honors `LUMIS1_PROFILE` and `LUMIS1_SANITY_ONLY`, and threads `max_seq_length` into `SFTConfig` instead of leaving it as `None`.
+- Aligned the notebook SFT LoRA defaults with Unsloth vision guidance by enabling vision-layer LoRA by default for vision-capable runs unless the config overrides it explicitly.
+- Split the active Colab surface into `THE NOTEBOOK-sanity.ipynb` and `THE NOTEBOOK-updated.ipynb`, removed the hidden `LUMIS1_SANITY_ONLY` notebook toggle, regenerated both notebooks, and updated active operator docs/tests to point at the two-file flow.
