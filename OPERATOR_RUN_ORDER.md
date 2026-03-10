@@ -6,7 +6,7 @@ This file defines the current notebook-first execution order only. It is not pro
 
 ## Mandatory Order
 
-1. `notebooks/91_colab_unified_unsloth_first.ipynb`
+1. `THE NOTEBOOK.ipynb`
 
 ## Success Artifacts By Step
 

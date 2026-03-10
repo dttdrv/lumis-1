@@ -53,4 +53,4 @@ The shared validator normalizes legacy preference rows and enforces:
 - `thinking = "off"`
 - `chat_template_kwargs.enable_thinking = false`
 
-Notebook `91_colab_unified_unsloth_first.ipynb` and `scripts/validate_identity_pack.py` hard-fail on missing files or count mismatches.
+Notebook `THE NOTEBOOK.ipynb` and `scripts/validate_identity_pack.py` hard-fail on missing files or count mismatches.

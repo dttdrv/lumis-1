@@ -8,14 +8,14 @@ This file explains how to run the active Lumis-1 notebook surface.
 
 The only active Colab notebook is:
 
-- `notebooks/91_colab_unified_unsloth_first.ipynb`
-- `C:\Users\deyan\Projects\Lumis-1\notebooks\91_colab_unified_unsloth_first.ipynb`
+- `THE NOTEBOOK.ipynb`
+- `C:\Users\deyan\Projects\Lumis-1\THE NOTEBOOK.ipynb`
 
 No other notebook in the active tree is part of the canonical operator path.
 
 ## What Notebook 91 Actually Does
 
-`91_colab_unified_unsloth_first.ipynb` is intended to run the active path in one Colab G4 session:
+`THE NOTEBOOK.ipynb` is intended to run the active path in one Colab G4 session:
 
 1. Create a working root under `/content/lumis1_unified` and a single evidence root under `workspace/runs/<run_id>/`
 2. Recover Drive mounting safely when `/content/drive` already exists and is non-empty

@@ -5,7 +5,7 @@ echo "Status: non-canonical convenience wrapper."
 echo "Resume is notebook-driven, not script-driven."
 echo
 echo "Use these active files:"
-echo "- notebooks/91_colab_unified_unsloth_first.ipynb"
+echo "- THE NOTEBOOK.ipynb"
 echo "- configs/train_sft.yaml"
 echo "- configs/train_dpo.yaml"
 echo

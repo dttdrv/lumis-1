@@ -11,4 +11,4 @@ python scripts/render_dataset_manifest.py --allow-small-sample
 
 echo
 echo "Canonical notebook:"
-echo "1. notebooks/91_colab_unified_unsloth_first.ipynb"
+echo "1. THE NOTEBOOK.ipynb"

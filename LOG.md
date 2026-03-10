@@ -88,3 +88,4 @@
 - Simplified the active notebook tree to notebook 91 only and removed the modular notebook surfaces, notebook 90, and the old notebook-91 snapshot from `notebooks/`.
 - Removed retired notebook-90 support and wrapper tests from the active tree, while leaving historical archive material and long-form historical reports untouched.
 - Updated current operator docs, helper scripts, `PROJECT_BRIEF.md`, and `STATE.yaml` so the active execution model now points only to `notebooks/91_colab_unified_unsloth_first.ipynb`.
+- Renamed the active notebook surface to `THE NOTEBOOK.ipynb`, moved it to the repository root, and archived the duplicate `workspace/trivy_scope_notebook91/` snapshot to leave only one live notebook-91 surface in the active tree.

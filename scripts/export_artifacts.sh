@@ -5,7 +5,7 @@ FULL_SFT="${1:-workspace/final/full_sft.jsonl}"
 FULL_PREF="${2:-workspace/final/full_preferences.jsonl}"
 
 echo "Status: canonical checker/helper only."
-echo "Export execution remains notebook-driven in notebooks/91_colab_unified_unsloth_first.ipynb."
+echo "Export execution remains notebook-driven in THE NOTEBOOK.ipynb."
 echo "This script only verifies prepared dataset artifacts and refreshes the canonical dataset manifest."
 
 [[ -f "$FULL_SFT" ]] || { echo "Missing $FULL_SFT"; exit 1; }

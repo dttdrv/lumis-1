@@ -7,7 +7,7 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 ## Canonical Execution Path
 
 - `configs/*.yaml`
-- `notebooks/91_colab_unified_unsloth_first.ipynb` as the canonical standalone Colab surface
+- `THE NOTEBOOK.ipynb` as the canonical standalone Colab surface
 - runtime helpers in `lumis1/*`
 - tests in `tests/*`
 - current evidence in `workspace/reports/*`

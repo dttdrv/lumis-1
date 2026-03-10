@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_PATH = REPO_ROOT / "notebooks" / "91_colab_unified_unsloth_first.ipynb"
+OUTPUT_PATH = REPO_ROOT / "THE NOTEBOOK.ipynb"
 RUNTIME_PATH = REPO_ROOT / "lumis1" / "colab_unified_unsloth_first.py"
 CONFIG_NAMES = [
     "dataset_mixture.yaml",
@@ -62,7 +62,7 @@ def build_notebook() -> dict:
 
     add_markdown(
         """
-        # 91 Colab Unified Unsloth First
+        # THE NOTEBOOK
 
         Status: Canonical Colab surface | Draft until a real Colab G4 run produces `workspace/runs/<run_id>/`.
 
@@ -136,7 +136,7 @@ def build_notebook() -> dict:
         EMBEDDED_CONFIG_TEXT = {json.dumps(embedded_configs, ensure_ascii=False)}
         EMBEDDED_RUNTIME_SOURCE = {json.dumps(runtime_source, ensure_ascii=False)}
         EMBEDDED_REQUIREMENTS_TEXT = {json.dumps(requirements_text, ensure_ascii=False)}
-        OUTPUT_PATH = REPO_ROOT / "notebooks" / "91_colab_unified_unsloth_first.ipynb"
+        OUTPUT_PATH = REPO_ROOT / "THE NOTEBOOK.ipynb"
 
         for path in [
             WORK_ROOT,
@@ -855,7 +855,7 @@ def build_notebook() -> dict:
                 "Whether the current text-only preference surface supports a stable multimodal DPO stage.",
             ],
             highest_risk_unresolved_issue="The first proof-bearing Colab G4 run still needs to confirm that upstream multimodal dataset schemas and surrogate identity images behave acceptably end to end.",
-            exact_next_step="Run notebooks/91_colab_unified_unsloth_first.ipynb on a real Colab G4 runtime and inspect the emitted workspace/runs tree for the generated run ID.",
+            exact_next_step="Run THE NOTEBOOK.ipynb on a real Colab G4 runtime and inspect the emitted workspace/runs tree for the generated run ID.",
         )
         final_checksums = collect_file_checksums(RUN_ARTIFACTS_DIR)
         write_json(RUN_ROOT / "checksums" / "artifacts.json", final_checksums)

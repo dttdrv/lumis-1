@@ -38,7 +38,7 @@ If the identity files are missing, stop and satisfy `INPUT_CONTRACT_IDENTITY.md`
 
 Run exactly:
 
-1. `notebooks/91_colab_unified_unsloth_first.ipynb`
+1. `THE NOTEBOOK.ipynb`
 
 ## Stop Conditions
 

@@ -25,7 +25,7 @@ authoritative_paths:
   notebooks:
     status: canonical
     paths:
-      - notebooks/91_colab_unified_unsloth_first.ipynb
+      - THE NOTEBOOK.ipynb
   legacy_notebooks:
     status: historical
     paths: []
@@ -112,7 +112,7 @@ verification:
   notebook_91_contract_tests: passed_2026-03-10
 
 next_steps:
-  - Run notebooks/91_colab_unified_unsloth_first.ipynb on Colab G4 and confirm the default `STnoui/lumis1-identity` auto-download path works without manual file staging.
+  - Run THE NOTEBOOK.ipynb on Colab G4 and confirm the default `STnoui/lumis1-identity` auto-download path works without manual file staging.
   - Confirm notebook 91 can stream the supported HF sources (`Docmatix`, `TextVQA`, `DocVQA`, text sources) without schema drift on Colab.
   - Decide whether the surrogate identity screenshot/document assets are acceptable as an interim multimodal bridge or whether identity multimodal rows must be backed by curated real image assets before training claims are made.
   - Confirm whether multimodal DPO should remain skipped by default on the real Colab stack or whether a multimodal preference path is stable enough to enable experimentally.
