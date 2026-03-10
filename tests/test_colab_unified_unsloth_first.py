@@ -8,6 +8,7 @@ from PIL import Image
 from lumis1.colab_unified_unsloth_first import (
     CORE_STACK_PACKAGES,
     IDENTITY_ALLOW_PATTERNS,
+    build_text_row_from_record,
     choose_final_download_target,
     create_final_report_payload,
     materialize_processor_ready_sft_rows,
@@ -181,4 +182,44 @@ def test_resolve_dpo_policy_skips_text_only_preferences_on_multimodal_run() -> N
 
     assert policy["status"] == "skipped"
     assert policy["reason"] == "skipped_text_only_preferences_on_multimodal_run"
+
+
+def test_build_text_row_from_record_normalizes_conversation_rows() -> None:
+    row = build_text_row_from_record(
+        "allenai/WildChat-4.8M",
+        {
+            "conversation": [
+                {"from": "human", "value": "Need a short answer."},
+                {"from": "assistant", "value": "Here is the answer."},
+            ]
+        },
+        row_id="wildchat-0001",
+        license_name="ODC-BY",
+        category="real_user_conversations",
+    )
+
+    assert row is not None
+    assert row["id"] == "wildchat-0001"
+    assert row["modality"] == "text"
+    assert row["messages"] == [
+        {"role": "user", "content": [{"type": "text", "text": "Need a short answer."}]},
+        {"role": "assistant", "content": [{"type": "text", "text": "Here is the answer."}]},
+    ]
+
+
+def test_build_text_row_from_record_rejects_unusable_conversation_rows() -> None:
+    row = build_text_row_from_record(
+        "allenai/WildChat-4.8M",
+        {
+            "conversation": [
+                {"from": "system", "value": "You are helpful."},
+                {"from": "human", "value": ""},
+            ]
+        },
+        row_id="wildchat-0002",
+        license_name="ODC-BY",
+        category="real_user_conversations",
+    )
+
+    assert row is None
 

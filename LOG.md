@@ -82,3 +82,9 @@
 - Added notebook-91 regression coverage for the Unsloth-first contract, HF identity bootstrap, safe Drive recovery, automatic final download, and self-contained runtime embedding.
 - Updated project/operator state so notebook 91 is canonical and notebook 90 is retained as legacy context.
 - Renamed the older root notebook-91 snapshot to `notebooks/91_colab_unified_unsloth_first_old.ipynb` and promoted the newer notebook-91 variant from `workspace/trivy_scope_notebook91/` to the canonical root path after the hang investigation.
+
+## 2026-03-10
+
+- Simplified the active notebook tree to notebook 91 only and removed the modular notebook surfaces, notebook 90, and the old notebook-91 snapshot from `notebooks/`.
+- Removed retired notebook-90 support and wrapper tests from the active tree, while leaving historical archive material and long-form historical reports untouched.
+- Updated current operator docs, helper scripts, `PROJECT_BRIEF.md`, and `STATE.yaml` so the active execution model now points only to `notebooks/91_colab_unified_unsloth_first.ipynb`.

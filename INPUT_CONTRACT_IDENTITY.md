@@ -14,7 +14,7 @@ The identity pack is treated as a fixed input and must be present before noteboo
 - `Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_sft.jsonl`
 - `Dataset/identity_dataset/output/full_run_codex_spark_xhigh/identity_preferences.jsonl`
 
-Resolution order is defined once in `configs/paths.yaml` and enforced by the shared runtime helpers used by notebook 10 and `scripts/validate_identity_pack.py`.
+Resolution order is defined once in `configs/paths.yaml` and enforced by the shared runtime helpers used by notebook 91 and `scripts/validate_identity_pack.py`.
 
 Optional:
 
@@ -53,4 +53,4 @@ The shared validator normalizes legacy preference rows and enforces:
 - `thinking = "off"`
 - `chat_template_kwargs.enable_thinking = false`
 
-Notebook `10_validate_identity_pack.ipynb` and `scripts/validate_identity_pack.py` hard-fail on missing files or count mismatches.
+Notebook `91_colab_unified_unsloth_first.ipynb` and `scripts/validate_identity_pack.py` hard-fail on missing files or count mismatches.

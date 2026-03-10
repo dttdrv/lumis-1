@@ -2,36 +2,16 @@
 
 Status: Canonical | Descriptive
 
-This file explains how to run the Lumis-1 notebook surfaces after the 2026-03-09 notebook 91 pass.
+This file explains how to run the active Lumis-1 notebook surface.
 
-## The Unified Notebook
+## Canonical Notebook
 
-The canonical Colab notebook is:
+The only active Colab notebook is:
 
 - `notebooks/91_colab_unified_unsloth_first.ipynb`
 - `C:\Users\deyan\Projects\Lumis-1\notebooks\91_colab_unified_unsloth_first.ipynb`
 
-The older notebook-91 variant is preserved for comparison only at:
-
-- `notebooks/91_colab_unified_unsloth_first_old.ipynb`
-- `C:\Users\deyan\Projects\Lumis-1\notebooks\91_colab_unified_unsloth_first_old.ipynb`
-
-Legacy Colab context remains available at:
-
-- `notebooks/90_colab_main_pipeline.ipynb`
-- `C:\Users\deyan\Projects\Lumis-1\notebooks\90_colab_main_pipeline.ipynb`
-
-Notebook 91 is the operator-facing path. Notebook 90 is historical context and should not be treated as the default bootstrap surface anymore.
-
-The underlying canonical modular stages are still:
-
-1. `notebooks/00_env_sanity_and_pinning.ipynb`
-2. `notebooks/10_validate_identity_pack.ipynb`
-3. `notebooks/20_build_open_dataset_mix.ipynb`
-4. `notebooks/30_merge_and_validate_full_dataset.ipynb`
-5. `notebooks/40_train_sft_unsloth_qwen35_4b.ipynb`
-6. `notebooks/50_train_dpo_unsloth_qwen35_4b.ipynb`
-7. `notebooks/60_eval_export_smoke.ipynb`
+No other notebook in the active tree is part of the canonical operator path.
 
 ## What Notebook 91 Actually Does
 
@@ -153,7 +133,3 @@ If the best output is large or requires multiple files such as GGUF plus compani
 - `final_deliverables.zip`
 
 No manual download flag is required.
-
-## If You Want The Modular Path Instead
-
-Use `OPERATOR_RUN_ORDER.md` and run the canonical notebook sequence `00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60`.

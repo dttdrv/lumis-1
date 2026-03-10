@@ -7,10 +7,7 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 ## Canonical Execution Path
 
 - `configs/*.yaml`
-- `notebooks/00 -> 10 -> 20 -> 30 -> 40 -> 50 -> 60`
-- `notebooks/91_colab_unified_unsloth_first.ipynb` as the canonical standalone sequential Colab surface over the same active path
-- `notebooks/91_colab_unified_unsloth_first_old.ipynb` retained as the older historical notebook-91 snapshot for traceability only
-- `notebooks/90_colab_main_pipeline.ipynb` retained as a superseded legacy Colab notebook for traceability only
+- `notebooks/91_colab_unified_unsloth_first.ipynb` as the canonical standalone Colab surface
 - runtime helpers in `lumis1/*`
 - tests in `tests/*`
 - current evidence in `workspace/reports/*`
@@ -51,7 +48,6 @@ Project: Lumis-1 repository rehabilitation for manual, evidence-backed operator 
 - Notebook 91 recovers Colab Drive mounting when `/content/drive` is already non-empty, auto-downloads missing identity files from `STnoui/lumis1-identity`, builds canonical merged datasets, and auto-downloads the final artifact or `final_deliverables.zip` to the local browser session.
 - Notebook 91 materializes surrogate local image assets for placeholder-only identity rows, writes multimodal blocks with public-compatible `image` / `path` / `image_path` keys for supported HF multimodal sources, and treats multimodal SFT as the primary training path.
 - Notebook 91 exports GGUF first from the strongest completed artifact of the same run and records a DPO skip reason when the multimodal path only has text preferences.
-- Notebook 90 remains historical context and should not be treated as the default Colab bootstrap path.
 - Concrete multimodal SFT remains unproven until a real Colab run succeeds end to end; identity multimodal supervision still depends on surrogate screenshot/document images, not original curated screenshots.
 - GGUF export can now complete unattended in `structural_only` mode when required variants exist but parity-pair smoke inputs are absent; this is not the same as proof-bearing parity verification.
 

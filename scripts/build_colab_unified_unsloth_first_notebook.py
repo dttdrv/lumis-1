@@ -468,12 +468,20 @@ def build_notebook() -> dict:
         from __future__ import annotations
 
         import json
+        from collections import Counter
         from pathlib import Path
 
         OPEN_SFT_PATH = FINAL_ROOT / "full_sft.jsonl"
         OPEN_PREFERENCE_PATH = FINAL_ROOT / "full_preferences.jsonl"
         OPEN_ASSET_ROOT = DATASET_RUN_ROOT / "open_assets"
         OPEN_ASSET_ROOT.mkdir(parents=True, exist_ok=True)
+        COLAB_SCAN_CAP = 512
+        LOCAL_SCAN_CAP = 2048
+        MAX_RECORDS_SCANNED_PER_SOURCE = min(
+            int(DATASET_MIXTURE.get("ingestion_defaults", {}).get("max_records_scanned_per_source") or LOCAL_SCAN_CAP),
+            COLAB_SCAN_CAP if IN_COLAB else LOCAL_SCAN_CAP,
+        )
+        MAX_UNMAPPED_ROWS_PER_SOURCE = 256 if IN_COLAB else 768
 
         def write_jsonl(path: Path, rows: list[dict]) -> None:
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -499,13 +507,38 @@ def build_notebook() -> dict:
             if source_id not in allowlist_map:
                 continue
             split_name = allowlist_map[source_id].get("default_split", "train")
+            subset_name = allowlist_map[source_id].get("subset") if isinstance(allowlist_map[source_id].get("subset"), str) else None
+            if source_id == "HuggingFaceM4/the_cauldron":
+                source_results.append({
+                    "source_id": source_id,
+                    "split": split_name,
+                    "subset": subset_name,
+                    "accepted": 0,
+                    "scanned": 0,
+                    "status": "skipped",
+                    "drop_reasons": {"subset_allowlist_not_embedded": 1},
+                })
+                continue
             try:
-                dataset = load_dataset(source_id, split=split_name, streaming=True)
+                dataset = load_dataset(source_id, subset_name, split=split_name, streaming=True)
                 scanned = 0
                 accepted = 0
+                preference_rows = 0
+                drop_reasons = Counter()
                 if source_cfg.get("modality") == "image_text":
                     for record in dataset:
+                        if scanned >= MAX_RECORDS_SCANNED_PER_SOURCE:
+                            drop_reasons["scan_cap_reached"] += 1
+                            break
                         scanned += 1
+                        if scanned == 1 or scanned % 64 == 0:
+                            print(json.dumps({
+                                "source_id": source_id,
+                                "split": split_name,
+                                "subset": subset_name,
+                                "scanned": scanned,
+                                "accepted": accepted,
+                            }, indent=2))
                         row = build_multimodal_row_from_record(
                             source_id,
                             record,
@@ -513,7 +546,9 @@ def build_notebook() -> dict:
                             row_id=f"{source_id.replace('/', '__')}-{scanned:08d}",
                         )
                         if row is None:
-                            if scanned >= 64:
+                            drop_reasons["unmapped_record"] += 1
+                            if drop_reasons["unmapped_record"] >= MAX_UNMAPPED_ROWS_PER_SOURCE:
+                                drop_reasons["unmapped_record_cap_reached"] += 1
                                 break
                             continue
                         open_sft_rows.append(row)
@@ -522,7 +557,19 @@ def build_notebook() -> dict:
                             break
                 else:
                     for record in dataset:
+                        if scanned >= MAX_RECORDS_SCANNED_PER_SOURCE:
+                            drop_reasons["scan_cap_reached"] += 1
+                            break
                         scanned += 1
+                        if scanned == 1 or scanned % 64 == 0:
+                            print(json.dumps({
+                                "source_id": source_id,
+                                "split": split_name,
+                                "subset": subset_name,
+                                "scanned": scanned,
+                                "accepted": accepted,
+                                "preference_rows": preference_rows,
+                            }, indent=2))
                         row = build_text_row_from_record(
                             source_id,
                             record,
@@ -533,6 +580,11 @@ def build_notebook() -> dict:
                         if row is not None:
                             open_sft_rows.append(row)
                             accepted += 1
+                        else:
+                            drop_reasons["unmapped_record"] += 1
+                            if drop_reasons["unmapped_record"] >= MAX_UNMAPPED_ROWS_PER_SOURCE:
+                                drop_reasons["unmapped_record_cap_reached"] += 1
+                                break
                         triplet = extract_preference_triplet(record)
                         if triplet is not None and source_id in set(DATASET_MIXTURE.get("preferences", {}).get("enabled_sources", [])):
                             prompt, chosen, rejected = triplet
@@ -543,11 +595,30 @@ def build_notebook() -> dict:
                                 "chosen": chosen,
                                 "rejected": rejected,
                             })
+                            preference_rows += 1
                         if accepted >= 8 and scanned >= 32:
                             break
-                source_results.append({"source_id": source_id, "accepted": accepted, "scanned": scanned, "status": "ok"})
+                source_results.append({
+                    "source_id": source_id,
+                    "split": split_name,
+                    "subset": subset_name,
+                    "accepted": accepted,
+                    "scanned": scanned,
+                    "preference_rows": preference_rows,
+                    "status": "ok",
+                    "drop_reasons": dict(drop_reasons),
+                })
             except Exception as exc:
-                source_results.append({"source_id": source_id, "accepted": 0, "scanned": 0, "status": "failed", "error": str(exc)})
+                source_results.append({
+                    "source_id": source_id,
+                    "split": split_name,
+                    "subset": subset_name,
+                    "accepted": 0,
+                    "scanned": 0,
+                    "preference_rows": 0,
+                    "status": "failed",
+                    "error": str(exc),
+                })
 
         identity_sft_rows = load_jsonl(sft_identity_path)
         identity_preference_rows = load_jsonl(preference_identity_path)

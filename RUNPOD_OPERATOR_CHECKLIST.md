@@ -38,13 +38,7 @@ If the identity files are missing, stop and satisfy `INPUT_CONTRACT_IDENTITY.md`
 
 Run exactly:
 
-1. `notebooks/00_env_sanity_and_pinning.ipynb`
-2. `notebooks/10_validate_identity_pack.ipynb`
-3. `notebooks/20_build_open_dataset_mix.ipynb`
-4. `notebooks/30_merge_and_validate_full_dataset.ipynb`
-5. `notebooks/40_train_sft_unsloth_qwen35_4b.ipynb`
-6. `notebooks/50_train_dpo_unsloth_qwen35_4b.ipynb`
-7. `notebooks/60_eval_export_smoke.ipynb`
+1. `notebooks/91_colab_unified_unsloth_first.ipynb`
 
 ## Stop Conditions
 

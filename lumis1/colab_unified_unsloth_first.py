@@ -398,6 +398,38 @@ def normalize_messages_for_storage(messages: list[dict[str, Any]]) -> list[dict[
     return normalize_messages_as_blocks(messages)
 
 
+def _normalize_conversation_role(value: Any) -> str:
+    role = normalize_text(value).lower()
+    if role in {"user", "human"}:
+        return "user"
+    if role in {"assistant", "gpt", "model", "bot"}:
+        return "assistant"
+    return ""
+
+
+def _normalize_conversation_messages(record: dict[str, Any]) -> list[dict[str, Any]]:
+    for field_name in ("conversation", "conversations", "turns"):
+        turns = record.get(field_name)
+        if not isinstance(turns, list) or not turns:
+            continue
+        normalized: list[dict[str, Any]] = []
+        seen_roles: set[str] = set()
+        for turn in turns:
+            if not isinstance(turn, dict):
+                continue
+            role = _normalize_conversation_role(turn.get("role") or turn.get("from"))
+            if role not in {"user", "assistant"}:
+                continue
+            text = _pick_first_text(turn.get("content"), turn.get("text"), turn.get("value"))
+            if not text:
+                continue
+            normalized.append({"role": role, "content": [{"type": "text", "text": text}]})
+            seen_roles.add(role)
+        if normalized and {"user", "assistant"} <= seen_roles:
+            return normalized
+    return []
+
+
 def build_text_row_from_record(
     source_id: str,
     record: dict[str, Any],
@@ -409,7 +441,11 @@ def build_text_row_from_record(
     messages = record.get("messages")
     if isinstance(messages, list) and messages:
         normalized = normalize_messages_for_storage(messages)
+        if not normalized:
+            normalized = _normalize_conversation_messages(record)
     else:
+        normalized = _normalize_conversation_messages(record)
+    if not normalized:
         prompt = _pick_first_text(
             record.get("prompt"),
             record.get("instruction"),

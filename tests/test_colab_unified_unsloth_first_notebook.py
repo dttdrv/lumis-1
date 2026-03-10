@@ -6,7 +6,6 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK_PATH = REPO_ROOT / "notebooks" / "91_colab_unified_unsloth_first.ipynb"
-OLD_NOTEBOOK_PATH = REPO_ROOT / "notebooks" / "91_colab_unified_unsloth_first_old.ipynb"
 
 
 def test_notebook_91_exists_and_compiles() -> None:
@@ -47,7 +46,6 @@ def test_notebook_91_exists_and_compiles() -> None:
     assert 'INSTALL_MODE = "colab_auto"' not in all_source
     assert "STRICT_REPO_PINNED_SYNC" not in all_source
     assert "hf_hub_download" not in all_source
-
-
-def test_notebook_91_old_exists() -> None:
-    assert OLD_NOTEBOOK_PATH.exists()
+    assert "MAX_RECORDS_SCANNED_PER_SOURCE" in all_source
+    assert "MAX_UNMAPPED_ROWS_PER_SOURCE" in all_source
+    assert "subset_allowlist_not_embedded" in all_source
