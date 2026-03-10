@@ -38,7 +38,7 @@ If the identity files are missing, stop and satisfy `INPUT_CONTRACT_IDENTITY.md`
 
 Run exactly:
 
-1. `THE NOTEBOOK.ipynb`
+1. `THE NOTEBOOK-updated.ipynb`
 
 ## Stop Conditions
 

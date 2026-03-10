@@ -6,7 +6,7 @@ This file defines the current notebook-first execution order only. It is not pro
 
 ## Mandatory Order
 
-1. `THE NOTEBOOK.ipynb`
+1. `THE NOTEBOOK-updated.ipynb`
 
 ## Success Artifacts By Step
 

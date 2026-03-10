@@ -89,6 +89,7 @@
 - Removed retired notebook-90 support and wrapper tests from the active tree, while leaving historical archive material and long-form historical reports untouched.
 - Updated current operator docs, helper scripts, `PROJECT_BRIEF.md`, and `STATE.yaml` so the active execution model now points only to `notebooks/91_colab_unified_unsloth_first.ipynb`.
 - Renamed the active notebook surface to `THE NOTEBOOK.ipynb`, moved it to the repository root, and archived the duplicate `workspace/trivy_scope_notebook91/` snapshot to leave only one live notebook-91 surface in the active tree.
+- Renamed the canonical notebook surface from `THE NOTEBOOK.ipynb` to `THE NOTEBOOK-updated.ipynb` and updated active docs, scripts, tests, and generator references to the new root filename.
 - Repaired THE NOTEBOOK open-corpus source loader so it now pins the required HF config/split combinations for `smoltalk2`, `Docmatix`, `DocVQA`, `HelpSteer3`, `aya_dataset`, and the cleaned UltraFeedback preferences source instead of relying on ambiguous defaults.
 - Extended the notebook runtime adapters so `aya_dataset` rows with `inputs` / `targets` and `HelpSteer3` preference rows with `context` / `response1` / `response2` / `overall_preference` map into canonical SFT and preference shapes.
 - Changed `facebook/textvqa` from a noisy runtime failure into an explicit notebook skip on the current HF datasets stack because hub dataset scripts are no longer supported there.

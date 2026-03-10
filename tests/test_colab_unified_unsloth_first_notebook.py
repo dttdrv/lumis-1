@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-NOTEBOOK_PATH = REPO_ROOT / "THE NOTEBOOK.ipynb"
+NOTEBOOK_PATH = REPO_ROOT / "THE NOTEBOOK-updated.ipynb"
 
 
 def test_notebook_91_exists_and_compiles() -> None:
@@ -31,7 +31,7 @@ def test_notebook_91_exists_and_compiles() -> None:
     assert "final_deliverables.zip" in all_source
     assert "resolve_dpo_policy" in all_source
     assert "skipped_text_only_preferences_on_multimodal_run" in all_source
-    assert 'OUTPUT_PATH = REPO_ROOT / "THE NOTEBOOK.ipynb"' in all_source
+    assert 'OUTPUT_PATH = REPO_ROOT / "THE NOTEBOOK-updated.ipynb"' in all_source
     assert "workspace/runs/<run_id>/" not in all_source
     assert "workspace/runs" in all_source
     assert "AutoProcessor" in all_source
