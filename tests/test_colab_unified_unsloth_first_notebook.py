@@ -36,10 +36,12 @@ def test_notebook_91_exists_and_compiles() -> None:
     assert "workspace/runs" in all_source
     assert "AutoProcessor" in all_source
     assert "FastVisionModel" in all_source
+    assert "FastVisionModel.get_peft_model" in all_source
     assert "UnslothVisionDataCollator" in all_source
     assert "max_length=None" in all_source
     assert "choose_final_download_target" in all_source
     assert "materialize_processor_ready_sft_rows" in all_source
+    assert "resolve_sft_model_plan" in all_source
     assert "from pathlib import Path" in all_source
     assert "blocking: no final export artifact exists to package or download" in all_source
     assert "from lumis1." not in all_source
@@ -49,3 +51,4 @@ def test_notebook_91_exists_and_compiles() -> None:
     assert "MAX_RECORDS_SCANNED_PER_SOURCE" in all_source
     assert "MAX_UNMAPPED_ROWS_PER_SOURCE" in all_source
     assert "subset_allowlist_not_embedded" in all_source
+    assert "load_in_4bit=True" not in all_source

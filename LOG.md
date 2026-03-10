@@ -89,3 +89,10 @@
 - Removed retired notebook-90 support and wrapper tests from the active tree, while leaving historical archive material and long-form historical reports untouched.
 - Updated current operator docs, helper scripts, `PROJECT_BRIEF.md`, and `STATE.yaml` so the active execution model now points only to `notebooks/91_colab_unified_unsloth_first.ipynb`.
 - Renamed the active notebook surface to `THE NOTEBOOK.ipynb`, moved it to the repository root, and archived the duplicate `workspace/trivy_scope_notebook91/` snapshot to leave only one live notebook-91 surface in the active tree.
+- Repaired THE NOTEBOOK open-corpus source loader so it now pins the required HF config/split combinations for `smoltalk2`, `Docmatix`, `DocVQA`, `HelpSteer3`, `aya_dataset`, and the cleaned UltraFeedback preferences source instead of relying on ambiguous defaults.
+- Extended the notebook runtime adapters so `aya_dataset` rows with `inputs` / `targets` and `HelpSteer3` preference rows with `context` / `response1` / `response2` / `overall_preference` map into canonical SFT and preference shapes.
+- Changed `facebook/textvqa` from a noisy runtime failure into an explicit notebook skip on the current HF datasets stack because hub dataset scripts are no longer supported there.
+- Rebuilt `THE NOTEBOOK.ipynb` and re-ran the focused notebook/runtime regression suite: `16 passed`.
+- Repaired THE NOTEBOOK SFT stage so it now derives quantization and LoRA adapter attachment from `train_sft.yaml`, attaches LoRA adapters before constructing `SFTTrainer`, and fails closed if a quantized run is configured without adapters.
+- Hardened HelpSteer3 preference extraction so DPO prompts preserve full multi-turn chat history and fallback winner selection aggregates annotator scores instead of trusting the first vote.
+- Rebuilt `THE NOTEBOOK.ipynb` again and re-ran the focused notebook/runtime regression suite after the SFT-plan repair: `20 passed`.

@@ -53,6 +53,21 @@ IDENTITY_ALLOW_PATTERNS = [
     "preference_dataset.jsonl",
     "identity_pack_report.pdf",
 ]
+SOURCE_STREAM_PLAN_OVERRIDES = {
+    "CohereLabs/aya_dataset": {"subset": "default", "split": "train"},
+    "nvidia/HelpSteer3": {"subset": "preference", "split": "train"},
+    "argilla/ultrafeedback-binarized-preferences-cleaned": {
+        "subset": "default",
+        "split": "train",
+    },
+    "HuggingFaceTB/smoltalk2": {"subset": "SFT", "split": "OpenHermes_2.5_no_think"},
+    "HuggingFaceM4/Docmatix": {"subset": "images", "split": "train"},
+    "lmms-lab/DocVQA": {"subset": "DocVQA", "split": "validation"},
+}
+SOURCE_SKIP_REASONS = {
+    "HuggingFaceM4/the_cauldron": {"subset_allowlist_not_embedded": 1},
+    "facebook/textvqa": {"dataset_script_unsupported_current_hf_stack": 1},
+}
 
 
 def sha256_file(path: str | Path) -> str:
@@ -62,6 +77,76 @@ def sha256_file(path: str | Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def resolve_source_stream_plan(
+    source_id: str,
+    *,
+    default_split: str = "train",
+    default_subset: str | None = None,
+) -> dict[str, Any]:
+    plan: dict[str, Any] = {
+        "source_id": source_id,
+        "subset": default_subset,
+        "split": default_split,
+        "status": "ok",
+    }
+    if source_id in SOURCE_SKIP_REASONS:
+        plan["status"] = "skipped"
+        plan["drop_reasons"] = dict(SOURCE_SKIP_REASONS[source_id])
+        return plan
+    override = SOURCE_STREAM_PLAN_OVERRIDES.get(source_id)
+    if override:
+        plan["subset"] = override["subset"]
+        plan["split"] = override["split"]
+    return plan
+
+
+def resolve_sft_model_plan(train_sft_cfg: dict[str, Any]) -> dict[str, Any]:
+    model_cfg = train_sft_cfg.get("model") if isinstance(train_sft_cfg.get("model"), dict) else {}
+    lora_cfg = train_sft_cfg.get("lora") if isinstance(train_sft_cfg.get("lora"), dict) else {}
+
+    load_in_4bit = bool(model_cfg.get("load_in_4bit", False))
+    full_finetuning = bool(model_cfg.get("full_finetuning", False))
+    lora_enabled = bool(lora_cfg.get("enabled", False)) and not full_finetuning
+
+    if load_in_4bit and not lora_enabled:
+        raise ValueError(
+            "quantized SFT requires trainable LoRA adapters; update train_sft.yaml "
+            "to keep lora.enabled=true or disable load_in_4bit"
+        )
+    if not full_finetuning and not lora_enabled:
+        raise ValueError(
+            "SFT training is disabled by configuration: enable LoRA adapters or full_finetuning"
+        )
+
+    target_modules = lora_cfg.get("target_modules", "all-linear")
+    if isinstance(target_modules, list) and not target_modules:
+        target_modules = "all-linear"
+
+    peft_kwargs = {
+        "r": int(lora_cfg.get("r", 16)),
+        "target_modules": target_modules,
+        "lora_alpha": int(lora_cfg.get("lora_alpha", 32)),
+        "lora_dropout": float(lora_cfg.get("lora_dropout", 0.0)),
+        "bias": str(lora_cfg.get("bias", "none")),
+        "random_state": int(lora_cfg.get("random_state", 3407)),
+        "use_rslora": bool(lora_cfg.get("use_rslora", False)),
+        "finetune_vision_layers": bool(lora_cfg.get("finetune_vision_layers", False)),
+        "finetune_language_layers": bool(lora_cfg.get("finetune_language_layers", True)),
+        "finetune_attention_modules": bool(lora_cfg.get("finetune_attention_modules", True)),
+        "finetune_mlp_modules": bool(lora_cfg.get("finetune_mlp_modules", True)),
+    }
+    modules_to_save = lora_cfg.get("modules_to_save")
+    if isinstance(modules_to_save, list) and modules_to_save:
+        peft_kwargs["modules_to_save"] = modules_to_save
+
+    return {
+        "load_in_4bit": load_in_4bit,
+        "full_finetuning": full_finetuning,
+        "lora_enabled": lora_enabled,
+        "peft_kwargs": peft_kwargs,
+    }
 
 
 def normalize_text(value: Any) -> str:
@@ -263,6 +348,50 @@ def _pick_majority_answer(values: Any) -> str:
     return ""
 
 
+def _extract_preferred_response_pair(record: dict[str, Any]) -> tuple[str, str] | None:
+    chosen = _pick_first_text(record.get("chosen"))
+    rejected = _pick_first_text(record.get("rejected"))
+    if chosen and rejected:
+        return chosen, rejected
+
+    response1 = _pick_first_text(
+        record.get("response1"),
+        record.get("answer1"),
+        record.get("candidate1"),
+    )
+    response2 = _pick_first_text(
+        record.get("response2"),
+        record.get("answer2"),
+        record.get("candidate2"),
+    )
+    if not response1 or not response2:
+        return None
+
+    score_value = record.get("overall_preference")
+    if score_value is None and isinstance(record.get("individual_preference"), list):
+        score_total = 0.0
+        score_seen = False
+        for preference in record["individual_preference"]:
+            if not isinstance(preference, dict):
+                continue
+            try:
+                score_total += float(preference.get("score"))
+                score_seen = True
+            except (TypeError, ValueError):
+                continue
+        if score_seen:
+            score_value = score_total
+    try:
+        score = float(score_value)
+    except (TypeError, ValueError):
+        return None
+    if score < 0:
+        return response1, response2
+    if score > 0:
+        return response2, response1
+    return None
+
+
 def _save_named_image(source_id: str, row_id: str, image_value: Any, asset_root: Path) -> Path:
     stem = hashlib.sha256(f"{source_id}::{row_id}".encode("utf-8")).hexdigest()[:20]
     destination = asset_root / source_id.replace("/", "__") / f"{stem}.png"
@@ -394,6 +523,32 @@ def render_prompt_messages_to_text(prompt_messages: Any) -> str:
     return " ".join(parts).strip()
 
 
+def render_message_history_to_text(messages: Any) -> str:
+    if not isinstance(messages, list):
+        return ""
+    parts: list[str] = []
+    for message in messages:
+        if not isinstance(message, dict):
+            continue
+        role = normalize_text(message.get("role")).upper() or "USER"
+        content = message.get("content")
+        if isinstance(content, str):
+            text = normalize_text(content)
+        elif isinstance(content, list):
+            block_parts = []
+            for block in content:
+                if isinstance(block, dict) and block.get("type") == "text":
+                    text = normalize_text(block.get("text"))
+                    if text:
+                        block_parts.append(text)
+            text = " ".join(block_parts).strip()
+        else:
+            text = ""
+        if text:
+            parts.append(f"{role}: {text}")
+    return "\n".join(parts).strip()
+
+
 def normalize_messages_for_storage(messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return normalize_messages_as_blocks(messages)
 
@@ -408,7 +563,7 @@ def _normalize_conversation_role(value: Any) -> str:
 
 
 def _normalize_conversation_messages(record: dict[str, Any]) -> list[dict[str, Any]]:
-    for field_name in ("conversation", "conversations", "turns"):
+    for field_name in ("conversation", "conversations", "turns", "context"):
         turns = record.get(field_name)
         if not isinstance(turns, list) or not turns:
             continue
@@ -445,18 +600,30 @@ def build_text_row_from_record(
             normalized = _normalize_conversation_messages(record)
     else:
         normalized = _normalize_conversation_messages(record)
+    preferred_pair = _extract_preferred_response_pair(record)
+    if source_id == "nvidia/HelpSteer3" and preferred_pair and normalized:
+        chosen_text, _ = preferred_pair
+        if normalized[-1].get("role") != "assistant":
+            normalized = [
+                *normalized,
+                {"role": "assistant", "content": [{"type": "text", "text": chosen_text}]},
+            ]
     if not normalized:
         prompt = _pick_first_text(
+            render_prompt_messages_to_text(record.get("context")),
             record.get("prompt"),
             record.get("instruction"),
             record.get("question"),
             record.get("input"),
+            record.get("inputs"),
         )
         answer = _pick_first_text(
+            preferred_pair[0] if preferred_pair else None,
             record.get("response"),
             record.get("output"),
             record.get("answer"),
             record.get("chosen"),
+            record.get("targets"),
         )
         if not prompt or not answer:
             return None
@@ -477,7 +644,7 @@ def build_text_row_from_record(
 
 
 def extract_preference_triplet(record: dict[str, Any]) -> tuple[str, str, str] | None:
-    prompt = _pick_first_text(
+    prompt = render_message_history_to_text(record.get("context")) or _pick_first_text(
         record.get("prompt"),
         record.get("instruction"),
         record.get("question"),
@@ -487,6 +654,10 @@ def extract_preference_triplet(record: dict[str, Any]) -> tuple[str, str, str] |
     rejected = _pick_first_text(record.get("rejected"))
     if prompt and chosen and rejected:
         return prompt, chosen, rejected
+    preferred_pair = _extract_preferred_response_pair(record)
+    if prompt and preferred_pair:
+        chosen_text, rejected_text = preferred_pair
+        return prompt, chosen_text, rejected_text
     a = _pick_first_text(record.get("response_a"), record.get("answer_a"), record.get("candidate_a"))
     b = _pick_first_text(record.get("response_b"), record.get("answer_b"), record.get("candidate_b"))
     winner = _pick_first_text(record.get("winner"), record.get("label"), record.get("preference")).upper()

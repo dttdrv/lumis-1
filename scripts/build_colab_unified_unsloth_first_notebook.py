@@ -391,6 +391,8 @@ def build_notebook() -> dict:
             extract_preference_triplet,
             materialize_identity_placeholder_assets,
             materialize_processor_ready_sft_rows,
+            resolve_sft_model_plan,
+            resolve_source_stream_plan,
             resolve_dpo_policy,
             resolve_unsloth_matrix_install_command,
             sha256_file,
@@ -506,17 +508,25 @@ def build_notebook() -> dict:
             source_id = source_cfg.get("source_id")
             if source_id not in allowlist_map:
                 continue
-            split_name = allowlist_map[source_id].get("default_split", "train")
-            subset_name = allowlist_map[source_id].get("subset") if isinstance(allowlist_map[source_id].get("subset"), str) else None
-            if source_id == "HuggingFaceM4/the_cauldron":
+            source_plan = resolve_source_stream_plan(
+                source_id,
+                default_split=allowlist_map[source_id].get("default_split", "train"),
+                default_subset=allowlist_map[source_id].get("subset")
+                if isinstance(allowlist_map[source_id].get("subset"), str)
+                else None,
+            )
+            split_name = source_plan["split"]
+            subset_name = source_plan["subset"]
+            if source_plan["status"] == "skipped":
                 source_results.append({
                     "source_id": source_id,
                     "split": split_name,
                     "subset": subset_name,
                     "accepted": 0,
                     "scanned": 0,
+                    "preference_rows": 0,
                     "status": "skipped",
-                    "drop_reasons": {"subset_allowlist_not_embedded": 1},
+                    "drop_reasons": dict(source_plan["drop_reasons"]),
                 })
                 continue
             try:
@@ -684,11 +694,14 @@ def build_notebook() -> dict:
         SFT_MODEL_DIR = SFT_RUN_ROOT / "artifacts" / "sft_model"
         SFT_MODEL_DIR.mkdir(parents=True, exist_ok=True)
         processor = AutoProcessor.from_pretrained(BASE_MODEL, trust_remote_code=True)
+        sft_model_plan = resolve_sft_model_plan(TRAIN_SFT_CFG)
         model, tokenizer = FastVisionModel.from_pretrained(
             model_name=BASE_MODEL,
-            load_in_4bit=True,
+            load_in_4bit=sft_model_plan["load_in_4bit"],
             trust_remote_code=True,
         )
+        if sft_model_plan["lora_enabled"]:
+            model = FastVisionModel.get_peft_model(model, **sft_model_plan["peft_kwargs"])
         train_dataset = Dataset.from_list(multimodal_rows)
         trainer = SFTTrainer(
             model=model,
@@ -713,6 +726,8 @@ def build_notebook() -> dict:
             "output_dir": str(SFT_MODEL_DIR),
             "rows_used": len(multimodal_rows),
             "base_model": BASE_MODEL,
+            "load_in_4bit": sft_model_plan["load_in_4bit"],
+            "lora_enabled": sft_model_plan["lora_enabled"],
             "max_length": None,
             "run_training_default": True,
         }
